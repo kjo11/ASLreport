@@ -1,0 +1,4 @@
+average error non-rectified: 45.8703
+average error rectfied: 45.4188
+average error difference: 31.6758
+

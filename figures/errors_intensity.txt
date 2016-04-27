@@ -1,0 +1,3 @@
+average error 2: 30.2813
+average error 1: 22.6671
+
