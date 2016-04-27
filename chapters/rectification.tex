@@ -5,8 +5,9 @@ $I_{j}$ and rectified images $I_{j}^{rect}$ are given by:
 
 \begin{align}
   \Delta I_{1,i} &= I_1(u_{1,i}) - I_1^{rect}(w_{1,i}) \\
-  \Delta I_{2,i} &= I_2(u_{2,i}) - I_2^{rect}(w_{2,i}) \hspace{1em}
-  \text{   for } i = 1 \ldots n, 
+  \Delta I_{2,i} &= I_2(u_{2,i}) - I_2^{rect}(w_{2,i}) 
+  \hspace{2em} \text{for } i = 1 \ldots n 
+  \hspace{1em}\text{,}
   \label{eqn:rect/I_def}
 \end{align}
 
@@ -19,8 +20,9 @@ differences to be approximately zero, since:
 
 \begin{align}
   I_1(u_{1,i}) &= I_1^{rect}(w_{1,i}) + \epsilon_{1,i} \\
-  I_2(u_{2,i}) &= I_2^{rect}(w_{2,i}) + \epsilon_{2,i} \\
-  \text{   for } i = 1 \ldots n, 
+  I_2(u_{2,i}) &= I_2^{rect}(w_{2,i}) + \epsilon_{2,i} 
+  \hspace{2em} \text{for } i = 1 \ldots n
+  \hspace{1em}\text{,}
   \label{eqn:rect/diffI_eq}
 \end{align}
 
@@ -31,23 +33,27 @@ The pixels of the rectified image need to obey
 
 \begin{equation}
   w_{i,j} = P_j \begin{pmatrix} X_{i,j}^{rect} \\ 1 \end{pmatrix}
-  \text{   for } j = 1, 2,
+  \hspace{2em} \text{for } j = 1, 2
+  \hspace{1em}\text{,}
   \label{eqn:rect/w_def}
 \end{equation}
 
 where $X_{i,j}^{rect}$ are computed such that $w_{i,j} = \tilde{u}_{i,j}$, with
 
 \begin{align}
-  \tilde{u}_{i,j} &= K'(T_j(X_i)) \text{, with} \\
-  T_j(X_i) &= \pi(C_{C_j M} (X_i - {_M}r_{MC_j})) \text{   and} \\
+  \tilde{u}_{i,j} &= K'(T_j(X_i)) \hspace{2em} \text{, where} \\
+  T_j(X_i) &= \pi(C_{C_j M} (X_i - {_M}r_{MC_j})) \hspace{2em} \text{and} \\
   \pi(\begin{pmatrix} x, y, z \end{pmatrix}^T) &= 
-  \begin{pmatrix} x/z, y/z, z \end{pmatrix}^T.
+  \begin{pmatrix} x/z, y/z, z \end{pmatrix}^T 
+  \hspace{1em}\text{.}
   \label{eqn:rect/utilde_def}
 \end{align}
 
 Remember that $u_{i,j}$ are given by 
 \begin{equation}
-  u_{i,j} = K_j (D_j(T(X_i)))
+  u_{i,j} = K_j (D_j(T(X_i))) 
+  \hspace{2em} \text{for } i = 1 \ldots n \text{, } \hspace{1em} j = 1,2
+  \hspace{1em}\text{,}
   \label{eqn/rect/u_def}
 \end{equation}
 
@@ -64,15 +70,15 @@ rectification process given by image\_proc of ROS.
   \centering
   \begin{subfigure}[b]{0.49\textwidth}
     \includegraphics[width=\textwidth]{figures/rect_r1.jpg} 
-    \caption{Intensity error of left image with nx = ? and ny = ?.}
+    \caption{Intensity error of left image.} 
     \label{fig:rect_r1}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
     \includegraphics[width=\textwidth]{figures/rect_r2.jpg} 
-    \caption{Intensity error of right image with nx = ? and ny = ?.}
+    \caption{Intensity error of right image.}
     \label{fig:rect_r2}
   \end{subfigure}
-  \caption{Rectification intensity errors of left and right image.}
+  \caption{Rectification intensity errors with $n_x = 600$ and $n_y = 400$.}
 \end{figure}
 
 Similar considerations can be applied for validating the interpretation of the
@@ -81,10 +87,11 @@ camera parameters given in the camera\_info message.
 The following assumptions are to be tested.
 
 \begin{align}
-  C_{SC_j} &= R_j \text{   for j=1, 2} 
-  \implies C_{C_2C_1} = R_2^TR_1 \text{   and} \\
+  C_{SC_j} &= R_j \hspace{2em} \text{for j=1, 2} 
+  \implies C_{C_2C_1} = R_2^TR_1 \hspace{2em} \text{and} \\
   _{C_1}r_{C_1C_2} &= \begin{pmatrix} -P_j(0,3)/P_j(0,0) & 0 & 0
-  \end{pmatrix}^T.
+  \end{pmatrix}^T
+  \hspace{1em}\text{.}
 \end{align}
 
 The methodology applied is the following. If the above assumptions hold, then one 
@@ -94,7 +101,9 @@ $\tilde{u}_{i,1}$ defined as above, and
 
 \begin{align}
   X_{i,2}^{rect} &= C_{C_2C_1} (_{C_1}r_{C_1X_i} + _{C_1}r_{C_1C_2}) \\
-                 &= C_{C_2C_1} (X_{i,1}^{rect} + _{C_1}r_{C_1C_2}) .
+                 &= C_{C_2C_1} (X_{i,1}^{rect} + _{C_1}r_{C_1C_2}) 
+  \hspace{1em}\text{.}
+  \label{eqn:rect/assumptions}
 \end{align}
 
 The residuals of the original images $I_1$ and $I_2$ and of
@@ -102,8 +111,9 @@ the rectified images $I_1^{rect}$ and $I_2^{rect}$ are given by
 
 \begin{align}
   \Delta r_i &= I_1(u_{1,i}) - I_2(w_{2,i}) \\
-  \Delta r_i^{rect} &= I_1^{rect}(w_{1,i}) - I_2^{rect}(w_{2,i}), \hspace{1em} \\
-  \text{   for } i = 1 \ldots n, 
+  \Delta r_i^{rect} &= I_1^{rect}(w_{1,i}) - I_2^{rect}(w_{2,i})
+  \hspace{2em} \text{for } i = 1 \ldots n 
+  \hspace{1em}\text{.}
   \label{eqn:rect/res_def}
 \end{align}
 
@@ -112,7 +122,8 @@ process of the images, we have
 
 \begin{equation}
   \Delta r_i = \Delta r_i^{rect} + \epsilon_i  
-  \text{   for } i = 1 \ldots n, 
+  \hspace{2em} \text{for } i = 1 \ldots n
+  \hspace{1em}\text{,}
   \label{eqn:rect/res_eq}
 \end{equation}
 
@@ -124,27 +135,29 @@ theinformation is available, low photmetric errors cannot be expected, which exp
 the relatively high average value. However, from Equation \ref{eqn:rect/res_eq}
 we know that the photometric errors should be approximately the same in both
 cases. A visualization of the difference between the two in Figure \ref{fig:rect_rdiff} 
-shows that this is indeed the case. 
+shows that this is indeed the case. Therefore, trnsform between the left and
+right image can be computed from the camera\_info message as given in
+\ref{eqn:rect/assumptions}.
 
 \begin{figure}[h]
   \centering
   \begin{subfigure}[b]{0.49\textwidth}
     \includegraphics[width=\textwidth]{figures/rect_ru.jpg} 
-    \caption{Residuals of original image with nx = ? and ny = ?.}
+    \caption{Residuals of original image.}
     \label{fig:rect_ru}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
     \includegraphics[width=\textwidth]{figures/rect_rw.jpg} 
-    \caption{Residuals of original image with nx = ? and ny = ?.}
+    \caption{Residuals of rectified image.}
     \label{fig:rect_rw}
   \end{subfigure}
   \\
   \begin{subfigure}[b]{0.7\textwidth}
     \includegraphics[width=\textwidth]{figures/rect_rdiff.jpg} 
-    \caption{Difference of residual errors.}
+    \caption{Difference of residuals.}
     \label{fig:rect_rdiff}
   \end{subfigure}
-  \caption{Rectification residual errors of original and rectified images.}
+  \caption{Rectification residual errors with $n_x = 600$ and $n_y = 400$.}
   \label{fig:rect}
 \end{figure}
 
