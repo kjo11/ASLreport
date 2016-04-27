@@ -1,0 +1,8 @@
+Some notes on the optimization
+
+Why add bending energy as regularizer? Because when there are not many measurements, the hessian Matrix (A'A) would be singular and not invertible. 
+(Which is a problem when trying to solve b = (A'A)A'x.
+The bending energy further offers the advantage over other choices that it leads to a smooth transition between well-populated regions if their 
+in between is not well populated (as opposed to other choices that would tune the "in between" to zero instead). 
+
+
