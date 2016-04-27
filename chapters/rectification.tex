@@ -7,7 +7,7 @@ $I_{j}$ and rectified images $I_{j}^{rect}$ are given by:
   \Delta I_{1,i} &= I_1(u_{1,i}) - I_1^{rect}(w_{1,i}) \\
   \Delta I_{2,i} &= I_2(u_{2,i}) - I_2^{rect}(w_{2,i}) \hspace{1em}
   \text{   for } i = 1 \ldots n, 
-  \label{eqn:rect/res_def}
+  \label{eqn:rect/I_def}
 \end{align}
 
 where $u_{1,i}$, $u_{2,i}$ denote the pixels in the original image and
@@ -17,12 +17,12 @@ If the rectified pixels are computed in accordance with the rectification
 process of the images given by image\_proc of ROS, we would expect both 
 differences to be approximately zero, since:
 
-\begin{equation}
+\begin{align}
   I_1(u_{1,i}) &= I_1^{rect}(w_{1,i}) + \epsilon_{1,i} \\
   I_2(u_{2,i}) &= I_2^{rect}(w_{2,i}) + \epsilon_{2,i} \\
   \text{   for } i = 1 \ldots n, 
-  \label{eqn:rect/res_eq}
-\end{equation}
+  \label{eqn:rect/diffI_eq}
+\end{align}
 
 with $\epsilon_{i,j}$ the error arising solely from interpolation of the rectified
 images.
@@ -73,7 +73,6 @@ rectification process given by image\_proc of ROS.
     \label{fig:rect_r2}
   \end{subfigure}
   \caption{Rectification intensity errors of left and right image.}
-  \label{fig:rect}
 \end{figure}
 
 Similar considerations can be applied for validating the interpretation of the
@@ -81,12 +80,12 @@ camera parameters given in the camera\_info message.
 
 The following assumptions are to be tested.
 
-\begin{equation}
+\begin{align}
   C_{SC_j} &= R_j \text{   for j=1, 2} 
-  \implies C_{C_2C_1} = R_2^TR_1 \text{   and}
+  \implies C_{C_2C_1} = R_2^TR_1 \text{   and} \\
   _{C_1}r_{C_1C_2} &= \begin{pmatrix} -P_j(0,3)/P_j(0,0) & 0 & 0
   \end{pmatrix}^T.
-\end{equation}
+\end{align}
 
 The methodology applied is the following. If the above assumptions hold, then one 
 can obtain the pixel coordinates in the second rectified image given the
@@ -94,8 +93,8 @@ coordinates in the first image using $X_{i,1}^{rect}$ such that $w_{i,1} = \tild
 $\tilde{u}_{i,1}$ defined as above, and 
 
 \begin{align}
-  X_{i,2}^{rect} &= C_{C_2C_1} (_{C_1}r_{C_1X_i} + _{C_1}r_{C_1C_2} 
-                 &= C_{C_2C_1} (X_{i,1}^{rect} + _{C_1}r_{C_1C_2} .
+  X_{i,2}^{rect} &= C_{C_2C_1} (_{C_1}r_{C_1X_i} + _{C_1}r_{C_1C_2}) \\
+                 &= C_{C_2C_1} (X_{i,1}^{rect} + _{C_1}r_{C_1C_2}) .
 \end{align}
 
 The residuals of the original images $I_1$ and $I_2$ and of
@@ -103,7 +102,7 @@ the rectified images $I_1^{rect}$ and $I_2^{rect}$ are given by
 
 \begin{align}
   \Delta r_i &= I_1(u_{1,i}) - I_2(w_{2,i}) \\
-  \Delta r_i^{rect} &= I_1^{rect}(w_{1,i}) - I_2^{rect}(w_{2,i}), \hspace{1em}
+  \Delta r_i^{rect} &= I_1^{rect}(w_{1,i}) - I_2^{rect}(w_{2,i}), \hspace{1em} \\
   \text{   for } i = 1 \ldots n, 
   \label{eqn:rect/res_def}
 \end{align}
