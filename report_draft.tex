@@ -4,6 +4,7 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{hyperref}
 
 \begin{document}
 
@@ -14,5 +15,10 @@
 
 \chapter{Rectification}
 \input{chapters/rectification.tex}
+
+\nocite{*} % Show everything in bibliography.
+
+\bibliographystyle{siam}
+\bibliography{bibliography}
 
 \end{document}

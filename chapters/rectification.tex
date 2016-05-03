@@ -1,163 +1,153 @@
+\section{Rectification test}
+
 The following test was performed to verify the correctness of the pixel
-association process. 
-The differenc of intensity at corresponding pixels in the original images
-$I_{j}$ and rectified images $I_{j}^{rect}$ are given by:
-
-\begin{align}
-  \Delta I_{1,i} &= I_1(u_{1,i}) - I_1^{rect}(w_{1,i}) \\
-  \Delta I_{2,i} &= I_2(u_{2,i}) - I_2^{rect}(w_{2,i}) 
-  \hspace{2em} \text{for } i = 1 \ldots n 
-  \hspace{1em}\text{,}
-  \label{eqn:rect/I_def}
-\end{align}
-
-where $u_{1,i}$, $u_{2,i}$ denote the pixels in the original image and
-$w_{1,i}$, $w_{2,i}$ denote the pixels in the rectified image. 
-
-If the rectified pixels are computed in accordance with the rectification
-process of the images given by image\_proc of ROS, we would expect both 
-differences to be approximately zero, since:
-
-\begin{align}
-  I_1(u_{1,i}) &= I_1^{rect}(w_{1,i}) + \epsilon_{1,i} \\
-  I_2(u_{2,i}) &= I_2^{rect}(w_{2,i}) + \epsilon_{2,i} 
-  \hspace{2em} \text{for } i = 1 \ldots n
-  \hspace{1em}\text{,}
-  \label{eqn:rect/diffI_eq}
-\end{align}
-
-with $\epsilon_{i,j}$ the error arising solely from interpolation of the rectified
-images.
-
-The pixels of the rectified image need to obey
+associations with respect to the rectified images given by \textit{image\_proc}
+of \texttt{ROS}.
+The difference of intensities at corresponding pixels in the original images $I_{j}$ and rectified images $I_{j}^{rect}$ are given by:
 
 \begin{equation}
-  w_{i,j} = P_j \begin{pmatrix} X_{i,j}^{rect} \\ 1 \end{pmatrix}
-  \hspace{2em} \text{for } j = 1, 2
+  \Delta I_{i,j} = I_j(u_{i,j}) - I_j^{rect}(w_{i,j}) 
+  \hspace{2em} \text{for } i = 1 \ldots n \text{, } \hspace{1em} j = 1,2
   \hspace{1em}\text{,}
-  \label{eqn:rect/w_def}
+  \label{eqn:rect/I_def}
 \end{equation}
 
-where $X_{i,j}^{rect}$ are computed such that $w_{i,j} = \tilde{u}_{i,j}$, with
+where $u_{i,j}$, $w_{i,j}$ denote the pixel location of the object point $X_i$ in the
+original and rectified image of camera $j$ respectively.
+
+If the rectified pixels are computed in accordance with the rectification
+process given by \texttt{ROS}, this difference should be
+approximately zero or
+
+\begin{equation}
+  I_j(u_{i,j}) = I_j^{rect}(w_{i,j}) + \epsilon_{i,j} 
+  \hspace{2em} \text{for } i = 1 \ldots n \text{, } \hspace{1em} j = 1,2
+  \hspace{1em}\text{,}
+  \label{eqn:rect/diffI_eq}
+\end{equation}
+
+with the error $\epsilon_{i,j}$ arising solely from interpolation.
+
+The pixels of the rectified image are computed using the projection matrices
+$P_{j} = \begin{bmatrix} K' | t_j \end{bmatrix}$ and rotation matrices $R_j$ 
+obtained from the CameraInfo message with \cite{Pipeline}
 
 \begin{align}
-  \tilde{u}_{i,j} &= K'(T_j(X_i)) \hspace{2em} \text{, where} \\
-  T_j(X_i) &= \pi(C_{C_j M} (X_i - {_M}r_{MC_j})) \hspace{2em} \text{and} \\
+  w_{i,j} &= K'(R_j T_j(X_i)) \hspace{2em} \text{, where} \\
+  T_j(X_i) &= \pi(_{C_j}r_{C_jX}) \\
+           &= \pi(C_{C_j M} (X_i - {_M}r_{MC_j})) \hspace{2em} \text{and} \\
   \pi(\begin{pmatrix} x, y, z \end{pmatrix}^T) &= 
-  \begin{pmatrix} x/z, y/z, z \end{pmatrix}^T 
+  \begin{pmatrix} x/z, y/z, 1 \end{pmatrix}^T 
   \hspace{1em}\text{.}
   \label{eqn:rect/utilde_def}
 \end{align}
 
 Remember that $u_{i,j}$ are given by 
+
 \begin{equation}
-  u_{i,j} = K_j (D_j(T(X_i))) 
+  u_{i,j} = K_j D_j(T_j(X_i))) 
   \hspace{2em} \text{for } i = 1 \ldots n \text{, } \hspace{1em} j = 1,2
   \hspace{1em}\text{,}
   \label{eqn/rect/u_def}
 \end{equation}
 
-which concludes the above considerations.
+with $K_j$, $D_j$ and $T_j$ the camera matrix, distortion function and
+projection transform given above.
 
-All tools for computing the pixel correspondences being defined, a look at 
-Figures \ref{fig:rect_r1} and \ref{fig:rect_r2} shows that the resulting error
+A look at Figures \ref{fig:rect_r1} and \ref{fig:rect_r2} shows that the resulting error
 between the rectified image and the original image is indeed unformly 
-small and with no patterns observable in both left and right images.
-The above equations for pixel correspondences are thereby validated for the 
-rectification process given by image\_proc of ROS.
+small and with only very light patterns observable in both left and right images.
+These patterns get stronger as we approach the image border, where interpolation
+effects become more important.
+The pixel correspondence equations developed above are thereby validated for the 
+rectified images provided by \texttt{ROS}.
 
-\begin{figure}[h]
-  \centering
-  \begin{subfigure}[b]{0.49\textwidth}
-    \includegraphics[width=\textwidth]{figures/rect_r1.jpg} 
-    \caption{Left image (mean: 22.67)} 
-    \label{fig:rect_r1}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.49\textwidth}
-    \includegraphics[width=\textwidth]{figures/rect_r2.jpg} 
-    \caption{Right image (mean: 30.2813)}
-    \label{fig:rect_r2}
-  \end{subfigure}
-  \caption{Rectification intensity errors with $n_x = 600$ and $n_y = 400$.}
-\end{figure}
+\section{Transformation test}
 
 Similar considerations can be applied for validating the interpretation of the
-camera parameters given in the camera\_info message.
+camera parameters to compute the transformation between the left and the right
+camera.
 
-The following assumptions are to be tested.
+The following assumptions need to be tested \cite{CameraInfo},
+\cite[p. 523f]{Siciliano2007}.
 
 \begin{align}
   C_{SC_j} &= R_j \hspace{2em} \text{for j=1, 2} 
   \implies C_{C_2C_1} = R_2^TR_1 \hspace{2em} \text{and} \\
-  _{C_1}r_{C_1C_2} &= \begin{pmatrix} -P_j(0,3)/P_j(0,0) & 0 & 0
+  _{C_1}r_{C_1C_2} &= C_{C_1 S} (_S{r}_{S C_2} - _S{r}_{S C_1})
+   = R_1^T \begin{pmatrix} -P_2(0,3)/P_2(0,0) & 0 & 0
   \end{pmatrix}^T
   \hspace{1em}\text{.}
+  \label{rect/eqn:assumptions}
 \end{align}
 
-The methodology applied is the following. If the above assumptions hold, then one 
-can obtain the pixel coordinates in the second rectified image given the
-coordinates in the first image using $X_{i,1}^{rect}$ such that $w_{i,1} = \tilde{u}_{i,1}$, with
-$\tilde{u}_{i,1}$ defined as above, and 
+If the above assumptions hold, then one can obtain the point coordinates in the second camera frame from the
+ones in the first camera frame by applying
 
 \begin{align}
-  X_{i,2}^{rect} &= C_{C_2C_1} (_{C_1}r_{C_1X_i} + _{C_1}r_{C_1C_2}) \\
-                 &= C_{C_2C_1} (X_{i,1}^{rect} + _{C_1}r_{C_1C_2}) 
+  _{C_2}r_{C_2X} &= C_{C_2C_1} (_{C_1}r_{C_1X_i} + _{C_1}r_{C_1C_2}) 
   \hspace{1em}\text{.}
-  \label{eqn:rect/assumptions}
 \end{align}
 
-The residuals of the original images $I_1$ and $I_2$ and of
-the rectified images $I_1^{rect}$ and $I_2^{rect}$ are given by
+The same transformations as before are then applied to project these points in
+the respective rectified images. As can be seen from Figure
+\ref{fig:rect_r2_transform}, the result
+is identical with the one from the procedure where the pixels are
+directly projected from the world frame to the left and right image. 
+Therefore, the transform between the left and
+right image is correctly computed.
+\textit{No! This only tells me that I was consistent with my transformations and
+not that the transformations are indeed right\ldots (Check with examples with
+correct depth information if the transformations are right.)}
 
-\begin{align}
-  \Delta r_i &= I_1(u_{1,i}) - I_2(w_{2,i}) \\
-  \Delta r_i^{rect} &= I_1^{rect}(w_{1,i}) - I_2^{rect}(w_{2,i})
-  \hspace{2em} \text{for } i = 1 \ldots n 
-  \hspace{1em}\text{.}
-  \label{eqn:rect/res_def}
-\end{align}
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}[b]{0.7\textwidth}
+    \includegraphics[width=\textwidth]{figures/rect_r1.jpg} 
+    \caption{Left image (mean: 4.78).} 
+    \label{fig:rect_r1}
+  \end{subfigure}
+  \\
+  \begin{subfigure}[b]{0.7\textwidth}
+    \includegraphics[width=\textwidth]{figures/rect_r2.jpg} 
+    \caption{Right image (mean: 4.34).}
+    \label{fig:rect_r2}
+  \end{subfigure}
+  \\
+  \begin{subfigure}[b]{0.7\textwidth}
+    \includegraphics[width=\textwidth]{figures/rect_r2_transform.jpg} 
+    \caption{Right image obtained with transformation (mean: 4.34).}
+    \label{fig:rect_r2_transform}
+  \end{subfigure}
+  \caption{Rectification intensity errors $\Delta I_{i,j}$ with $n_x = 300$ and $n_y = 200$.}
+\end{figure}
 
-If the rectified pixels are computed in accordance with the rectification
-process of the images, we have 
-
-\begin{equation}
-  \Delta r_i = \Delta r_i^{rect} + \epsilon_i  
-  \hspace{2em} \text{for } i = 1 \ldots n
-  \hspace{1em}\text{,}
-  \label{eqn:rect/res_eq}
-\end{equation}
-
-with $\epsilon_i$ the error arising solely from interpolation errors between the
-left and the right image.
 The photometric error in the original and rectified image are is shown in Figures
 \ref{fig:rect_ru} and \ref{fig:rect_rw}. Since at this stage, no reliable depth
-theinformation is available, low photmetric errors cannot be expected, which explains 
-the relatively high average value. However, from Equation \ref{eqn:rect/res_eq}
-we know that the photometric errors should be approximately the same in both
-cases. A visualization of the difference between the two in Figure \ref{fig:rect_rdiff} 
-shows that this is indeed the case. Therefore, trnsform between the left and
-right image can be computed from the camera\_info message as given in
-\ref{eqn:rect/assumptions}.
+information is available, low photometric errors cannot be expected, which explains 
+the relatively high average value. However, we know that the photometric errors should 
+be approximately the same in the rectified and non-rectified images.
+This is indeed the case as can be seen in Figure \ref{fig:rect}.
 
 \begin{figure}[h]
   \centering
   \begin{subfigure}[b]{0.49\textwidth}
     \includegraphics[width=\textwidth]{figures/rect_ru.jpg} 
-    \caption{Original image (mean: 45.87)}
+    \caption{Original image (mean: 44.97).}
     \label{fig:rect_ru}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
     \includegraphics[width=\textwidth]{figures/rect_rw.jpg} 
-    \caption{Rectified image (mean: 45.42)}
+    \caption{Rectified image (mean: 46.23).}
     \label{fig:rect_rw}
   \end{subfigure}
   \\
   \begin{subfigure}[b]{0.7\textwidth}
     \includegraphics[width=\textwidth]{figures/rect_rdiff.jpg} 
-    \caption{Difference (mean: 31.6758)}
+    \caption{Difference of original and rectified image (mean: 6.71).}
     \label{fig:rect_rdiff}
   \end{subfigure}
-  \caption{Rectification residual errors with $n_x = 600$ and $n_y = 400$.}
+  \caption{Rectification residual errors with $n_x = 300$ and $n_y = 200$.}
   \label{fig:rect}
 \end{figure}
 
