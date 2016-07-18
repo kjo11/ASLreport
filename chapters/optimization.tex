@@ -1,8 +1,58 @@
-Some notes on the optimization
-
 Why add bending energy as regularizer? Because when there are not many measurements, the hessian Matrix (A'A) would be singular and not invertible. 
 (Which is a problem when trying to solve b = (A'A)A'x.
 The bending energy further offers the advantage over other choices that it leads to a smooth transition between well-populated regions if their 
 in between is not well populated (as opposed to other choices that would tune the "in between" to zero instead). 
 
+Optimization procedure:
+
+\begin{equation}
+  \mathbf{\hat{a}} =  
+  \argmin{\mathbf{a}\in\mathbb{R}^M} \sum_{i = 0}^{N} r_i(\mathbf{a})^2 +
+  \beta(\mathbf{a}) + \ldots 
+\end{equation}
+
+\begin{align}
+  \mathbf{r} &: \mathbb{R}^M \to \mathbb{R}^N \\
+  \mathbf{a} &\in \mathbb{R}^M \\
+  J(\mathbf{a}) &= 
+  %\lbrack \frac{\partial r_i}{\partial a_j} \rbrack {j = 1, 2,
+  %\ldots M}_{i = 1, 2, \ldots N} = 
+  \begin{bmatrix} 
+       \nabla r_1(\mathbf a)^T \\
+       \nabla r_2(\mathbf a)^T \\
+       \vdots \\
+       \nabla r_N(\mathbf a)^T \\
+  \end{bmatrix}
+\end{align}
+
+\begin{align}
+  \nabla f(\mathbf a) &= J(\mathbf a) ^T \mathbf r(\mathbf a) \\
+  \nabla^2 f(\mathbf a) &\approx J(\mathbf a) ^T J(\mathbf a)
+\end{align}
+
+\begin{equation}
+  \mathbf{\hat{a}} =  
+  \argmin{\mathbf{a}\in\mathbb{R}^M} \frac{1}{2} \sum_{i = 0}^{N} r_i(\mathbf{a})^2
+\end{equation}
+
+\begin{equation}
+  J_k(\mathbf a) ^TJ_k (\mathbf a) \mathbf p_k^{GN} = - J_k(\mathbf a) ^T\mathbf r_k(\mathbf a)
+\end{equation}
+
+\begin{equation}
+  \mathbf a_{k+1} = \mathbf a_k + \alpha_k \mathbf p_k^{GN}
+\end{equation}
+
+Leastsquares:
+\cite[p.245-269]{Nocedal1999}
+
+Line search:
+\cite[p.30f]{Nocedal1999}
+
+Gauss newton: 
+\cite[p.254]{Nocedal1999}
+
+Armijo backtracking: (not suited for quasi newton and conjugate gradient
+methods!)
+\cite[p.37]{Nocedal1999}
 

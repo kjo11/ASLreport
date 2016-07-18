@@ -4,13 +4,12 @@
 {\sc J.~Nocedal and S.~J. Wright}, {\em {Numerical Optimization}},
   Springer-Verlag New York, Inc., second~ed., 1999.
 
-\bibitem{Pipeline}
-{\sc ROS}, {\em {image{\_}pipeline CameraInfo}}.
+\bibitem{WikiCameraInfo}
+{\sc ROS}, {\em {wiki CameraInfo}}.
 \newblock \url{http://wiki.ros.org/image_pipeline/CameraInfo}, 2011.
 
-\bibitem{CameraInfo}
-\leavevmode\vrule height 2pt depth -1.6pt width 23pt, {\em {sensor{\_}msgs
-  CameraInfo}}.
+\bibitem{DocCameraInfo}
+\leavevmode\vrule height 2pt depth -1.6pt width 23pt, {\em {docs CameraInfo}}.
 \newblock \url{http://docs.ros.org/api/sensor_msgs/html/msg/CameraInfo.html},
   2016.
 
