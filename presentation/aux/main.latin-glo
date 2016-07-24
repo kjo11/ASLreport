@@ -1,0 +1,3 @@
+(indexentry :tkey (("\\protect \\ensuremath  {\\protect \\ensuremath  {\\protect \\bm  {a}}}" "\\glossentry{a}") ) :locref "{}{2}" :attr "pageglsnumberformat" ) 
+(indexentry :tkey (("Jr" "\\glossentry{Jr}") ) :locref "{}{2}" :attr "pageglsnumberformat" ) 
+(indexentry :tkey (("K" "\\glossentry{K}") ) :locref "{}{2}" :attr "pageglsnumberformat" ) 
