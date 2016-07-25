@@ -1,0 +1,21 @@
+close all
+clear all
+  
+%% Initialization bag  
+path1 = '/home/kiki/ASL_ROS/new_code/stereo_camera_reconstruction/results/mapping/plane_b100/convergence';
+path2 = '/home/kiki/ASL_ROS/new_code/stereo_camera_reconstruction/results/mapping/plane_b1000/convergence';
+
+
+fid = fopen(strcat(path1), 'r');
+[x1, ~] = fscanf(fid, '%e', [2, Inf]);
+fid = fopen(strcat(path2), 'r');
+[x2, ~] = fscanf(fid, '%e', [2, Inf]);
+
+figure;
+plot(x1(1,:), x1(2,:), 'o', 'color', 'blue'); hold on;
+plot(x2(1,:), x2(2,:), 'x', 'color', 'red') 
+vline(2.5,'color','green')
+axis([-20,10, 0, 35]);
+title('Convergence study  (*)');
+legend('b = 100', 'b = 1000');
+xlabel('Initialization [m]'), ylabel('# iterations');
