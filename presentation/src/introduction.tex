@@ -1,0 +1,38 @@
+\section{Introduction}
+
+\subsection{Motivation}
+\frame{
+  \frametitle{Dense SLAM with B-Splines}
+
+  Picture of Sparse SLAM 
+  Picture of Dense SLAM
+}
+
+\subsection{Project Goals}
+\frame{
+  \frametitle{Project Goal and Methodology}
+
+  Create framework for surface reconstruction and localization using moving
+  stereo camera based on moving monocular camera case. 
+
+  \begin{columns}
+    \column{0.35\textwidth}
+
+    Added functionalities
+    \begin{itemize}
+      \item Create spline surface reprensentation from static stereo camera.  
+      \item Localize new stereo camera position using obtained map.
+    \end{itemize}
+
+      \column{0.65\textwidth}
+    Methodology
+    \begin{itemize}
+    \item Simulation environment \ros with \rviz for pointcloud and
+      \opencv for image handling.
+      \item Implementation of optimization algorithm using \eigen 's
+      sparse matrix solvers.
+      \item Localization method using photometric errors only and generic
+        rotation representation
+    \end{itemize}
+  \end{columns}
+}

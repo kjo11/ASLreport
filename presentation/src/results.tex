@@ -1,0 +1,139 @@
+\subsection{Results Mapping}
+
+\frame{
+  \frametitle{Datasets and parameters}
+  
+\begin{tabular}{l|c|c|c|}
+    Dataset & Plane test & Middlebury \cite{Middlebury}& Inhouse \\
+    \hline
+    \hline
+    Ground truth & analytical & structured light & pattern matching \\ 
+    Images & rectified & rectified & non rectified \\
+    Calibration & +++ & ++ & + \\ 
+    \hline
+    \hline
+    Mapping & yes & yes & yes \\ 
+    Localization & yes & no & no \\
+    \hline
+    \hline
+    Spline resolution & 20 x 20 & \multicolumn{2}{c|}{75 x 100} \\
+    \hline
+    Map dimensions & 0.9 x 1.2 & \multicolumn{2}{c|}{1.5 x 2.0} \\ 
+    \hline
+    Map resolution & \multicolumn{3}{c|}{90 x 120} \\ 
+    \hline
+  \end{tabular}
+}
+
+\subsection{Mapping}
+\frame{\frametitle{Plane test case}
+\begin{columns}
+  \column{.5\textwidth}
+
+  \begin{figure}[h!]
+\centering
+\resizebox{\linewidth}{!}{
+  \input{../../graphics/planetest.tex}
+}
+\end{figure}
+  \column{.5\textwidth}
+
+    \begin{figure}[H]
+    \begin{subfigure}{.2\linewidth}
+      \includegraphics[width=\textwidth]{figures/planetest1.png}
+    \end{subfigure}
+    \begin{subfigure}{.2\linewidth}
+      \includegraphics[width=\textwidth]{figures/planetest2.png}
+    \end{subfigure}
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=.9\linewidth]{figures/planetest3d.png}
+  \end{figure}
+\end{columns}
+}
+
+%\frame{\frametitle{Simulation test case}}
+\frame{
+  \frametitle{Middlebury dataset}
+  
+  \begin{figure}[H]
+  \begin{subfigure}{.2\linewidth}
+    \includegraphics[width=\textwidth]{figures/recycle0.png}
+  \end{subfigure}
+  \begin{subfigure}{.2\linewidth}
+    \includegraphics[width=\textwidth]{figures/middlebury_residuals_b1.png}
+  \end{subfigure}
+  \begin{subfigure}{.2\linewidth}
+    \includegraphics[width=\textwidth]{figures/middlebury_residuals_b10.png}
+  \end{subfigure}
+  \end{figure}
+  
+  \begin{figure}[H]
+  \begin{subfigure}{.2\linewidth}
+    \includegraphics[width=\textwidth]{figures/middlebury_3d_groundtruth.png}
+  \end{subfigure}
+  \begin{subfigure}{.2\linewidth}
+    \includegraphics[width=\textwidth]{figures/middlebury_3d_b1.png}
+  \end{subfigure}
+  \begin{subfigure}{.2\linewidth}
+    \includegraphics[width=\textwidth]{figures/middlebury_3d_b10.png}
+  \end{subfigure}
+  \end{figure}
+  
+  \begin{figure}[H]
+  \begin{subfigure}{.2\linewidth}
+    \includegraphics[width=\textwidth]{figures/middlebury_disparity.png}
+  \end{subfigure}
+  \begin{subfigure}{.2\linewidth}
+    \includegraphics[width=\textwidth]{figures/middlebury_disparity_b1.png}
+  \end{subfigure}
+  \begin{subfigure}{.2\linewidth}
+    \includegraphics[width=\textwidth]{figures/middlebury_disparity_b10.png}
+  \end{subfigure}
+  \end{figure}
+
+}
+
+\frame{
+  \frametitle{Inhouse dataset}
+
+  Parameters: 
+  $\beta = 10$
+  $\gamma = 100e3$
+  $d = 100$
+
+  \scalebox{.9}{
+    \begin{tabularx}{\textwidth}{X c c c}
+  Parameters: \newline
+  $\beta = 10$ \newline
+  $\gamma = 1e6$ \newline
+  $d = 100$ &
+    \multirow{2}{*}{
+    \includegraphics[valign=t,width=.25\textwidth]{figures/bag_far_gt.png}
+    } &
+    \multirow{2}{*}{
+    \includegraphics[valign=t,width=.25\textwidth]{figures/bag_far_map.png}
+    } &
+    \includegraphics[valign=t,width=.2\textwidth]{figures/disparity_map_far_hr.png} \\
+    & & &
+    \includegraphics[valign=t,width=.2\textwidth]{figures/disparity_gt_far.png} \\
+    & \multirow{2}{*}{
+    \includegraphics[valign=t,width=.25\textwidth]{figures/bag_close_gt.png} 
+    } &
+    \multirow{2}{*}{
+    \includegraphics[valign=t,width=.25\textwidth]{figures/bag_close_map.png} 
+    } &
+    \includegraphics[valign=t,width=.2\textwidth]{figures/disparity_map_close_hr.png} \\
+    & & &
+    \includegraphics[valign=t,width=.2\textwidth]{figures/disparity_gt_close.png} \\
+  \end{tabularx}
+}
+
+}
+
+\subsection{Localization}
+\frame{\frametitle{Plane test case}}
+
+%\frame{\frametitle{Simulation test case}}

@@ -4,7 +4,11 @@
 \newcommand{\slink}{\texttt{Simulink}}
 \newcommand{\cpp}{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\relsize{-3}{\textbf{++}}}}
 \newcommand{\eigen}{\texttt{Eigen}}
-
+\newcommand{\ros}{\texttt{ROS}}
+\newcommand{\rviz}{\texttt{rviz}}
+\newcommand{\opencv}{\texttt{opencv}}
+\newcommand{\cholmod}{\texttt{CHOLMOD}}
+\newcommand{\argmin}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{min}}\;}
 % string commands
 \newcommand{\ReplaceStr}[2]{%
   \IfSubStr{#1}{XX}{%
@@ -98,6 +102,7 @@
     name={\ensuremath{\vc{#3}}},%
     user1={\ensuremath{#3_i}},%
     user2={\ensuremath{#3_{i,j}}},%
+    user3={\ensuremath{\vc{\hat{#3}}}},%
     description={test}%
     sort={\mysort},%
     type={#5}%
@@ -156,7 +161,7 @@
 \newcommand{\tps}[1]{\ensuremath{#1^\intercal}}
 
 % add argmin operator in math mode
-\DeclareMathOperator*{\argmin}{arg\,min}
+%\DeclareMathOperator*{\argmin}{arg\,min}
 
 % redefine ams macro to allow optional argument for controlling matrix line spacing
 \makeatletter

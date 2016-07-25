@@ -7,107 +7,33 @@
 \title{Final Presentation Master Thesis}
 \author{Frederike Duembgen}
 \date{\today}
-% \usetheme{Uppsala}
+\usetheme{EPFL}
 
-\AtBeginSection[]{
-  \begin{frame}
-  \vfill
-  \centering
-  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
-    \usebeamerfont{title}\secname\par%
-  \end{beamercolorbox}
-  \vfill
-  \end{frame}
-}
+% \AtBeginSection[]{
+  % \begin{frame}
+  % \vfill
+  % \centering
+  % \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    % \usebeamerfont{title}\secname\par%
+  % \end{beamercolorbox}
+  % \vfill
+  % \end{frame}
+% }
 
-\addtobeamertemplate{frametitle}{
-   \let\insertframetitle\insertsubsectionhead}{}
-\addtobeamertemplate{frametitle}{
-   \let\insertframesubtitle\insertframetitle}{}
-
+% \addtobeamertemplate{frametitle}{
+   % \let\insertframetitle\insertsubsectionhead}{}
+% \addtobeamertemplate{frametitle}{
+   % \let\insertframesubtitle\insertframetitle}{}
 
 \begin{document}
 
 \frame{\titlepage}
 
-\frame{
-  \frametitle{Testframe}
-
-  This is a test of the splines: \g{a} and the Jacobian: \g{Jr} and the camera
-  matrix: \g{K}.
-} 
-
-
-
 \frame{\frametitle{Outline}\tableofcontents}
 
-\section{Introduction}
-
-\subsection{Motivation}
-\frame{
-  \frametitle{Dense SLAM}
-  % \begin{definition}
-    % This is a definition.
-  % \end{definition}
-
-  % \begin{example}
-    % This is an example.
-    % \begin{itemize}
-      % \item item1 \pause
-      % \item item2 \pause
-      % \item item3
-    % \end{itemize}
-  % \end{example}
-  % \begin{theorem}
-    % This is a theorem.
-  % \end{theorem}
-
-  % \begin{proof}
-    % \begin{enumerate}
-      % \item<1-> Suppose $p$ were the largest prime number.
-      % \item<2-> Let $q$ be the product of the first $p$ numbers.
-      % \item<3-> Then $q + 1$ is not divisible by any of them.
-      % \item<1-> But $q + 1$ is greater than $1$, thus divisible by some prime
-      % number not in the first $p$ numbers.\qedhere
-    % \end{enumerate}
-  % \end{proof}
-  % \begin{block}{A new block}
-    % This is a first block.
-  % \end{block}
-}
-
-\frame{
-  \frametitle{B-Splines}
-}
-
-\subsection{Theoretical Concepts}
-\frame{
-  \frametitle{B-Splines}
-}
-
-\frame{
-  \frametitle{Photometric error}
-}
-
-\frame{
-  \frametitle{Gauss-newton optimization}
-}
-
-\section{Results}
-\subsection{Methodology}
-\frame{\frametitle{Problem setup}}
-\frame{\frametitle{Datasets}}
-\subsection{Mapping}
-\frame{\frametitle{Plane test case}}
-\frame{\frametitle{Simulation test case}}
-\frame{\frametitle{Middlebury dataset}}
-\frame{\frametitle{Inhouse dataset}}
-\subsection{Localization}
-\frame{\frametitle{Plane test case}}
-\frame{\frametitle{Simulation test case}}
-
-\section{Conclusion}
-\frame{\frametitle{Achievements}}
-\frame{\frametitle{Suggestions For Future Work}}
+\input{introduction}
+\input{theory}
+\input{results}
+\input{conclusion}
 
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.19)  22 JUL 2016 15:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.19)  26 JUL 2016 00:26
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1173,6 +1173,9 @@ Package: tabularx 2014/10/28 v2.10 `tabularx' package (DPC)
 \TX@cols=\count273
 \TX@ftn=\toks46
 )
+(/usr/local/texlive/2015/texmf-dist/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen320
+)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks47
@@ -1602,17 +1605,9 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/enumitem/enumitem.sty
-Package: enumitem 2011/09/28 v3.5.2 Customized lists
-\labelindent=\skip70
-\enit@outerparindent=\dimen320
-\enit@toks=\toks49
-\enit@inbox=\box79
-\enitdp@description=\count274
-)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count275
+\etb@tempcnta=\count274
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tools/bm.sty
 Package: bm 2014/10/28 v1.1c Bold Symbol Support (DPC/FMi)
@@ -1633,16 +1628,16 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 (/usr/local/texlive/2015/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks50
-\XKV@tempa@toks=\toks51
+\XKV@toks=\toks49
+\XKV@tempa@toks=\toks50
 )
-\XKV@depth=\count276
+\XKV@depth=\count275
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (/usr/local/texlive/2015/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
 Package: mfirstuc 2015/12/17 v2.02 (NLCT)
-\@glsmfirst=\toks52
-\@glsmrest=\toks53
+\@glsmfirst=\toks51
+\@glsmrest=\toks52
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/textcase/textcase.sty
 Package: textcase 2004/10/07 v0.07 Text only upper/lower case changing (DPC)
@@ -1655,7 +1650,7 @@ Package: datatool-base 2016/01/18 v2.25 (NLCT)
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/substr/substr.sty
 Package: substr 2009/10/20 v1.2 Handle substrings
-\c@su@anzahl=\count277
+\c@su@anzahl=\count276
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/datatool/datatool-fp.sty
 Package: datatool-fp 2016/01/18 v2.25 (NLCT)
@@ -1666,19 +1661,19 @@ Package: fp 1995/04/02
 `Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
 (/usr/local/texlive/2015/texmf-dist/tex/latex/fp/defpattern.sty
 Package: defpattern 1994/10/12
-\actioncount=\count278
+\actioncount=\count277
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/fp/fp-basic.sty
 Package: fp-basic 1996/05/13
-\FP@xs=\count279
-\FP@xia=\count280
-\FP@xib=\count281
-\FP@xfa=\count282
-\FP@xfb=\count283
-\FP@rega=\count284
-\FP@regb=\count285
-\FP@regs=\count286
-\FP@times=\count287
+\FP@xs=\count278
+\FP@xia=\count279
+\FP@xib=\count280
+\FP@xfa=\count281
+\FP@xfb=\count282
+\FP@rega=\count283
+\FP@regb=\count284
+\FP@regs=\count285
+\FP@times=\count286
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/fp/fp-addons.sty
 Package: fp-addons 1995/03/15
@@ -1697,7 +1692,7 @@ Package: fp-pas 1994/08/29
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/fp/fp-random.sty
 Package: fp-random 1995/02/23
-\FPseed=\count288
+\FPseed=\count287
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/fp/fp-eqn.sty
 Package: fp-eqn 1995/04/03
@@ -1708,15 +1703,15 @@ Package: fp-upn 1996/10/21
 (/usr/local/texlive/2015/texmf-dist/tex/latex/fp/fp-eval.sty
 Package: fp-eval 1995/04/03
 )))
-\@dtl@toks=\toks54
-\@dtl@tmpcount=\count289
-\dtl@tmplength=\skip71
-\dtl@sortresult=\count290
-\@dtl@numgrpsepcount=\count291
-\@dtl@datatype=\count292
-\dtl@codeA=\count293
-\dtl@codeB=\count294
-\@dtl@foreach@level=\count295
+\@dtl@toks=\toks53
+\@dtl@tmpcount=\count288
+\dtl@tmplength=\skip70
+\dtl@sortresult=\count289
+\@dtl@numgrpsepcount=\count290
+\@dtl@datatype=\count291
+\dtl@codeA=\count292
+\dtl@codeB=\count293
+\@dtl@foreach@level=\count294
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/glossaries/base/glossaries-compat
 ible-307.sty
@@ -1730,13 +1725,13 @@ Package: tracklang 2015/03/23 v1.2 (NLCT) Track Languages
 lish.ldf
 File: glossaries-english.ldf 2014/11/23 v1.0
 )
-\gls@level=\count296
-\@gls@tmpb=\toks55
-\gls@tmplen=\skip72
-\glskeylisttok=\toks56
-\glslabeltok=\toks57
-\glsshorttok=\toks58
-\glslongtok=\toks59
+\gls@level=\count295
+\@gls@tmpb=\toks54
+\gls@tmplen=\skip71
+\glskeylisttok=\toks55
+\glslabeltok=\toks56
+\glsshorttok=\toks57
+\glslongtok=\toks58
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/glossaries/styles/glossary-hypern
 av.sty
@@ -1745,36 +1740,36 @@ Package: glossary-hypernav 2016/01/24 v4.21 (NLCT)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/glossaries/styles/glossary-list.s
 ty
 Package: glossary-list 2016/01/24 v4.21 (NLCT)
-\glslistdottedwidth=\skip73
+\glslistdottedwidth=\skip72
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/glossaries/styles/glossary-long.s
 ty
 Package: glossary-long 2016/01/24 v4.21 (NLCT)
  (/usr/local/texlive/2015/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
-\LTleft=\skip74
-\LTright=\skip75
-\LTpre=\skip76
-\LTpost=\skip77
-\LTchunksize=\count297
+\LTleft=\skip73
+\LTright=\skip74
+\LTpre=\skip75
+\LTpost=\skip76
+\LTchunksize=\count296
 \LTcapwidth=\dimen321
-\LT@head=\box80
-\LT@firsthead=\box81
-\LT@foot=\box82
-\LT@lastfoot=\box83
-\LT@cols=\count298
-\LT@rows=\count299
-\c@LT@tables=\count300
-\c@LT@chunks=\count301
-\LT@p@ftn=\toks60
+\LT@head=\box79
+\LT@firsthead=\box80
+\LT@foot=\box81
+\LT@lastfoot=\box82
+\LT@cols=\count297
+\LT@rows=\count298
+\c@LT@tables=\count299
+\c@LT@chunks=\count300
+\LT@p@ftn=\toks59
 )
-\glsdescwidth=\skip78
-\glspagelistwidth=\skip79
+\glsdescwidth=\skip77
+\glspagelistwidth=\skip78
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/glossaries/styles/glossary-tree.s
 ty
 Package: glossary-tree 2016/01/24 v4.21 (NLCT)
-\glstreeindent=\skip80
+\glstreeindent=\skip79
 )) (./glossary-katie.sty
 
 LaTeX Warning: You have requested package `glossary-katie',
@@ -1788,7 +1783,7 @@ Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
 e.tex
 File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
-\pgfnodeparttextbox=\box84
+\pgfnodeparttextbox=\box83
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
 tex
@@ -1815,8 +1810,8 @@ Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
 \pgffor@iter=\dimen324
 \pgffor@skip=\dimen325
-\pgffor@stack=\toks61
-\pgffor@toks=\toks62
+\pgffor@stack=\toks60
+\pgffor@toks=\toks61
 ))
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
 e.tex
@@ -1825,7 +1820,7 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
 dlers.code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count302
+\pgf@plot@mark@count=\count301
 \pgfplotmarksize=\dimen326
 )
 \tikz@lastx=\dimen327
@@ -1834,23 +1829,23 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \tikz@lastysaved=\dimen330
 \tikzleveldistance=\dimen331
 \tikzsiblingdistance=\dimen332
-\tikz@figbox=\box85
-\tikz@figbox@bg=\box86
-\tikz@tempbox=\box87
-\tikz@tempbox@bg=\box88
-\tikztreelevel=\count303
-\tikznumberofchildren=\count304
-\tikznumberofcurrentchild=\count305
-\tikz@fig@count=\count306
+\tikz@figbox=\box84
+\tikz@figbox@bg=\box85
+\tikz@tempbox=\box86
+\tikz@tempbox@bg=\box87
+\tikztreelevel=\count302
+\tikznumberofchildren=\count303
+\tikznumberofcurrentchild=\count304
+\tikz@fig@count=\count305
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
 e.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count307
-\pgfmatrixcurrentcolumn=\count308
-\pgf@matrix@numberofcolumns=\count309
+\pgfmatrixcurrentrow=\count306
+\pgfmatrixcurrentcolumn=\count307
+\pgf@matrix@numberofcolumns=\count308
 )
-\tikz@expandcount=\count310
+\tikz@expandcount=\count309
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarytopaths.code.tex
@@ -1861,12 +1856,12 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 Package: pgfplots 2016/01/06 v1.13 Data Visualization (1.13)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
-\t@pgfplots@toka=\toks63
-\t@pgfplots@tokb=\toks64
-\t@pgfplots@tokc=\toks65
+\t@pgfplots@toka=\toks62
+\t@pgfplots@tokb=\toks63
+\t@pgfplots@tokc=\toks64
 \pgfplots@tmpa=\dimen333
-\c@pgfplots@coordindex=\count311
-\c@pgfplots@scanlineindex=\count312
+\c@pgfplots@coordindex=\count310
+\c@pgfplots@scanlineindex=\count311
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric
 .code.tex))
@@ -1882,7 +1877,7 @@ Package pgfplots: loading complementary arithmetics for your pgf version...
 soldpgfsupp_pgflibraryfpu.code.tex)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplot
 soldpgfsupp_pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count313
+\c@pgfmathroundto@lastzeros=\count312
 ))
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code
 .tex
@@ -1892,14 +1887,14 @@ liststructure.code.tex)
 liststructureext.code.tex)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
 array.code.tex
-\c@pgfplotsarray@tmp=\count314
+\c@pgfplotsarray@tmp=\count313
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
 matrix.code.tex)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable
 shared.code.tex
-\c@pgfplotstable@counta=\count315
-\t@pgfplotstable@a=\toks66
+\c@pgfplotstable@counta=\count314
+\t@pgfplotstable@a=\toks65
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
 deque.code.tex)
@@ -1911,7 +1906,7 @@ ta.code.tex))
 .code.tex)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplot
 s.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count316
+\c@pgfplotslibrarysurf@no=\count315
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots
 .surfshading.pgfsys-pdftex.def)))
@@ -1948,11 +1943,11 @@ s.code.tex
 \pgfdecoratedinputsegmentcompleteddistance=\dimen336
 \pgfdecoratedinputsegmentremainingdistance=\dimen337
 \pgf@decorate@distancetomove=\dimen338
-\pgf@decorate@repeatstate=\count317
+\pgf@decorate@repeatstate=\count316
 \pgfdecorationsegmentamplitude=\dimen339
 \pgfdecorationsegmentlength=\dimen340
 )
-\tikz@lib@dec@box=\box89
+\tikz@lib@dec@box=\box88
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarydecorations.pathmorphing.code.tex
@@ -1962,7 +1957,7 @@ brarydecorations.pathmorphing.code.tex))
 s/tikzlibrarydecorations.pathreplacing.code.tex
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
 brarydecorations.pathreplacing.code.tex))
-\pgfplots@numplots=\count318
+\pgfplots@numplots=\count317
 \pgfplots@xmin@reg=\dimen341
 \pgfplots@xmax@reg=\dimen342
 \pgfplots@ymin@reg=\dimen343
@@ -1984,11 +1979,11 @@ File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.1a (rcs-revision 1.9)
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/rotating/rotating.sty
 Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
-\c@r@tfl@t=\count319
-\rotFPtop=\skip81
-\rotFPbot=\skip82
-\rot@float@box=\box90
-\rot@mess@toks=\toks67
+\c@r@tfl@t=\count318
+\rotFPtop=\skip80
+\rotFPbot=\skip81
+\rot@float@box=\box89
+\rot@mess@toks=\toks66
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/relsize/relsize.sty
 Package: relsize 2013/03/29 ver 4.1
@@ -1996,17 +1991,17 @@ Package: relsize 2013/03/29 ver 4.1
 (/usr/local/texlive/2015/texmf-dist/tex/generic/xstring/xstring.sty
 (/usr/local/texlive/2015/texmf-dist/tex/generic/xstring/xstring.tex
 \@xs@message=\write5
-\integerpart=\count320
-\decimalpart=\count321
+\integerpart=\count319
+\decimalpart=\count320
 )
 Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 )
 (/usr/local/texlive/texmf-local/tex/latex/local/kbordermatrix/kbordermatrix.sty
 Package: kbordermatrix 2011/09/21 Bordered matrix with brackets
-\kbcolsep=\skip83
-\kbrowsep=\skip84
-\br@kwd=\skip85
-\k@bordht=\skip86
+\kbcolsep=\skip82
+\kbrowsep=\skip83
+\br@kwd=\skip84
+\k@bordht=\skip85
 )) (./definitions.tex) (./glossary.tex
 \glswrite=\write6
 \glo@main@file=\write7
@@ -2017,32 +2012,70 @@ Package glossaries Info: Writing glossary file main.glo on input line 5.
 \openout8 = `main.latin-glo'.
 
 Package glossaries Info: Writing glossary file main.latin-glo on input line 5.
+) (./beamerthemeEPFL.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2013/04/04 v0.2 Provides if(tex) conditional for PDFTeX, XeTeX, 
+and LuaTeX
 )
-(/home/kiki/Project/ASL/presentation/aux/main.aux)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+Package: adjustbox 2012/05/21 v1.0 Adjusting TeX boxes (trim, clip, ...)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/adjustbox/trimclip.sty
+Package: trimclip 2012/05/16 v1.0 Trim and clip general TeX material
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/collectbox/collectbox.sty
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box90
+)
+\tc@llx=\dimen347
+\tc@lly=\dimen348
+\tc@urx=\dimen349
+\tc@ury=\dimen350
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
+File: tc-pdftex.def 2012/05/13 v1.0 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen351
+\adjbox@Height=\dimen352
+\adjbox@Depth=\dimen353
+\adjbox@Totalheight=\dimen354
+)
+\ruleheight=\skip86
+\rulewidth=\skip87
+)
+(/home/kiki/Project/ASL/presentation/aux/main.aux
+
+LaTeX Warning: Label `fig:photometric' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 29.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 28.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Try loading font information for T1+lmss on input line 29.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 28.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -2055,14 +2088,14 @@ File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: includehead includefoot 
-* h-part:(L,W,R)=(28.45274pt, 307.28987pt, 28.45274pt)
+* h-part:(L,W,R)=(18.21088pt, 335.10446pt, 10.88002pt)
 * v-part:(T,H,B)=(0.0pt, 273.14662pt, 0.0pt)
 * \paperwidth=364.19536pt
 * \paperheight=273.14662pt
-* \textwidth=307.28987pt
+* \textwidth=335.10446pt
 * \textheight=244.6939pt
-* \oddsidemargin=-43.81725pt
-* \evensidemargin=-43.81725pt
+* \oddsidemargin=-54.05911pt
+* \evensidemargin=-54.05911pt
 * \topmargin=-72.26999pt
 * \headheight=14.22636pt
 * \headsep=0.0pt
@@ -2083,17 +2116,17 @@ File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count322
-\scratchdimen=\dimen347
+\scratchcounter=\count321
+\scratchdimen=\dimen355
 \scratchbox=\box91
-\nofMPsegments=\count323
-\nofMParguments=\count324
-\everyMPshowfont=\toks68
-\MPscratchCnt=\count325
-\MPscratchDim=\dimen348
-\MPnumerator=\count326
-\makeMPintoPDFobject=\count327
-\everyMPtoPDFconversion=\toks69
+\nofMPsegments=\count322
+\nofMParguments=\count323
+\everyMPshowfont=\toks67
+\MPscratchCnt=\count324
+\MPscratchDim=\dimen356
+\MPnumerator=\count325
+\makeMPintoPDFobject=\count326
+\everyMPtoPDFconversion=\toks68
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -2111,7 +2144,7 @@ e
 ))
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box92
-Package hyperref Info: Link coloring OFF on input line 29.
+Package hyperref Info: Link coloring OFF on input line 28.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -2119,11 +2152,11 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count328
+\c@section@level=\count327
 )
-LaTeX Info: Redefining \ref on input line 29.
-LaTeX Info: Redefining \pageref on input line 29.
-LaTeX Info: Redefining \nameref on input line 29.
+LaTeX Info: Redefining \ref on input line 28.
+LaTeX Info: Redefining \pageref on input line 28.
+LaTeX Info: Redefining \nameref on input line 28.
 
 (/home/kiki/Project/ASL/presentation/aux/main.out)
 (/home/kiki/Project/ASL/presentation/aux/main.out)
@@ -2131,47 +2164,47 @@ LaTeX Info: Redefining \nameref on input line 29.
 \openout9 = `main.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 29.
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 28.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/bx/n on input line 29.
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/bx/n on input line 28.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 29.
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 28.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 29.
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 28.
 \symnumbers=\mathgroup9
 \sympureletters=\mathgroup10
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 29.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 29.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 29.
+(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 28.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 28.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 28.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 29.
+(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 28.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 29.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 29.
+(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 28.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 28.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 29.
+(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 28.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 29.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 29.
+(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 28.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 28.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 29.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 28.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 29.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 28.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/bx/n on input line 29.
+(Font)                  T1/lmss/m/n --> T1/lmss/bx/n on input line 28.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/bx/it on input line 29.
+(Font)                  T1/lmss/m/it --> T1/lmss/bx/it on input line 28.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/lmss/bx/n --> T1/lmr/bx/n on input line 29.
+(Font)                  OT1/lmss/bx/n --> T1/lmr/bx/n on input line 28.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/lmss/bx/n --> T1/lmss/bx/n on input line 29.
+(Font)                  T1/lmss/bx/n --> T1/lmss/bx/n on input line 28.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/bx/n on input line 29.
+(Font)                  T1/lmss/m/n --> T1/lmss/bx/n on input line 28.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/bx/it on input line 29.
+(Font)                  T1/lmss/m/it --> T1/lmss/bx/it on input line 28.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/lmtt/m/n --> T1/lmtt/bx/n on input line 29.
+(Font)                  T1/lmtt/m/n --> T1/lmtt/bx/n on input line 28.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/beamer/translator/dicts/translato
 r-basic-dictionary/translator-basic-dictionary-English.dict
@@ -2197,7 +2230,7 @@ Dictionary: translator-numbers-dictionary, Language: English
 r-theorem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 29.
+LaTeX Info: Redefining \includegraphics on input line 28.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: longtable package is loaded.
 
@@ -2214,119 +2247,647 @@ File: siunitx-abbreviations.cfg 2016/03/01 v2.6q siunitx: Abbreviated units
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.13} into 
 your preamble.
- on input line 29.
+ on input line 28.
 
 (/home/kiki/Project/ASL/presentation/aux/main.nav)
-\c__siunitx_mathsf_int=\count329
-LaTeX Font Info:    Try loading font information for OT1+lmss on input line 29.
+<asl_logo_right.pdf, id=47, 1365.1pt x 221.82875pt>
+File: asl_logo_right.pdf Graphic file (type pdf)
+ <use asl_logo_right.pdf>
+Package pdftex.def Info: asl_logo_right.pdf used on input line 28.
+(pdftex.def)             Requested size: 78.44473pt x 12.75pt.
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 28.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 29.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 28.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 29.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 28.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 29.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 28.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 29.
+(Font)              <6> on input line 28.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 29.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 29.
-LaTeX Font Info:    Try loading font information for U+msa on input line 29.
+(Font)              <5> on input line 28.
+LaTeX Font Info:    Try loading font information for U+msa on input line 28.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 29.
+LaTeX Font Info:    Try loading font information for U+msb on input line 28.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 29.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 28.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 29.
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 29.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 29.
-\c__siunitx_mathtt_int=\count330
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 29.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 28.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 28.
+
+<eth_logo_kurz_neg_13.pdf, id=48, 141.23163pt x 22.94704pt>
+File: eth_logo_kurz_neg_13.pdf Graphic file (type pdf)
+
+<use eth_logo_kurz_neg_13.pdf>
+Package pdftex.def Info: eth_logo_kurz_neg_13.pdf used on input line 28.
+(pdftex.def)             Requested size: 40.35918pt x 6.55746pt.
+\c__siunitx_mathsf_int=\count328
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 28.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 28.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 28.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 28.
+\c__siunitx_mathtt_int=\count329
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 28.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [1
+)
+File: eth_logo_kurz_neg_13.pdf Graphic file (type pdf)
+
+<use eth_logo_kurz_neg_13.pdf>
+Package pdftex.def Info: eth_logo_kurz_neg_13.pdf used on input line 30.
+(pdftex.def)             Requested size: 40.35918pt x 6.55746pt.
+File: asl_logo_right.pdf Graphic file (type pdf)
+ <use asl_logo_right.pdf>
+Package pdftex.def Info: asl_logo_right.pdf used on input line 30.
+(pdftex.def)             Requested size: 78.44473pt x 12.75pt.
+ [1
 
 \openout6 = `main.xdy'.
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 38.
-LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <8> not available
-(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 38.
-LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <6> not available
-(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 38.
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./eth_l
+ogo_kurz_neg_13.pdf> <./asl_logo_right.pdf>] (/home/kiki/Project/ASL/presentati
+on/aux/main.toc)
+File: eth_logo_kurz_neg_13.pdf Graphic file (type pdf)
+
+<use eth_logo_kurz_neg_13.pdf>
+Package pdftex.def Info: eth_logo_kurz_neg_13.pdf used on input line 32.
+(pdftex.def)             Requested size: 40.35918pt x 6.55746pt.
+File: asl_logo_right.pdf Graphic file (type pdf)
+ <use asl_logo_right.pdf>
+Package pdftex.def Info: asl_logo_right.pdf used on input line 32.
+(pdftex.def)             Requested size: 78.44473pt x 12.75pt.
  [2
 
-]
-(/home/kiki/Project/ASL/presentation/aux/main.toc) [3
-
-] [4
-
-] [5
-
-] [6
-
-] [7
-
-] [8
+] (./introduction.tex
+File: eth_logo_kurz_neg_13.pdf Graphic file (type pdf)
+<use eth_logo_kurz_neg_13.pdf>
+Package pdftex.def Info: eth_logo_kurz_neg_13.pdf used on input line 9.
+(pdftex.def)             Requested size: 40.35918pt x 6.55746pt.
+File: asl_logo_right.pdf Graphic file (type pdf)
+ <use asl_logo_right.pdf>
+Package pdftex.def Info: asl_logo_right.pdf used on input line 9.
+(pdftex.def)             Requested size: 78.44473pt x 12.75pt.
+ [3
 
 ]
-[9
+LaTeX Font Info:    Try loading font information for TS1+lmss on input line 38.
 
-] [10
 
-] [11
+(/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ts1lmss.fd
+File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+File: eth_logo_kurz_neg_13.pdf Graphic file (type pdf)
 
-] [12
+<use eth_logo_kurz_neg_13.pdf>
+Package pdftex.def Info: eth_logo_kurz_neg_13.pdf used on input line 38.
+(pdftex.def)             Requested size: 40.35918pt x 6.55746pt.
+File: asl_logo_right.pdf Graphic file (type pdf)
+ <use asl_logo_right.pdf>
+Package pdftex.def Info: asl_logo_right.pdf used on input line 38.
+(pdftex.def)             Requested size: 78.44473pt x 12.75pt.
+ [4
 
-] [13
+]) (./theory.tex
+<figures/degrees.png, id=110, 1344.02126pt x 314.17375pt>
+File: figures/degrees.png Graphic file (type png)
 
-] [14
+<use figures/degrees.png>
+Package pdftex.def Info: figures/degrees.png used on input line 30.
+(pdftex.def)             Requested size: 167.55223pt x 39.16615pt.
 
-] [15
+<figures/spline.png, id=111, 1353.055pt x 772.8875pt>
+File: figures/spline.png Graphic file (type png)
+ <use figures/spline.png>
+Package pdftex.def Info: figures/spline.png used on input line 30.
+(pdftex.def)             Requested size: 201.06471pt x 114.84314pt.
 
-] [16
+Overfull \hbox (26.4731pt too wide) in paragraph at lines 30--30
+[]  
+ []
 
-] [17
 
-] [18
+Overfull \vbox (42.86267pt too high) detected at line 30
+ []
 
-] [19
+File: eth_logo_kurz_neg_13.pdf Graphic file (type pdf)
+<use eth_logo_kurz_neg_13.pdf>
+Package pdftex.def Info: eth_logo_kurz_neg_13.pdf used on input line 30.
+(pdftex.def)             Requested size: 40.35918pt x 6.55746pt.
+File: asl_logo_right.pdf Graphic file (type pdf)
+ <use asl_logo_right.pdf>
+Package pdftex.def Info: asl_logo_right.pdf used on input line 30.
+(pdftex.def)             Requested size: 78.44473pt x 12.75pt.
+ [5
 
-] [20
+ <./figures/degrees.png> <./figures/spline.png>]
+<figures/camerasetup.png, id=124, 778.91pt x 841.1425pt>
+File: figures/camerasetup.png Graphic file (type png)
 
-] [21
+<use figures/camerasetup.png>
+Package pdftex.def Info: figures/camerasetup.png used on input line 60.
+(pdftex.def)             Requested size: 134.04228pt x 144.7507pt.
+LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <10.95> not available
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 60.
+LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <8> not available
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 60.
+LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <6> not available
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 60.
+
+
+LaTeX Warning: Citation `Primer' on page 6 undefined on input line 60.
+
+
+Overfull \vbox (13.18658pt too high) detected at line 60
+ []
+
+File: eth_logo_kurz_neg_13.pdf Graphic file (type pdf)
+<use eth_logo_kurz_neg_13.pdf>
+Package pdftex.def Info: eth_logo_kurz_neg_13.pdf used on input line 60.
+(pdftex.def)             Requested size: 40.35918pt x 6.55746pt.
+File: asl_logo_right.pdf Graphic file (type pdf)
+ <use asl_logo_right.pdf>
+Package pdftex.def Info: asl_logo_right.pdf used on input line 60.
+(pdftex.def)             Requested size: 78.44473pt x 12.75pt.
+ [6
+
+ <./figures/camerasetup.png>] <figures/pixels1_strip.png, id=135, 214.8025pt x 
+335.2525pt>
+File: figures/pixels1_strip.png Graphic file (type png)
+
+<use figures/pixels1_strip.png>
+Package pdftex.def Info: figures/pixels1_strip.png used on input line 142.
+(pdftex.def)             Requested size: 33.81517pt x 52.7804pt.
+
+<figures/pixels2_strip.png, id=136, 220.825pt x 335.2525pt>
+File: figures/pixels2_strip.png Graphic file (type png)
+
+<use figures/pixels2_strip.png>
+Package pdftex.def Info: figures/pixels2_strip.png used on input line 142.
+(pdftex.def)             Requested size: 34.76326pt x 52.7804pt.
+
+<figures/residuals_strip.png, id=137, 446.66875pt x 725.71124pt>
+File: figures/residuals_strip.png Graphic file (type png)
+
+<use figures/residuals_strip.png>
+Package pdftex.def Info: figures/residuals_strip.png used on input line 142.
+(pdftex.def)             Requested size: 32.48318pt x 52.7804pt.
+
+<figures/mapping.png, id=138, 850.17625pt x 871.255pt>
+File: figures/mapping.png Graphic file (type png)
+
+<use figures/mapping.png>
+Package pdftex.def Info: figures/mapping.png used on input line 142.
+(pdftex.def)             Requested size: 117.2886pt x 120.19344pt.
+
+Overfull \vbox (40.74713pt too high) detected at line 142
+ []
+
+File: eth_logo_kurz_neg_13.pdf Graphic file (type pdf)
+<use eth_logo_kurz_neg_13.pdf>
+Package pdftex.def Info: eth_logo_kurz_neg_13.pdf used on input line 142.
+(pdftex.def)             Requested size: 40.35918pt x 6.55746pt.
+File: asl_logo_right.pdf Graphic file (type pdf)
+ <use asl_logo_right.pdf>
+Package pdftex.def Info: asl_logo_right.pdf used on input line 142.
+(pdftex.def)             Requested size: 78.44473pt x 12.75pt.
+ [7
+
+ <./figures/pixels1_strip.png> <./figures/pixels2_strip.png> <./figures/residua
+ls_strip.png> <./figures/mapping.png>]
+File: figures/pixels1_strip.png Graphic file (type png)
+ <use figures/pixels1_strip.png>
+Package pdftex.def Info: figures/pixels1_strip.png used on input line 142.
+(pdftex.def)             Requested size: 33.81517pt x 52.7804pt.
+File: figures/pixels2_strip.png Graphic file (type png)
+
+<use figures/pixels2_strip.png>
+Package pdftex.def Info: figures/pixels2_strip.png used on input line 142.
+(pdftex.def)             Requested size: 34.76326pt x 52.7804pt.
+File: figures/residuals_strip.png Graphic file (type png)
+ <use figures/residuals_strip.png>
+Package pdftex.def Info: figures/residuals_strip.png used on input line 142.
+(pdftex.def)             Requested size: 32.48318pt x 52.7804pt.
+File: figures/mapping.png Graphic file (type png)
+
+<use figures/mapping.png>
+Package pdftex.def Info: figures/mapping.png used on input line 142.
+(pdftex.def)             Requested size: 117.2886pt x 120.19344pt.
+
+Overfull \hbox (12.34766pt too wide) in paragraph at lines 142--142
+[]  
+ []
+
+
+Overfull \vbox (46.45294pt too high) detected at line 142
+ []
+
+File: eth_logo_kurz_neg_13.pdf Graphic file (type pdf)
+<use eth_logo_kurz_neg_13.pdf>
+Package pdftex.def Info: eth_logo_kurz_neg_13.pdf used on input line 142.
+(pdftex.def)             Requested size: 40.35918pt x 6.55746pt.
+File: asl_logo_right.pdf Graphic file (type pdf)
+ <use asl_logo_right.pdf>
+Package pdftex.def Info: asl_logo_right.pdf used on input line 142.
+(pdftex.def)             Requested size: 78.44473pt x 12.75pt.
+ [8
 
 ]
+File: eth_logo_kurz_neg_13.pdf Graphic file (type pdf)
+
+<use eth_logo_kurz_neg_13.pdf>
+Package pdftex.def Info: eth_logo_kurz_neg_13.pdf used on input line 167.
+(pdftex.def)             Requested size: 40.35918pt x 6.55746pt.
+File: asl_logo_right.pdf Graphic file (type pdf)
+ <use asl_logo_right.pdf>
+Package pdftex.def Info: asl_logo_right.pdf used on input line 167.
+(pdftex.def)             Requested size: 78.44473pt x 12.75pt.
+ [9
+
+]
+<figures/localization.png, id=161, 843.15pt x 935.495pt>
+File: figures/localization.png Graphic file (type png)
+
+<use figures/localization.png>
+Package pdftex.def Info: figures/localization.png used on input line 221.
+(pdftex.def)             Requested size: 134.03973pt x 148.7116pt.
+pdfTeX warning (ext4): destination with the same identifier (name{fig:photometr
+ic}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.221 }
+       
+File: eth_logo_kurz_neg_13.pdf Graphic file (type pdf)
+ <use eth_logo_kurz_neg_13.pdf>
+Package pdftex.def Info: eth_logo_kurz_neg_13.pdf used on input line 221.
+(pdftex.def)             Requested size: 40.35918pt x 6.55746pt.
+File: asl_logo_right.pdf Graphic file (type pdf)
+ <use asl_logo_right.pdf>
+Package pdftex.def Info: asl_logo_right.pdf used on input line 221.
+(pdftex.def)             Requested size: 78.44473pt x 12.75pt.
+ [10
+
+ <./figures/localization.png>]
+File: figures/localization.png Graphic file (type png)
+ <use figures/localization.png>
+Package pdftex.def Info: figures/localization.png used on input line 221.
+(pdftex.def)             Requested size: 134.03973pt x 148.7116pt.
+
+Overfull \vbox (1.54124pt too high) detected at line 221
+ []
+
+File: eth_logo_kurz_neg_13.pdf Graphic file (type pdf)
+<use eth_logo_kurz_neg_13.pdf>
+Package pdftex.def Info: eth_logo_kurz_neg_13.pdf used on input line 221.
+(pdftex.def)             Requested size: 40.35918pt x 6.55746pt.
+File: asl_logo_right.pdf Graphic file (type pdf)
+ <use asl_logo_right.pdf>
+Package pdftex.def Info: asl_logo_right.pdf used on input line 221.
+(pdftex.def)             Requested size: 78.44473pt x 12.75pt.
+ [11
+
+]
+File: eth_logo_kurz_neg_13.pdf Graphic file (type pdf)
+
+<use eth_logo_kurz_neg_13.pdf>
+Package pdftex.def Info: eth_logo_kurz_neg_13.pdf used on input line 230.
+(pdftex.def)             Requested size: 40.35918pt x 6.55746pt.
+File: asl_logo_right.pdf Graphic file (type pdf)
+ <use asl_logo_right.pdf>
+Package pdftex.def Info: asl_logo_right.pdf used on input line 230.
+(pdftex.def)             Requested size: 78.44473pt x 12.75pt.
+ [12
+
+]) (./results.tex
+
+LaTeX Warning: Citation `Middlebury' on page 13 undefined on input line 26.
+
+File: eth_logo_kurz_neg_13.pdf Graphic file (type pdf)
+<use eth_logo_kurz_neg_13.pdf>
+Package pdftex.def Info: eth_logo_kurz_neg_13.pdf used on input line 26.
+(pdftex.def)             Requested size: 40.35918pt x 6.55746pt.
+File: asl_logo_right.pdf Graphic file (type pdf)
+ <use asl_logo_right.pdf>
+Package pdftex.def Info: asl_logo_right.pdf used on input line 26.
+(pdftex.def)             Requested size: 78.44473pt x 12.75pt.
+ [13
+
+]
+(/home/kiki/Project/ASL/presentation/aux/../../graphics/planetest.tex
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+)
+<figures/planetest1.png, id=183, 377.41pt x 240.9pt>
+File: figures/planetest1.png Graphic file (type png)
+
+<use figures/planetest1.png>
+Package pdftex.def Info: figures/planetest1.png used on input line 55.
+(pdftex.def)             Requested size: 33.50993pt x 21.38599pt.
+
+<figures/planetest2.png, id=184, 377.41pt x 240.9pt>
+File: figures/planetest2.png Graphic file (type png)
+
+<use figures/planetest2.png>
+Package pdftex.def Info: figures/planetest2.png used on input line 55.
+(pdftex.def)             Requested size: 33.50993pt x 21.38599pt.
+
+<figures/planetest3d.png, id=185, 582.175pt x 625.33624pt>
+File: figures/planetest3d.png Graphic file (type png)
+
+<use figures/planetest3d.png>
+Package pdftex.def Info: figures/planetest3d.png used on input line 55.
+(pdftex.def)             Requested size: 150.79597pt x 161.9729pt.
+
+Overfull \vbox (39.84428pt too high) detected at line 55
+ []
+
+File: eth_logo_kurz_neg_13.pdf Graphic file (type pdf)
+<use eth_logo_kurz_neg_13.pdf>
+Package pdftex.def Info: eth_logo_kurz_neg_13.pdf used on input line 55.
+(pdftex.def)             Requested size: 40.35918pt x 6.55746pt.
+File: asl_logo_right.pdf Graphic file (type pdf)
+ <use asl_logo_right.pdf>
+Package pdftex.def Info: asl_logo_right.pdf used on input line 55.
+(pdftex.def)             Requested size: 78.44473pt x 12.75pt.
+ [14
+
+ <./figures/planetest1.png (PNG copy)> <./figures/planetest2.png (PNG copy)> <.
+/figures/planetest3d.png>] <figures/recycle0.png, id=191, 722.7pt x 487.8225pt>
+File: figures/recycle0.png Graphic file (type png)
+
+<use figures/recycle0.png>
+Package pdftex.def Info: figures/recycle0.png used on input line 97.
+(pdftex.def)             Requested size: 67.01987pt x 45.23453pt.
+
+<figures/middlebury_residuals_b1.png, id=192, 330.23375pt x 247.92625pt>
+File: figures/middlebury_residuals_b1.png Graphic file (type png)
+
+<use figures/middlebury_residuals_b1.png>
+Package pdftex.def Info: figures/middlebury_residuals_b1.png used on input line
+ 97.
+(pdftex.def)             Requested size: 67.01987pt x 50.3145pt.
+
+<figures/middlebury_residuals_b10.png, id=193, 358.33875pt x 268.00125pt>
+File: figures/middlebury_residuals_b10.png Graphic file (type png)
+
+<use figures/middlebury_residuals_b10.png>
+Package pdftex.def Info: figures/middlebury_residuals_b10.png used on input lin
+e 97.
+(pdftex.def)             Requested size: 67.01987pt x 50.12334pt.
+
+<figures/middlebury_3d_groundtruth.png, id=194, 549.05125pt x 402.50375pt>
+File: figures/middlebury_3d_groundtruth.png Graphic file (type png)
+
+<use figures/middlebury_3d_groundtruth.png>
+Package pdftex.def Info: figures/middlebury_3d_groundtruth.png used on input li
+ne 97.
+(pdftex.def)             Requested size: 67.01987pt x 49.12749pt.
+
+<figures/middlebury_3d_b1.png, id=195, 532.99126pt x 391.4625pt>
+File: figures/middlebury_3d_b1.png Graphic file (type png)
+
+<use figures/middlebury_3d_b1.png>
+Package pdftex.def Info: figures/middlebury_3d_b1.png used on input line 97.
+(pdftex.def)             Requested size: 67.01987pt x 49.2194pt.
+
+<figures/middlebury_3d_b10.png, id=196, 582.175pt x 403.5075pt>
+File: figures/middlebury_3d_b10.png Graphic file (type png)
+
+<use figures/middlebury_3d_b10.png>
+Package pdftex.def Info: figures/middlebury_3d_b10.png used on input line 97.
+(pdftex.def)             Requested size: 67.01987pt x 46.44856pt.
+
+<figures/middlebury_disparity.png, id=197, 326.21875pt x 217.81375pt>
+File: figures/middlebury_disparity.png Graphic file (type png)
+
+<use figures/middlebury_disparity.png>
+Package pdftex.def Info: figures/middlebury_disparity.png used on input line 97
+.
+(pdftex.def)             Requested size: 67.01987pt x 44.74847pt.
+
+<figures/middlebury_disparity_b1.png, id=198, 326.21875pt x 217.81375pt>
+File: figures/middlebury_disparity_b1.png Graphic file (type png)
+
+<use figures/middlebury_disparity_b1.png>
+Package pdftex.def Info: figures/middlebury_disparity_b1.png used on input line
+ 97.
+(pdftex.def)             Requested size: 67.01987pt x 44.74847pt.
+
+<figures/middlebury_disparity_b10.png, id=199, 350.30875pt x 233.87375pt>
+File: figures/middlebury_disparity_b10.png Graphic file (type png)
+
+<use figures/middlebury_disparity_b10.png>
+Package pdftex.def Info: figures/middlebury_disparity_b10.png used on input lin
+e 97.
+(pdftex.def)             Requested size: 67.01987pt x 44.74336pt.
+
+Overfull \vbox (1.59825pt too high) detected at line 97
+ []
+
+File: eth_logo_kurz_neg_13.pdf Graphic file (type pdf)
+<use eth_logo_kurz_neg_13.pdf>
+Package pdftex.def Info: eth_logo_kurz_neg_13.pdf used on input line 97.
+(pdftex.def)             Requested size: 40.35918pt x 6.55746pt.
+File: asl_logo_right.pdf Graphic file (type pdf)
+ <use asl_logo_right.pdf>
+Package pdftex.def Info: asl_logo_right.pdf used on input line 97.
+(pdftex.def)             Requested size: 78.44473pt x 12.75pt.
+ [15
+
+ <./figures/recycle0.png (PNG copy)> <./figures/middlebury_residuals_b1.png> <.
+/figures/middlebury_residuals_b10.png> <./figures/middlebury_3d_groundtruth.png
+> <./figures/middlebury_3d_b1.png> <./figures/middlebury_3d_b10.png> <./figures
+/middlebury_disparity.png> <./figures/middlebury_disparity_b1.png> <./figures/m
+iddlebury_disparity_b10.png>] <figures/bag_far_gt.png, id=205, 425.59pt x 485.8
+15pt>
+<use figures/bag_far_gt.png>
+Overfull \vbox (76.07288pt too high) detected at line 134
+ []
+
+<figures/bag_far_map.png, id=206, 432.61626pt x 486.81876pt>
+<use figures/bag_far_map.png>
+Overfull \vbox (74.7483pt too high) detected at line 134
+ []
+
+<figures/disparity_map_far_hr.png, id=207, 377.41pt x 240.9pt>
+<use figures/disparity_map_far_hr.png>
+<figures/disparity_gt_far.png, id=209, 754.82pt x 481.8pt>
+<use figures/disparity_gt_far.png>
+<figures/bag_close_gt.png, id=210, 418.56375pt x 489.83pt>
+<use figures/bag_close_gt.png>
+Overfull \vbox (78.45357pt too high) detected at line 134
+ []
+
+<figures/bag_close_map.png, id=211, 432.61626pt x 486.81876pt>
+<use figures/bag_close_map.png>
+Overfull \vbox (74.7483pt too high) detected at line 134
+ []
+
+<figures/disparity_map_close_hr.png, id=212, 377.41pt x 240.9pt>
+<use figures/disparity_map_close_hr.png>
+<figures/disparity_gt_close.png, id=213, 754.82pt x 481.8pt>
+<use figures/disparity_gt_close.png> <use figures/bag_far_gt.png>
+Overfull \vbox (76.07288pt too high) detected at line 134
+ []
+
+<use figures/bag_far_map.png>
+Overfull \vbox (74.7483pt too high) detected at line 134
+ []
+
+<use figures/disparity_map_far_hr.png> <use figures/disparity_gt_far.png>
+<use figures/bag_close_gt.png>
+Overfull \vbox (78.45357pt too high) detected at line 134
+ []
+
+<use figures/bag_close_map.png>
+Overfull \vbox (74.7483pt too high) detected at line 134
+ []
+
+<use figures/disparity_map_close_hr.png> <use figures/disparity_gt_close.png>
+Overfull \hbox (8.78142pt too wide) in paragraph at lines 134--134
+[]|\T1/lmss/m/n/10.95 Parameters: 
+ []
+
+File: figures/bag_far_gt.png Graphic file (type png)
+<use figures/bag_far_gt.png>
+Package pdftex.def Info: figures/bag_far_gt.png used on input line 134.
+(pdftex.def)             Requested size: 425.58894pt x 485.81381pt.
+
+Overfull \vbox (76.07288pt too high) detected at line 134
+ []
+
+File: figures/bag_far_map.png Graphic file (type png)
+<use figures/bag_far_map.png>
+Package pdftex.def Info: figures/bag_far_map.png used on input line 134.
+(pdftex.def)             Requested size: 432.6152pt x 486.81757pt.
+
+Overfull \vbox (74.7483pt too high) detected at line 134
+ []
+
+File: figures/disparity_map_far_hr.png Graphic file (type png)
+<use figures/disparity_map_far_hr.png>
+Package pdftex.def Info: figures/disparity_map_far_hr.png used on input line 13
+4.
+(pdftex.def)             Requested size: 377.40907pt x 240.8994pt.
+File: figures/disparity_gt_far.png Graphic file (type png)
+ <use figures/disparity_gt_far.png>
+Package pdftex.def Info: figures/disparity_gt_far.png used on input line 134.
+(pdftex.def)             Requested size: 754.81818pt x 481.79881pt.
+File: figures/bag_close_gt.png Graphic file (type png)
+
+<use figures/bag_close_gt.png>
+Package pdftex.def Info: figures/bag_close_gt.png used on input line 134.
+(pdftex.def)             Requested size: 418.56271pt x 489.8288pt.
+
+Overfull \vbox (78.45357pt too high) detected at line 134
+ []
+
+File: figures/bag_close_map.png Graphic file (type png)
+<use figures/bag_close_map.png>
+Package pdftex.def Info: figures/bag_close_map.png used on input line 134.
+(pdftex.def)             Requested size: 432.6152pt x 486.81757pt.
+
+Overfull \vbox (74.7483pt too high) detected at line 134
+ []
+
+File: figures/disparity_map_close_hr.png Graphic file (type png)
+<use figures/disparity_map_close_hr.png>
+Package pdftex.def Info: figures/disparity_map_close_hr.png used on input line 
+134.
+(pdftex.def)             Requested size: 377.40907pt x 240.8994pt.
+File: figures/disparity_gt_close.png Graphic file (type png)
+ <use figures/disparity_gt_close.png>
+Package pdftex.def Info: figures/disparity_gt_close.png used on input line 134.
+
+(pdftex.def)             Requested size: 754.81818pt x 481.79881pt.
+
+Overfull \vbox (22.15271pt too high) detected at line 134
+ []
+
+File: eth_logo_kurz_neg_13.pdf Graphic file (type pdf)
+<use eth_logo_kurz_neg_13.pdf>
+Package pdftex.def Info: eth_logo_kurz_neg_13.pdf used on input line 134.
+(pdftex.def)             Requested size: 40.35918pt x 6.55746pt.
+File: asl_logo_right.pdf Graphic file (type pdf)
+ <use asl_logo_right.pdf>
+Package pdftex.def Info: asl_logo_right.pdf used on input line 134.
+(pdftex.def)             Requested size: 78.44473pt x 12.75pt.
+ [16
+
+ <./figures/bag_far_gt.png> <./figures/bag_far_map.png> <./figures/disparity_ma
+p_far_hr.png> <./figures/disparity_gt_far.png (PNG copy)> <./figures/bag_close_
+gt.png> <./figures/bag_close_map.png> <./figures/disparity_map_close_hr.png> <.
+/figures/disparity_gt_close.png (PNG copy)>]
+File: eth_logo_kurz_neg_13.pdf Graphic file (type pdf)
+ <use eth_logo_kurz_neg_13.pdf>
+Package pdftex.def Info: eth_logo_kurz_neg_13.pdf used on input line 137.
+(pdftex.def)             Requested size: 40.35918pt x 6.55746pt.
+File: asl_logo_right.pdf Graphic file (type pdf)
+
+<use asl_logo_right.pdf>
+Package pdftex.def Info: asl_logo_right.pdf used on input line 137.
+(pdftex.def)             Requested size: 78.44473pt x 12.75pt.
+ [17
+
+]) (./conclusion.tex
+File: eth_logo_kurz_neg_13.pdf Graphic file (type pdf)
+
+<use eth_logo_kurz_neg_13.pdf>
+Package pdftex.def Info: eth_logo_kurz_neg_13.pdf used on input line 2.
+(pdftex.def)             Requested size: 40.35918pt x 6.55746pt.
+File: asl_logo_right.pdf Graphic file (type pdf)
+ <use asl_logo_right.pdf>
+Package pdftex.def Info: asl_logo_right.pdf used on input line 2.
+(pdftex.def)             Requested size: 78.44473pt x 12.75pt.
+ [18
+
+]
+File: eth_logo_kurz_neg_13.pdf Graphic file (type pdf)
+
+<use eth_logo_kurz_neg_13.pdf>
+Package pdftex.def Info: eth_logo_kurz_neg_13.pdf used on input line 3.
+(pdftex.def)             Requested size: 40.35918pt x 6.55746pt.
+File: asl_logo_right.pdf Graphic file (type pdf)
+ <use asl_logo_right.pdf>
+Package pdftex.def Info: asl_logo_right.pdf used on input line 3.
+(pdftex.def)             Requested size: 78.44473pt x 12.75pt.
+ [19
+
+])
 \tf@nav=\write10
 \openout10 = `main.nav'.
 
@@ -2342,36 +2903,56 @@ Package glossaries Warning: No \printglossary or \printglossaries found.
 (Remove \makeglossaries if you don't want any glossaries.)
 This document will not have a glossary.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 114.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 114.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 39.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 39.
 (/home/kiki/Project/ASL/presentation/aux/main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 114.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 114.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 39.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 39.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3C336E0A0E2EAE4E64831318D41406C3;442.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 114.
+(rerunfilecheck)             Checksum: 6863FC21E5BF1295553CC9BEADDA5A44;466.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 39.
  ) 
 Here is how much of TeX's memory you used:
- 45701 strings out of 493042
- 1032493 string characters out of 6134660
- 1240635 words of memory out of 5000000
- 48332 multiletter control sequences out of 15000+600000
- 78289 words of font info for 63 fonts, out of 8000000 for 9000
+ 47279 strings out of 493042
+ 1066285 string characters out of 6134660
+ 1246952 words of memory out of 5000000
+ 49822 multiletter control sequences out of 15000+600000
+ 100251 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,14n,77p,10393b,710s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
-texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/local/texlive/2015/t
-exmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2015/texmf-dist/
-fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type
-1/public/lm/lmss12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/l
-m/lmss9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmssbo10.
-pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsso8.pfb>
-Output written on /home/kiki/Project/ASL/presentation/aux/main.pdf (21 pages, 1
-41954 bytes).
+ 66i,23n,114p,10393b,2634s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/
+texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/20
+15/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2015/texmf-d
+ist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/
+dvips/lm/lm-mathex.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/l
+m-ts1.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbx10.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local
+/texlive/2015/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2015/texmf-
+dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/
+type1/public/lm/lmmib10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pub
+lic/lm/lmss10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lms
+s17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmss8.pfb></u
+sr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmssbo10.pfb></usr/local
+/texlive/2015/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/lm/lmsso8.pfb></usr/local/texlive/2015/texmf-dist/fo
+nts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
+public/lm/lmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/l
+mtt10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbo
+ls/msbm10.pfb>
+Output written on /home/kiki/Project/ASL/presentation/aux/main.pdf (19 pages, 2
+739429 bytes).
 PDF statistics:
- 650 PDF objects out of 1000 (max. 8388607)
- 607 compressed objects within 7 object streams
- 51 named destinations out of 1000 (max. 500000)
- 107 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 313 PDF objects out of 1000 (max. 8388607)
+ 222 compressed objects within 3 object streams
+ 53 named destinations out of 1000 (max. 500000)
+ 263 words of extra memory for PDF output out of 10000 (max. 10000000)
 

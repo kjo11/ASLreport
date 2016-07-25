@@ -1,0 +1,230 @@
+\subsection{Theoretical Concepts}
+\frame{
+  \frametitle{B-Splines for surface representation}
+  \textit{Splines}: piecewise polynomial function of degree <$d$.
+
+  \textit{B(asis)-Splines}: Specific choice of finite-support splines calculated
+  by \textit{Cox de Boor} recursion formula (support $s = d + 1$).
+
+      \begin{figure}[h!]
+        \centering
+        \includegraphics[width=.5\textwidth]{figures/degrees.png}
+      \end{figure}
+
+      \begin{columns}
+        \column{.6\textwidth}
+
+      \begin{figure}[h!]
+        \centering
+        \includegraphics[width=\linewidth]{figures/spline.png}
+        \label{fig:splines}
+      \end{figure}
+
+        \column{.4\textwidth}
+     \begin{align*}
+       h(x_j) &= \sum_{i=0}^{\g{M}}\gi{a} h_i(x_j)\\
+       &= \sum_{i=k}^{k + \g{s}} \gi{a} h_i(x_j)\text{, for } j = 1 \ldots \g{N}
+       \label{test}
+     \end{align*}
+    \end{columns}
+}
+
+\frame{
+  \frametitle{Camera setup}
+
+  \begin{columns}
+    \column{.5\linewidth}
+
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=.8\linewidth]{figures/camerasetup.png}
+  \end{figure}
+    
+    \column{.5\linewidth}
+
+  Camera poses described by \g{mrmc} and \g{ccm} for $k = 1, 2$ or 
+
+  \begin{align*}
+    \g{xi}_{C_k} &:= \begin{bmatrix} \g{mrmc}, \g{phic} \end{bmatrix}^T \\
+    \g{xi}_S &:= \begin{bmatrix} \g{mrms}, \g{phis} \end{bmatrix}^T
+  \end{align*}
+
+  with \g{phic}, \g{phis} $\in\mathbb{R}^3$ \cite{Primer}
+  %are the coordinate tuples associated with the relative orientation of the respective coordinate frames. 
+\end{columns}
+
+\vspace{1em}
+If stereo rotation matrices $\g{R} := \g{csc}$ and baseline $T_x := \g{srcc}$
+are known, one pose of $\{ \g{xi}_{C_1}, \g{xi}_{C_2}, \g{xi}_S \}$ is
+sufficient for all poses to be defined.
+}
+
+\frame{
+  \frametitle{Photometric errors for mapping}
+
+  \begin{columns}
+    \column{0.35\linewidth}
+  
+  \begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.3\linewidth}
+      \includegraphics[height=1.5\textwidth]{figures/pixels1_strip.png}
+    \end{subfigure}
+    \begin{subfigure}{0.3\linewidth}
+      \includegraphics[height=1.5\textwidth]{figures/pixels2_strip.png}
+    \end{subfigure}
+    \begin{subfigure}{0.3\linewidth}
+      \includegraphics[height=1.5\textwidth]{figures/residuals_strip.png}
+    \end{subfigure}
+    \label{fig:pixels}
+  \end{figure}
+
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{figures/mapping.png}
+    \label{fig:photometric}
+  \end{figure}
+
+    \column{0.65\linewidth}
+
+    \only<1-1>{
+
+    Photometric error of grid point $x_j, y_j$:
+
+    \begin{equation*}
+      r_j = I_1(\vc u_{j,1}) - I_2(\vc u_{j,2}) \text{ ,}
+      \label{eq:photometric}
+    \end{equation*}
+
+    with $I_1$, $I_2$ interpolated intensities at the locations $\vc u_{j,k}$ in camera
+    $k = 1$ and $k=2$.
+
+  \begin{align*}
+    \vc u_{j,k} &= \vc K_k D_k(\g{Tk}(\g{mrmx}))) \\
+    \g{Tk}(\g{mrmx}) &= \g{pi}(\g{crcx}) \\
+    &= \g{pi}(\g{ccm} (\g{mrmx} - \g{mrmc})) \hspace{1em} 
+    \label{eq:pixel}
+  \end{align*}
+
+  3D point given by spline map:
+
+  \begin{equation*}
+    \g{mrmx} = \begin{bmatrix} x_j, y_j, h(x_j, y_j) \end{bmatrix} ^T
+  \end{equation*}
+}
+    \only<2-2>{
+
+  The analytical Jacobian 
+
+  \begin{equation*}
+    \g{Jrs} = \frac{\partial \vc r(\g{a})}{\partial\g{a}} \in\mathbb{R}^{\g{N}x\g{M}}
+  \end{equation*}
+       
+  is obtained by the chain rule:
+
+  \begin{align*} 
+    \g{Jrs} &= (\vc J_{pixel, 1} \vc J_{camera, 1}(\g{mrmx}) \\
+    &- \vc J_{pixel, 2} \vc J_{camera, 2}(\g{mrmx})) \vc J_{splines} \text{ ,}
+  \end{align*}
+
+  with 
+
+  \begin{align*}
+    \vc J_{pixel, k} &= \frac{\partial I_k(\vc u_{k})}{\partial \vc{\tilde{u}}_{k}},
+    \hspace{1em}
+    \vc J_{camera, k}(\g{mrmx}) = \frac{\partial
+      \vc{\tilde{u}}_{k}}{\partial \g{mrmx}} \\
+    \vc J_{splines} &= \frac{\partial \g{mrmx}}{\partial \g{a}}
+  \end{align*}
+
+  }
+  \end{columns}
+}
+
+\frame{
+  \frametitle{Optimization problem for mapping}
+
+  \begin{align*}
+    \giii{a} &= \argmin{\g{a}\in\mathbb{R}^{\g{M}}} f(\g{a}) \\
+             &= \argmin{\g{a}\in\mathbb{R}^{\g{M}}} \frac{1}{2} (\sum_{j =
+             0}^{\g{N}} \textcolor{red}{w_j} r_j(\g{a})^2
+    + \textcolor{blue}{\beta \g{a}^T \vc B \g{a}} 
+    + \textcolor{green}{\gamma \g{a}^T \vc G \g{a}}) \text{ ,}
+  \end{align*}
+
+  with 
+  \begin{itemize}
+    \item \textcolor{blue}{bending} and \textcolor{green}{gradient} energy regularization terms
+      and
+    \item \textcolor{red}{weight} representing the average visibility of point $j$.
+  \end{itemize}
+
+  \begin{figure}[h!]
+    \centering
+    %\includegraphics[width=.3\linewidth]{figures/visibility.png}
+  \end{figure}
+  
+}
+
+\frame{
+  \frametitle{Photometric errors for localization}
+
+  \begin{columns}
+    \column{0.4\linewidth}
+  
+    \begin{figure}[h!]
+      \centering
+      \includegraphics[width=\linewidth]{figures/localization.png}
+      \label{fig:photometric}
+    \end{figure}
+
+    \column{0.6\linewidth}
+
+    \only<1-1>{
+
+    Photometric error of grid point $x_j, y_j$:
+
+    \begin{align*}
+      r_{j,1} &= I_1(\vc u_{j,1}) - \hat{I}(x_j, y_j) \\
+      r_{j,2} &= I_2(\vc u_{j,1}) - \hat{I}(x_j, y_j) \text{ ,}
+    \end{align*}
+
+    with $I_1$, $I_2$ interpolated intensities at pixels $\vc u_{j,k}$ in camera
+    $k = 1$ and $k=2$ and $\hat{I}(x_j, y_j)$ the estimated intensity from
+    previous step.
+    
+  }
+    \only<2-2>{
+
+The analytical Jacobian
+
+\begin{equation*}
+  \g{Jrp} = \frac{\partial \vc r(\g{xi})}{\partial\g{xi}} \in\mathbb{R}^{\g{N}x6}
+\end{equation*}
+     
+is obtained by the chain rule:
+
+    \begin{align*} 
+      \g{Jrp} &= \vc J_{pixel} \vc J_{camera}(\g{xi})
+    \end{align*}
+
+    with 
+
+    \begin{align*}
+      \vc J_{pixel} = \frac{\partial I(\vc u)}{\partial \vc{\tilde{u}}},
+      \hspace{0.5em}
+      \vc J_{camera}(\g{xi}) = \frac{\partial \vc{\tilde{u}}}{\partial \g{xi}}
+    \end{align*}
+}
+\end{columns}
+
+}
+
+\frame{
+  \frametitle{Optimization problem for localization}
+
+  \begin{equation*}
+    \giii{xi} =  \argmin{\giii{xi}\in\mathbb{R}^6} \frac{1}{2} 
+    \sum_{j = 0}^{\g{N}} r_j(\g{xi})^2
+  \end{equation*}
+}

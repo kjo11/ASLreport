@@ -1,0 +1,157 @@
+\RequirePackage{tikz}
+\RequirePackage{iftex}
+\RequirePackage[export]{adjustbox}
+\usetikzlibrary{calc}
+% \ifPDFTeX
+	% \RequirePackage{garamondx}
+% \fi
+
+\AtBeginDocument{\setbeamertemplate{logo}{}}
+
+\newcommand{\milano@logo}{}
+\newcommand{\milano@supervisor}{}
+\newcommand{\milano@department}{}
+\newcommand{\milano@titlepagelogoA}{}
+\newcommand{\milano@titlepagelogoB}{}
+\newcommand{\milano@backgroundlogo}{}
+
+\renewcommand{\logo}[1]{\renewcommand{\milano@logo}{#1}}
+\newcommand{\supervisor}[1]{\renewcommand{\milano@supervisor}{#1}}
+\newcommand{\department}[1]{\renewcommand{\milano@department}{#1}}
+\newcommand{\titlepagelogoA}[1]{\renewcommand{\milano@titlepagelogoA}{#1}}
+\newcommand{\titlepagelogoB}[1]{\renewcommand{\milano@titlepagelogoB}{#1}}
+\newcommand{\backgroundlogo}[1]{\renewcommand{\milano@backgroundlogo}{#1}}
+
+\newcommand{\thanksframe}[1]{{
+	\setbeamertemplate{background}{
+		\begin{tikzpicture}
+			\useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+			\fill[ETHblue] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+		\end{tikzpicture}
+	}
+	\begin{frame}[c]
+	\centering\Large\color{white} #1
+	\end{frame}
+}}
+
+\definecolor{ETHblue}{RGB}{31,64,122}      % ETH1
+\definecolor{ETHgreen}{RGB}{72,90,44}       % ETH2
+\definecolor{ETHlightblue}{RGB}{18,105,176}     % ETH3
+\definecolor{ETHdarkgreen}{RGB}{114,121,28}     % ETH4
+\definecolor{ETHpurple}{RGB}{145,5,106}      % ETH5
+\definecolor{ETHgray}{RGB}{111,111,100}    % ETH6
+\definecolor{ETHred}{RGB}{168,50,45}      % ETH7
+\definecolor{ETHlightishblue}{RGB}{0,122,150}      % ETH8
+\definecolor{ETHorange}{RGB}{149,96,19}      % ETH9
+
+\setbeamercolor{normal text}{fg=black, bg=}
+\setbeamercolor{frametitle}{fg=black}
+\setbeamercolor{framesubtitle}{fg=gray}
+\setbeamercolor{footline}{fg=black}
+\setbeamercolor{headline}{bg=ETHlightishblue, fg=white}
+\setbeamercolor{logo}{fg=ETHlightishblue}
+\setbeamercolor{institute in head/foot}{parent={footline}}
+\setbeamercolor{item}{parent={normal text}}
+\setbeamercolor{author}{parent={normal text}}
+\setbeamercolor{title}{parent={normal text}}
+\setbeamercolor{title page}{fg=black,bg=ETHlightishblue}
+\setbeamercolor{block title}{fg=ETHlightblue}
+\setbeamercolor{block title example}{fg=ETHlightblue}
+\setbeamercolor{section in toc}{fg=ETHlightblue}
+\setbeamercolor{subsection in toc}{fg=ETHlightblue}
+
+\setbeamerfont{title}{size=\LARGE}
+% \setbeamerfont{author}{shape=\itshape}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setbeamerfont{framesubtitle}{size=\large,series=\bfseries}
+\setbeamerfont{footline}{size=\tiny}
+
+% Sizes
+\setbeamersize{text margin left=0.05\paperwidth, text margin right=1em}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{background canvas}[vertical shading][bottom=white,top=white]
+
+\setbeamertemplate{footline}{
+  \hspace{0.02\paperwidth}
+  \includegraphics[height=2em,valign=b]{asl_logo_right.pdf}
+  \hfill \parbox{0.5\textwidth}{\hfill\insertauthor~~|~~\@date~~|~~\insertframenumber \hspace{0.02\paperwidth}
+  \vspace{0.01\paperwidth}}
+}
+
+\newlength{\ruleheight}
+\newlength{\rulewidth}
+\setlength{\ruleheight}{1mm}
+\setlength{\rulewidth}{0.75\linewidth}
+
+
+\setbeamertemplate{title page}{
+\usebeamercolor{title page}
+  %\leavevmode
+ 
+  \vfill
+
+  \raggedleft 
+	
+  %% Title
+  {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}
+  {%% Subtitle
+    \ifx\insertsubtitle\@empty%
+    \else%
+    \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par
+    \fi%  
+  }   
+  % \vskip 5mm
+  % %% Horizontal line
+  % {\usebeamercolor[fg]{title}\hrule height\ruleheight width\rulewidth\par}
+
+  % \vskip 5mm
+  {\hfill\usebeamercolor[bg]{title page}\rule{\rulewidth}{\ruleheight}\par}
+  %% Author
+  {\usebeamercolor{author}\usebeamerfont{author}
+    \insertauthor}
+  \vskip 1cm
+  %% Institute
+  {\usebeamercolor{institute}\usebeamerfont{institute}
+    \insertinstitute}
+  \vskip 1cm
+  %% Date
+  {\usebeamercolor{date}\usebeamerfont{date}
+    \insertdate}
+  \vfill
+
+% \begin{tikzpicture}
+	% \useasboundingbox (1,0) rectangle (\the\paperwidth,\the\paperheight);
+	% \node[opacity=.3] at (12.5, 0.7) {\milano@backgroundlogo};
+	% \fill[color=ETHLightBlue] (0, 6.75) rectangle (\the\paperwidth, 8.75);
+	% \node at (2.15, 7.75) {\milano@titlepagelogoA};
+	% \draw[thick] (3.4, 8.25) -- (3.4, 7.25);
+	% \node[right, align=left, font=\usebeamerfont{institute}] at (3.7, 7.8) {\insertinstitute};
+	% \node[right] at (9.9, 7.8) {\milano@titlepagelogoB};
+	% \node[align=center, font=\usebeamerfont{title}] at (6.1, 4.5) {\inserttitle};
+	% \node[align=center, font=\usebeamerfont{subtitle}] at (6.1, 3.5) {\insertsubtitle};
+	% \node[align=left, font=\usebeamerfont{author}] at (10.3, 1.4) {\insertauthor};
+	% \node[align=left, font=\usebeamerfont{author}, right] at (1.3, 1.4) {\milano@supervisor};
+% \end{tikzpicture}
+}
+
+\setbeamertemplate{headline}{
+  % \centering
+  \begin{tikzpicture}
+
+    \useasboundingbox (0,\the\paperheight) rectangle ++($(\the\paperwidth,0) - 0.1*(0,\the\paperwidth)$);
+    \coordinate (topleft) at ($(0,\the\paperheight) + 0.02*(\the\paperwidth,-\the\paperwidth)$);
+    \coordinate (bottomright) at ($(\the\paperwidth,\the\paperheight)-0.02*(\the\paperwidth,\the\paperwidth) - 0.05*(0,\the\paperwidth)$);
+    \coordinate (bottomleft) at (topleft |- bottomright); 
+    \fill[color=ETHlightblue] (topleft) rectangle (bottomright);
+    \fill[color=ETHlightblue] (bottomleft) rectangle ++($0.02*(\the\paperwidth,-\the\paperwidth)$);
+    \fill[color=ETHlightblue] (bottomright) rectangle ++($0.02*(-\the\paperwidth,-\the\paperwidth)$);
+    \node at ($0.5*(topleft) + 0.5*(bottomleft) + 0.08*(\the\paperwidth,0)$) {\includegraphics[height=0.018\paperwidth]{eth_logo_kurz_neg_13.pdf}};
+  \end{tikzpicture}
+}
+
+\setbeamertemplate{frametitle}{
+      {\usebeamercolor[fg]{frametitle}\usebeamerfont{frametitle}\insertframetitle\par}%
+      {\usebeamercolor[fg]{framesubtitle}\usebeamerfont{framesubtitle}\subsecname\par}%
+}

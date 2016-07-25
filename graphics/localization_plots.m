@@ -2,9 +2,9 @@ close all
 clear all
 
 %% Initialization
-path = "/home/kiki/ASL_ROS/new_code/stereo_camera_reconstruction/results/localization_plane/";
-name = "camera_x_weights_blur.csv";
-name_resolution = "max_resolution.csv";
+path = '/home/kiki/ASL_ROS/new_code/stereo_camera_reconstruction/results/localization_plane/';
+name = 'camera_x_weights_blur.csv';
+name_resolution = 'max_resolution.csv';
 %name = "camera_x_blur.csv";
 
 dimension = 1; %1 for x, 2 for y, 3 for z.
@@ -13,9 +13,9 @@ iterations_to_consider=11;
 
 %% Plotting
 fid = fopen(strcat(path, name), 'r');
-[x, count] = fscanf(fid, '%e', [7, Inf]);
+[x, ~] = fscanf(fid, '%e', [7, Inf]);
 fid = fopen(strcat(path, name_resolution), 'r');
-[y, count] = fscanf(fid, '%e');
+[y, ~] = fscanf(fid, '%e');
 max_resolution = [y(1), y(1), -y(2)];
 
 zero_indices = find(x(1,:)==0);
