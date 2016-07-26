@@ -1,0 +1,34 @@
+\begin{thebibliography}{1}
+
+\bibitem{PTAM}
+Georg Klein and David Murray.
+\newblock {Parallel tracking and mapping for small AR workspaces}.
+\newblock In {\em Mixed and Augmented Reality, 2007. ISMAR 2007. 6th IEEE and
+  ACM International Symposium on}, pages 225--234. IEEE, 2007.
+
+\bibitem{DTAM}
+Richard~A Newcombe, Steven~J Lovegrove, and Andrew~J Davison.
+\newblock {DTAM: Dense tracking and mapping in real-time}.
+\newblock In {\em 2011 international conference on computer vision}, pages
+  2320--2327. IEEE, 2011.
+
+\bibitem{Dominik}
+Dominik Schindler.
+\newblock {Visual Terrain Estimation for Legged Robots}.
+\newblock {\em Master Thesis}, 2015.
+
+\bibitem{Primer}
+Michael Bloesch, Hannes Sommer, Tristan Laidlow, Michael Burri, Gabriel Nuetzi,
+  and R~O Jun.
+\newblock {A Primer on the Differential Calculus of 3D Orientations}.
+\newblock 2016.
+
+\bibitem{Middlebury}
+Daniel Scharstein, Heiko Hirschm{\"{u}}ller, York Kitajima, Greg Krathwohl,
+  Nera Ne{\v{s}}i{\'{c}}, Xi~Wang, and Porter Westling.
+\newblock {High-resolution stereo datasets with subpixel-accurate ground
+  truth}.
+\newblock In {\em German Conference on Pattern Recognition}, pages 31--42.
+  Springer International Publishing, 2014.
+
+\end{thebibliography}

@@ -1,7 +1,8 @@
 \section{Results}
 
+\subsection{Mapping And Localization Datasets}
 \frame{
-  \frametitle{Datasets and parameters}
+  \frametitle{Overview}
   
 \begin{tabular}{l|c|c|c|}
     Dataset & Plane test & Middlebury \cite{Middlebury}& Inhouse \\
@@ -16,69 +17,58 @@
     Localization & yes & no & no \\
     \hline
     \hline
+    Map dimensions [m] & 0.9 x 1.2 & \multicolumn{2}{c|}{1.5 x 2.0} \\ 
+    \hline
     Spline resolution & 20 x 20 & \multicolumn{2}{c|}{75 x 100} \\
     \hline
-    Map dimensions & 0.9 x 1.2 & \multicolumn{2}{c|}{1.5 x 2.0} \\ 
-    \hline
-    Map resolution & \multicolumn{3}{c|}{90 x 120} \\ 
+    Residuals resolution & \multicolumn{3}{c|}{90 x 120} \\ 
     \hline
   \end{tabular}
 }
 
-\subsection{Mapping}
-\frame{\frametitle{Plane test case}
-\begin{tabular}{cc}
-      \includegraphics[width=0.2\linewidth]{figures/planetest1.png} &
-      \includegraphics[width=0.2\linewidth]{figures/planetest2.png} \\
-      \resizebox{0.45\linewidth}{!}{\input{../../graphics/planetest.tex}} &
-    \includegraphics[valign=b,width=.35\linewidth]{figures/planetest3d.png}\\
+\subsection{Mapping Results}
+\frame{\frametitle{Plane Test}
+\begin{tabular}{ccc}
+      \includegraphics[width=0.15\linewidth]{figures/planetest1.png} &
+      \includegraphics[width=0.15\linewidth]{figures/planetest2.png} & 
+
+      \multirow{2}{*}{\resizebox{0.5\linewidth}{!}{\input{../../graphics/planetest.tex}}}
+      \\
+      \multicolumn{2}{c}{\includegraphics[valign=b,width=.35\linewidth]{figures/planetest3d.png}}
 \end{tabular}
 }
 
 %\frame{\frametitle{Simulation test case}}
-\frame{
-  \frametitle{Middlebury dataset results}
-  
-  \begin{figure}[H]
-  \begin{subfigure}{.2\linewidth}
-    \includegraphics[width=\textwidth]{figures/recycle0.png}
-  \end{subfigure}
-  \begin{subfigure}{.2\linewidth}
-    \includegraphics[width=\textwidth]{figures/middlebury_residuals_b1.png}
-  \end{subfigure}
-  \begin{subfigure}{.2\linewidth}
-    \includegraphics[width=\textwidth]{figures/middlebury_residuals_b10.png}
-  \end{subfigure}
-  \end{figure}
-  
-  \begin{figure}[H]
-  \begin{subfigure}{.2\linewidth}
-    \includegraphics[width=\textwidth]{figures/middlebury_3d_groundtruth.png}
-  \end{subfigure}
-  \begin{subfigure}{.2\linewidth}
-    \includegraphics[width=\textwidth]{figures/middlebury_3d_b1.png}
-  \end{subfigure}
-  \begin{subfigure}{.2\linewidth}
-    \includegraphics[width=\textwidth]{figures/middlebury_3d_b10.png}
-  \end{subfigure}
-  \end{figure}
-  
-  \begin{figure}[H]
-  \begin{subfigure}{.2\linewidth}
-    \includegraphics[width=\textwidth]{figures/middlebury_disparity.png}
-  \end{subfigure}
-  \begin{subfigure}{.2\linewidth}
-    \includegraphics[width=\textwidth]{figures/middlebury_disparity_b1.png}
-  \end{subfigure}
-  \begin{subfigure}{.2\linewidth}
-    \includegraphics[width=\textwidth]{figures/middlebury_disparity_b10.png}
-  \end{subfigure}
-  \end{figure}
 
+\frame{
+  \frametitle{Middlebury Dataset}
+
+    % \includegraphics[width=.24\textwidth]{figures/recycle0.png}
+    
+    \begin{tabular}{c|cc}
+    groundtruth & $\beta = 1$ & $\beta = 10$ \\
+
+    \includegraphics[height=.17\textwidth]{figures/middlebury_disparity_gt_new.png} & 
+    \includegraphics[height=.17\textwidth]{figures/middlebury_disparity_b1_new.png} &
+    \includegraphics[height=.17\textwidth]{figures/middlebury_disparity_b10_new.png} \\
+ 
+  % \begin{figure}[H]
+  % \begin{subfigure}{.2\lineheight}
+    % \includegraphics[height=\textwidth]{figures/middlebury_residuals_b1.png}
+  % \end{subfigure}
+  % \begin{subfigure}{.2\lineheight}
+    % \includegraphics[height=\textwidth]{figures/middlebury_residuals_b10.png}
+  % \end{subfigure}
+  % \end{figure}
+  
+    \includegraphics[height=.24\textwidth]{figures/middlebury_3d_groundtruth.png} &
+    \includegraphics[height=.24\textwidth]{figures/middlebury_3d_b1_new.png} &
+    \includegraphics[height=.24\textwidth]{figures/middlebury_3d_b10_new.png} 
+  \end{tabular}
 }
 
 \frame{
-  \frametitle{Middlebury dataset convergence}
+  \frametitle{Middlebury Dataset}
 
 \resizebox{\linewidth}{!}{
   \input{../../graphics/middlebury_photometric.tex}
@@ -87,16 +77,25 @@
   
 }
 
+\newlength{\colwidth}
+\settowidth{\colwidth}{$\gamma = 1e5$}
+
 \frame{
-  \frametitle{Inhouse dataset results}
+  \frametitle{Inhouse Dataset}
 
   \scalebox{.9}{
-    \begin{tabularx}{\textwidth}{Xr c c c}
+    % \begin{tabularx}{\textwidth}{X c c c}
+    \begin{tabular}{m{\colwidth} c c c}
       \footnotesize
-  $\beta = 10$ \newline
-  $\gamma = 1e5$
-    &
-    \multirow{2}{*}{
+      \multirow{2}{\colwidth}{
+        \parbox{\colwidth}{
+        \vspace{3em}
+          \RaggedLeft
+        ``far ''
+        $\beta = 10$ 
+        $\gamma = 1e6$
+      } 
+    } & \multirow{2}{*}{
     \includegraphics[valign=t,width=.25\textwidth]{figures/bag_far_gt.png}
     } &
     \multirow{2}{*}{
@@ -106,9 +105,15 @@
     & & &
     \includegraphics[valign=t,width=.2\textwidth]{figures/disparity_gt_far.png} \\
       \footnotesize
-  $\beta = 10$ \newline
-  $\gamma = 1e5$ 
-    & \multirow{2}{*}{
+      \multirow{2}{\colwidth}{
+        \parbox{\colwidth}{
+        \vspace{3em}
+          \RaggedLeft
+          ``close''
+        $\beta = 10$ 
+        $\gamma = 1e5$
+      } 
+    } & \multirow{2}{*}{
     \includegraphics[valign=t,width=.25\textwidth]{figures/bag_close_gt.png} 
     } &
     \multirow{2}{*}{
@@ -117,28 +122,47 @@
     \includegraphics[valign=t,width=.2\textwidth]{figures/disparity_map_close_hr.png} \\
     & & &
     \includegraphics[valign=t,width=.2\textwidth]{figures/disparity_gt_close.png} \\
-  \end{tabularx}
+  % \end{tabularx}
+  \end{tabular}
+
 }
 
 }
 
 \frame{
-  \frametitle{Inhouse dataset convergence}
+  \frametitle{Inhouse Dataset}
+  
+  \begin{columns}
+    \column{.2\linewidth}
+  \includegraphics[width=\linewidth]{figures/plane_initialization.png}
+
+    \column{.79\linewidth}
   \resizebox{\linewidth}{!}{
     \input{../../graphics/bag_photometric.tex}
     \input{../../graphics/bag_jacobian.tex}
   }
+\end{columns}
 
 }
 
-\subsection{Localization}
+\subsection{Localization Results}
 \frame{
   \frametitle{Plane Test}
+  
+  \begin{columns}
+    \column{.2\linewidth}
+  \includegraphics[width=\linewidth]{figures/localization_original.png}
+  \\
+  \includegraphics[width=\linewidth]{figures/localization_intensities.png}
+    
+  \column{.79\linewidth}
 
 \resizebox{\linewidth}{!}{
   \input{../../graphics/localization_,x.tex}
   \input{../../graphics/localization_,z.tex}
 }
+
+\end{columns}
 }
 
 %\frame{\frametitle{Simulation test case}}

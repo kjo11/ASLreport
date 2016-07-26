@@ -1,14 +1,14 @@
 \section{Conclusion}
-
+\subsection{}
 \frame{\frametitle{Achievements}
 
 \begin{itemize}
   \item Created versatile \texttt{stereo surface reconstruction} package for
     \begin{itemize}
-      \item variable spline degree and resolution,
+      \item variable spline degrees and resolution,
       \item entirely customizable optimization parameters and
       \item rectified and unrectified images.
-    \end{itemize}
+  \end{itemize}
   \item Implemented photometric localization algorithm based on one stereo
     measurement.
   \item Tested functionalities on real and simulated datasets.
@@ -20,10 +20,24 @@
 
 \begin{itemize}
   \item Implement sequence of mapping and localization steps to
-      improve map accuracy using multiple measurements.
-  \item Integrate new measurements to extend map using bundle adjustment.
+      improve map accuracy by solving recursively over multiple measurements.
+  \item Integrate measurements to extend map and create wider camera
+    baseline.
   \item Test framework in realistic sceneries.  
 \end{itemize}
+}
 
+\frame{
+
+  \centering\large
+  Questions?
+}
+
+\frame[allowframebreaks]{
+  \frametitle{References}
+
+\footnotesize
+\bibliographystyle{unsrt}
+\bibliography{bibliography}
 }
 

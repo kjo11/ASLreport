@@ -1,9 +1,9 @@
-\subsection{Theoretical Concepts}
+\subsection{Methods}
 \frame{
   \frametitle{B-Splines for Surface Representation}
   \textit{Splines}: piecewise polynomial function of degree <$d$.
-  \textit{B(asis)-Splines}: Specific choice of finite-support splines calculated
-  by \textit{Cox de Boor} recursion formula (support $s = d + 1$).
+
+  \textit{B(asis)-Splines}: Specific choice of finite-support splines for basis.
 
       \begin{figure}[h!]
         \centering
@@ -49,7 +49,6 @@
     \column{.5\linewidth}
 
   Camera poses described by \g{mrmc} and \g{ccm} for $k = 1, 2$ or 
-
   \begin{align*}
     \g{xi}_{C_k} &:= \begin{bmatrix} \g{mrmc}, \g{phic} \end{bmatrix}^T \\
     \g{xi}_S &:= \begin{bmatrix} \g{mrms}, \g{phis} \end{bmatrix}^T
@@ -60,9 +59,9 @@
 \end{columns}
 
 \vspace{1em}
-If stereo rotation matrices $\g{R} := \g{csc}$ and baseline $\vc T_x := \g{srcc}$
-are known, one pose of $\{ \g{xi}_{C_1}, \g{xi}_{C_2}, \g{xi}_S \}$ is
-sufficient for all poses to be defined.
+
+Relative position of $\{ \g{xi}_{C_1}, \g{xi}_{C_2}, \g{xi}_S \}$ stays fixed.
+
 }
 
 \frame{
@@ -73,36 +72,37 @@ sufficient for all poses to be defined.
 
     \vspace{-1em}
   
-  \begin{figure}[h!]
-    \centering
-    \begin{subfigure}{0.3\linewidth}
-      \includegraphics[height=1.5\textwidth]{figures/pixels1_strip.png}
-    \end{subfigure}
-    \begin{subfigure}{0.3\linewidth}
-      \includegraphics[height=1.5\textwidth]{figures/pixels2_strip.png}
-    \end{subfigure}
-    \begin{subfigure}{0.3\linewidth}
-      \includegraphics[height=1.5\textwidth]{figures/residuals_strip.png}
-    \end{subfigure}
-    \label{fig:pixels}
-  \end{figure}
+    \begin{figure}[h!]
+      \centering
+      \begin{subfigure}{0.3\linewidth}
+        \includegraphics[height=1.5\textwidth]{figures/pixels1_strip.png}
+      \end{subfigure}
+      \begin{subfigure}{0.3\linewidth}
+        \includegraphics[height=1.5\textwidth]{figures/pixels2_strip.png}
+      \end{subfigure}
+      \begin{subfigure}{0.3\linewidth}
+        \includegraphics[height=1.5\textwidth]{figures/residuals_strip.png}
+      \end{subfigure}
+      \label{fig:pixels}
+    \end{figure}
 
-  \vspace{-1em}
+    \vspace{-1em}
 
-  \begin{figure}[h!]
-    \centering
-    \includegraphics[width=.8\linewidth]{figures/mapping.png}
-    \label{fig:photometric}
-  \end{figure}
+    \begin{figure}[h!]
+      \centering
+      \includegraphics[width=.8\linewidth]{figures/mapping.png}
+      \label{fig:photometric}
+    \end{figure}
 
-    \column{0.64\linewidth}
+  \column{0.64\linewidth}
 
     \only<1-1>{
 
     Photometric error of grid point $x_j, y_j$:
 
+    %TODO CONTINUE HERE!
     \begin{equation*}
-      r_j = I_1(\vc u_{j,1}) - I_2(\vc u_{j,2}) \text{ ,}
+      r_j = I_1(\vc u_{j,1}(\g{a})) - I_2(\vc u_{j,2}) \text{ ,}
       \label{eq:photometric}
     \end{equation*}
 

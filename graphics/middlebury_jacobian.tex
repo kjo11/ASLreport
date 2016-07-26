@@ -6,12 +6,12 @@
 %
 \definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
 \definecolor{mycolor2}{rgb}{0.85000,0.32500,0.09800}%
-\definecolor{mycolor3}{rgb}{0.92900,0.69400,0.12500}%
+\definecolor{mycolor3}{rgb}{0.46600,0.67400,0.18800}%
 %
 \begin{tikzpicture}
 
 \begin{axis}[%
-width=0.965\linewidth,
+width=0.75\linewidth,
 height=0.75\linewidth,
 at={(0\linewidth,0\linewidth)},
 scale only axis,
@@ -21,16 +21,15 @@ xlabel={Iteration},
 xmajorgrids,
 ymin=150000,
 ymax=450000,
-ylabel={Jacobian Norm},
+ylabel={Gradient Norm},
 ymajorgrids,
 axis background/.style={fill=white},
 title style={font=\bfseries},
-title={Jacobian Norm},
+title={Gradient Norm},
 axis x line*=bottom,
-axis y line*=left,
-legend style={legend cell align=left,align=left,draw=white!15!black}
+axis y line*=left
 ]
-\addplot [color=mycolor1,solid,line width=1.5pt]
+\addplot [color=mycolor1,solid,line width=1.5pt,forget plot]
   table[row sep=crcr]{%
 0	388993\\
 1	320754\\
@@ -83,9 +82,7 @@ legend style={legend cell align=left,align=left,draw=white!15!black}
 48	315874\\
 49	312691\\
 };
-\addlegendentry{$\beta\text{ = 1}$};
-
-\addplot [color=mycolor2,solid,line width=1.5pt]
+\addplot [color=mycolor2,solid,line width=1.5pt,forget plot]
   table[row sep=crcr]{%
 0	388993\\
 1	352062\\
@@ -138,9 +135,7 @@ legend style={legend cell align=left,align=left,draw=white!15!black}
 48	260215\\
 49	305225\\
 };
-\addlegendentry{$\beta\text{ = 10}$};
-
-\addplot [color=mycolor3,solid,line width=1.5pt]
+\addplot [color=mycolor3,solid,line width=1.5pt,forget plot]
   table[row sep=crcr]{%
 0	388993\\
 1	375437\\
@@ -193,7 +188,5 @@ legend style={legend cell align=left,align=left,draw=white!15!black}
 48	192705\\
 49	201143\\
 };
-\addlegendentry{$\beta\text{ = 100}$};
-
 \end{axis}
 \end{tikzpicture}%

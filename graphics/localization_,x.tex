@@ -10,7 +10,7 @@
 \begin{tikzpicture}
 
 \begin{axis}[%
-width=0.965\linewidth,
+width=0.962\linewidth,
 height=0.75\linewidth,
 at={(0\linewidth,0\linewidth)},
 scale only axis,
@@ -20,7 +20,7 @@ xlabel={Iteration},
 xmajorgrids,
 ymin=0,
 ymax=0.4,
-ylabel={Error in x [mm]},
+ylabel={Error in x [m]},
 ymajorgrids,
 axis background/.style={fill=white},
 title style={font=\bfseries},
@@ -44,7 +44,7 @@ legend style={legend cell align=left,align=left,draw=white!15!black}
 10	0.00350698\\
 11	0.00350743\\
 };
-\addlegendentry{Camera frame};
+\addlegendentry{Single camera frame};
 
 \addplot [color=mycolor2,dashed,line width=1.5pt]
   table[row sep=crcr]{%

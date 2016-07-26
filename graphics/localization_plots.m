@@ -34,7 +34,7 @@ num_deltas_st = length(zero_indices_st);
 
 figure(i); hold on; grid on;
 title('Plane Localization Convergence')
-xlabel('Iteration'), ylabel(['Error in ',dimensions(i),' [mm]'])
+xlabel('Iteration'), ylabel(['Error in ',dimensions(i),' [m]'])
 for j = 2:2:num_deltas
   von = zero_indices(j);
   bis = von + iterations_to_consider - 1;
@@ -54,7 +54,13 @@ xlim([0 iterations_to_consider])
 ch = get(gca,'Children');
 set(gca,'Children',[ch(1:num_deltas_st-1); ch(num_deltas_st+1:end-1); ch(num_deltas_st); ch(end)])
 if (i==1)
-    legend('Camera frame','Stereo frame')
+    legend('Single camera frame','Stereo frame')
 end
+if (i==3)
+    set(gca,'YDir','reverse');
+end
+
 matlab2tikz(['localization_,',dimensions(i),'.tex'],'width','\linewidth');
+
+
 end
