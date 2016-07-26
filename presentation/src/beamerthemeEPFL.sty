@@ -8,19 +8,9 @@
 
 \AtBeginDocument{\setbeamertemplate{logo}{}}
 
-\newcommand{\milano@logo}{}
-\newcommand{\milano@supervisor}{}
-\newcommand{\milano@department}{}
-\newcommand{\milano@titlepagelogoA}{}
-\newcommand{\milano@titlepagelogoB}{}
-\newcommand{\milano@backgroundlogo}{}
-
-\renewcommand{\logo}[1]{\renewcommand{\milano@logo}{#1}}
-\newcommand{\supervisor}[1]{\renewcommand{\milano@supervisor}{#1}}
-\newcommand{\department}[1]{\renewcommand{\milano@department}{#1}}
-\newcommand{\titlepagelogoA}[1]{\renewcommand{\milano@titlepagelogoA}{#1}}
-\newcommand{\titlepagelogoB}[1]{\renewcommand{\milano@titlepagelogoB}{#1}}
-\newcommand{\backgroundlogo}[1]{\renewcommand{\milano@backgroundlogo}{#1}}
+\newcommand{\@supervisor}{}
+\newcommand{\supervisor}[1]{\renewcommand{\@supervisor}{Supervisor: #1}}
+\newcommand{\supervisors}[1]{\renewcommand{\@supervisor}{Supervisors: #1}}
 
 \newcommand{\thanksframe}[1]{{
 	\setbeamertemplate{background}{
@@ -61,7 +51,8 @@
 \setbeamercolor{subsection in toc}{fg=ETHlightblue}
 
 \setbeamerfont{title}{size=\LARGE}
-% \setbeamerfont{author}{shape=\itshape}
+\setbeamerfont{author}{series=\bfseries,size=\large}
+\setbeamerfont{institute}{size=\normalsize}
 \setbeamerfont{frametitle}{size=\Large,series=\bfseries}
 \setbeamerfont{framesubtitle}{size=\large,series=\bfseries}
 \setbeamerfont{footline}{size=\tiny}
@@ -103,10 +94,6 @@
     \fi%  
   }   
   % \vskip 5mm
-  % %% Horizontal line
-  % {\usebeamercolor[fg]{title}\hrule height\ruleheight width\rulewidth\par}
-
-  % \vskip 5mm
   {\hfill\usebeamercolor[bg]{title page}\rule{\rulewidth}{\ruleheight}\par}
   %% Author
   {\usebeamercolor{author}\usebeamerfont{author}
@@ -114,26 +101,13 @@
   \vskip 1cm
   %% Institute
   {\usebeamercolor{institute}\usebeamerfont{institute}
-    \insertinstitute}
+    \@supervisor}
   \vskip 1cm
   %% Date
   {\usebeamercolor{date}\usebeamerfont{date}
     \insertdate}
   \vfill
 
-% \begin{tikzpicture}
-	% \useasboundingbox (1,0) rectangle (\the\paperwidth,\the\paperheight);
-	% \node[opacity=.3] at (12.5, 0.7) {\milano@backgroundlogo};
-	% \fill[color=ETHLightBlue] (0, 6.75) rectangle (\the\paperwidth, 8.75);
-	% \node at (2.15, 7.75) {\milano@titlepagelogoA};
-	% \draw[thick] (3.4, 8.25) -- (3.4, 7.25);
-	% \node[right, align=left, font=\usebeamerfont{institute}] at (3.7, 7.8) {\insertinstitute};
-	% \node[right] at (9.9, 7.8) {\milano@titlepagelogoB};
-	% \node[align=center, font=\usebeamerfont{title}] at (6.1, 4.5) {\inserttitle};
-	% \node[align=center, font=\usebeamerfont{subtitle}] at (6.1, 3.5) {\insertsubtitle};
-	% \node[align=left, font=\usebeamerfont{author}] at (10.3, 1.4) {\insertauthor};
-	% \node[align=left, font=\usebeamerfont{author}, right] at (1.3, 1.4) {\milano@supervisor};
-% \end{tikzpicture}
 }
 
 \setbeamertemplate{headline}{

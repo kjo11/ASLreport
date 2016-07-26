@@ -2,17 +2,17 @@
 
 \subsection{Motivation}
 \frame{
-  \frametitle{Dense SLAM with B-Splines}
+  \frametitle{Visual SLAM Approaches}
 
   \begin{figure}[H]
     \begin{minipage}[r]{.15\textwidth}
       \caption{\footnotesize Sparse SLAM (PTAM, \cite{PTAM})}
     \end{minipage}  
-    \begin{minipage}[c]{.25\textwidth}
+    \begin{minipage}[c]{.2\textwidth}
       \includegraphics[width=\linewidth]{figures/sparse.png}
     \end{minipage}
     \hspace{2em}
-    \begin{minipage}[c]{.25\textwidth}
+    \begin{minipage}[c]{.2\textwidth}
       \includegraphics[width=\linewidth]{figures/DTAM.png}
     \end{minipage}
     \begin{minipage}[l]{.15\textwidth}
@@ -20,12 +20,16 @@
     \end{minipage}  
     \\
     \vspace{1em}
-    \begin{minipage}[c]{.3\textwidth}
+    \begin{minipage}[c]{.25\textwidth}
       \includegraphics[width=\linewidth]{figures/Dominik.png}
       \centering
-      \caption{\footnotesize Dense SLAM with Splines \cite{Dominik}}
     \end{minipage}
+    \begin{minipage}[l]{.15\textwidth}
+      \caption{\footnotesize Dense SLAM with B-Splines \cite{Dominik}}
+    \end{minipage}  
   \end{figure}
+
+  \imp{$\implies$ Choice: Dense SLAM with B-Splines}
 
     % \begin{subfigure}{.3\linewidth}
       % \includegraphics[width=\linewidth]{figures/sparse.png}
@@ -46,12 +50,11 @@
 \frame{
   \frametitle{Visual Terrain Estimation For Legged Robots}
 
-  Create framework for surface reconstruction and localization using moving
-  stereo camera
+  \imp{Framework for dense stereo camera SLAM }
 
   \begin{itemize}
-      \item Createing spline surface reprensentation from static stereo camera.
-      \item Localizing new stereo camera position using obtained map.
+      \item Static stereo camera $\implies$ spline surface (map)
+      \item Map $\implies$ new camera position
     \end{itemize}
 
   \begin{figure}[H]
@@ -61,7 +64,7 @@
   }
 
     
-\subsection{Methodology}
+\subsection{Methods}
 \frame{
   \frametitle{Visual Terrain Estimation For Legged Robots}
   \begin{itemize}

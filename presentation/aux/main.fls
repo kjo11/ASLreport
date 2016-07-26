@@ -581,6 +581,8 @@ INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmtt10.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmtt8.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmtt8.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmss17.tfm
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmss12.tfm
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmssbx10.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmss8.tfm
 INPUT eth_logo_kurz_neg_13.pdf
 INPUT ./eth_logo_kurz_neg_13.pdf
@@ -589,15 +591,6 @@ INPUT ./asl_logo_right.pdf
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmtt8.tfm
 OUTPUT /home/kiki/Project/ASL/presentation/aux/main.xdy
 INPUT /usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT /home/kiki/Project/ASL/presentation/aux/main.toc
-INPUT /home/kiki/Project/ASL/presentation/aux/main.toc
-INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmss12.tfm
-INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmssbx10.tfm
-INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmssbx10.tfm
-INPUT eth_logo_kurz_neg_13.pdf
-INPUT ./eth_logo_kurz_neg_13.pdf
-INPUT asl_logo_right.pdf
-INPUT ./asl_logo_right.pdf
 INPUT introduction.tex
 INPUT introduction.tex
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmss10.tfm
@@ -611,6 +604,9 @@ INPUT ./figures/DTAM.png
 INPUT figures/Dominik.png
 INPUT ./figures/Dominik.png
 INPUT ./figures/Dominik.png
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmssbx10.tfm
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmss12.tfm
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmssbx10.tfm
 INPUT eth_logo_kurz_neg_13.pdf
 INPUT ./eth_logo_kurz_neg_13.pdf
 INPUT asl_logo_right.pdf
@@ -625,7 +621,6 @@ INPUT eth_logo_kurz_neg_13.pdf
 INPUT ./eth_logo_kurz_neg_13.pdf
 INPUT asl_logo_right.pdf
 INPUT ./asl_logo_right.pdf
-INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmssbx10.tfm
 INPUT eth_logo_kurz_neg_13.pdf
 INPUT ./eth_logo_kurz_neg_13.pdf
 INPUT asl_logo_right.pdf
@@ -754,6 +749,9 @@ INPUT /home/kiki/Project/ASL/presentation/aux/../../graphics/middlebury_photomet
 INPUT /home/kiki/Project/ASL/presentation/aux/../../graphics/middlebury_photometric.tex
 INPUT /home/kiki/Project/ASL/presentation/aux/../../graphics/middlebury_jacobian.tex
 INPUT /home/kiki/Project/ASL/presentation/aux/../../graphics/middlebury_jacobian.tex
+INPUT figures/recycle0.png
+INPUT ./figures/recycle0.png
+INPUT ./figures/recycle0.png
 INPUT eth_logo_kurz_neg_13.pdf
 INPUT ./eth_logo_kurz_neg_13.pdf
 INPUT asl_logo_right.pdf
@@ -833,7 +831,6 @@ INPUT eth_logo_kurz_neg_13.pdf
 INPUT ./eth_logo_kurz_neg_13.pdf
 INPUT asl_logo_right.pdf
 INPUT ./asl_logo_right.pdf
-INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmss12.tfm
 INPUT eth_logo_kurz_neg_13.pdf
 INPUT ./eth_logo_kurz_neg_13.pdf
 INPUT asl_logo_right.pdf

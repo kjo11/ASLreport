@@ -4,26 +4,27 @@ clear all
 plotsettings
 
 %% Initialization Middlebury
-% path = '/home/kiki/ASL_ROS/new_code/stereo_camera_reconstruction/results/mapping/middlebury/middlebury_';
-% names = {'d1_g0_b10', 'd1_g1_b10', 'h_d1_b1', 'h_j_d1_b1', 'h_j_d1_g0_b10', 'j_d01_b1', 'j_d1_b1', 'h_j_d1_g0_b10_armijo'};
-% names = {'h_j_d1_g0_b1', 'h_j_d1_g0_b10', 'h_j_d1_g0_b100'};
-% labels = {'\beta = 1', '\beta = 10', '\beta = 100'};
-% %labels = {'d1 g0 b10', 'd1 g1 b10', 'h d1 b1', 'h j d1 b1', 'h j d1 g0 b10', 'j d01 b1', 'j d1 b1'};
-% fname = 'middlebury';
-% title_error = 'Photometric RMSE And Average Disparity Error';
+path = '/home/kiki/ASL_ROS/new_code/stereo_camera_reconstruction/results/mapping/middlebury/middlebury_';
+names = {'d1_g0_b10', 'd1_g1_b10', 'h_d1_b1', 'h_j_d1_b1', 'h_j_d1_g0_b10', 'j_d01_b1', 'j_d1_b1', 'h_j_d1_g0_b10_armijo'};
+names = {'h_j_d1_g0_b1', 'h_j_d1_g0_b10', 'h_j_d1_g0_b100'};
+labels = {'\beta = 1', '\beta = 10', '\beta = 100'};
+%labels = {'d1 g0 b10', 'd1 g1 b10', 'h d1 b1', 'h j d1 b1', 'h j d1 g0 b10', 'j d01 b1', 'j d1 b1'};
+fname = 'middlebury';
+title_error = 'Photometric RMSE And Average Disparity Error';
   
 % % Initialization bag  
-path = '/home/kiki/ASL_ROS/new_code/stereo_camera_reconstruction/results/mapping/bag_';
-names = {'close_g0', 'close_g100000', 'far_g0', 'far_g10000'};
-labels = {'Close','Close with \gamma','Far','Far with \gamma'};
-fname = 'bag';
-title_error = 'Photometric RMSE';
+% path = '/home/kiki/ASL_ROS/new_code/stereo_camera_reconstruction/results/mapping/bag_';
+% names = {'close_g0', 'close_g100000', 'far_g0', 'far_g10000'};
+% labels = {'Close','Close with \gamma','Far','Far with \gamma'};
+% fname = 'bag';
+% title_error = 'Photometric RMSE';
 
 
 %% Plotting
 index_photometric = 2;
 index_disparity = 4;
 index_jacobian = 5;
+
 
 figure(1); hold on; grid on;
 figure(3); hold on; grid on;
@@ -36,6 +37,7 @@ for i = 1:length(names)
   plot(x(1,:), x(index_photometric,:), '-','Color',colors{i}) 
   
   figure(3) 
+  x(index_jacobian,:) = x(index_jacobian, :) / 7500;
   plot(x(1,:), x(index_jacobian,:), '-','Color',colors{i})
 end
 

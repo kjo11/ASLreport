@@ -2,7 +2,7 @@
 
 \subsection{Mapping And Localization Datasets}
 \frame{
-  \frametitle{Overview}
+  \frametitle{Overview Results}
   
 \begin{tabular}{l|c|c|c|}
     Dataset & Plane test & Middlebury \cite{Middlebury}& Inhouse \\
@@ -43,7 +43,6 @@
 \frame{
   \frametitle{Middlebury Dataset}
 
-    % \includegraphics[width=.24\textwidth]{figures/recycle0.png}
     
     \begin{tabular}{c|cc}
     groundtruth & $\beta = 1$ & $\beta = 10$ \\
@@ -70,11 +69,15 @@
 \frame{
   \frametitle{Middlebury Dataset}
 
-\resizebox{\linewidth}{!}{
+  \begin{columns}
+    \column{.79\linewidth}
+  \resizebox{\linewidth}{!}{
   \input{../../graphics/middlebury_photometric.tex}
   \input{../../graphics/middlebury_jacobian.tex}
-}
-  
+  }
+    \column{.2\linewidth}
+  \includegraphics[width=\textwidth]{figures/recycle0.png}
+  \end{columns}
 }
 
 \newlength{\colwidth}
@@ -165,4 +168,3 @@
 \end{columns}
 }
 
-%\frame{\frametitle{Simulation test case}}
