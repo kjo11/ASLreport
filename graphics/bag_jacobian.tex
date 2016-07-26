@@ -1,0 +1,175 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+\definecolor{mycolor2}{rgb}{0.85000,0.32500,0.09800}%
+\definecolor{mycolor3}{rgb}{0.92900,0.69400,0.12500}%
+\definecolor{mycolor4}{rgb}{0.49400,0.18400,0.55600}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=0.965\linewidth,
+height=0.75\linewidth,
+at={(0\linewidth,0\linewidth)},
+scale only axis,
+xmin=0,
+xmax=30,
+xlabel={Iteration},
+xmajorgrids,
+ymin=0,
+ymax=400000,
+ylabel={Jacobian Norm},
+ymajorgrids,
+axis background/.style={fill=white},
+title style={font=\bfseries},
+title={Jacobian Norm},
+axis x line*=bottom,
+axis y line*=left,
+legend style={legend cell align=left,align=left,draw=white!15!black}
+]
+\addplot [color=mycolor1,solid,line width=1.5pt]
+  table[row sep=crcr]{%
+0	210519\\
+1	240006\\
+2	258154\\
+3	287112\\
+4	330054\\
+5	350843\\
+6	268833\\
+7	245094\\
+8	203599\\
+9	194682\\
+10	160200\\
+11	131919\\
+12	125250\\
+13	149941\\
+14	114061\\
+15	139348\\
+16	130260\\
+17	150595\\
+18	143040\\
+19	153901\\
+20	126350\\
+21	128237\\
+22	132034\\
+23	137863\\
+24	131092\\
+25	125447\\
+26	126658\\
+27	137913\\
+28	129841\\
+29	146576\\
+};
+\addlegendentry{Close};
+
+\addplot [color=mycolor2,solid,line width=1.5pt]
+  table[row sep=crcr]{%
+0	210519\\
+1	239753\\
+2	258007\\
+3	295820\\
+4	328191\\
+5	322622\\
+6	279069\\
+7	240294\\
+8	226430\\
+9	187068\\
+10	151746\\
+11	141382\\
+12	115337\\
+13	108735\\
+14	115842\\
+15	129137\\
+16	127570\\
+17	139719\\
+18	109952\\
+19	93744.4\\
+20	100500\\
+21	95099.4\\
+22	104169\\
+23	81371.8\\
+24	80023.9\\
+25	74520\\
+26	65933.6\\
+27	73441.9\\
+28	72308.6\\
+29	76847.6\\
+};
+\addlegendentry{$\text{Close with }\gamma$};
+
+\addplot [color=mycolor3,solid,line width=1.5pt]
+  table[row sep=crcr]{%
+0	166070\\
+1	163590\\
+2	90838.4\\
+3	61707\\
+4	49874.4\\
+5	76525.3\\
+6	37761.5\\
+7	30959.2\\
+8	28507.6\\
+9	42416\\
+10	42583.1\\
+11	48292.2\\
+12	42527.5\\
+13	46580.8\\
+14	41755.5\\
+15	46216.1\\
+16	46386.2\\
+17	57637.7\\
+18	46537.3\\
+19	51450\\
+20	41302.8\\
+21	49818.3\\
+22	48522.9\\
+23	42631\\
+24	47402.6\\
+25	56336.6\\
+26	51211.4\\
+27	54748\\
+28	43918.9\\
+29	50631.8\\
+};
+\addlegendentry{Far};
+
+\addplot [color=mycolor4,solid,line width=1.5pt]
+  table[row sep=crcr]{%
+0	166070\\
+1	163756\\
+2	89574.2\\
+3	56230\\
+4	51859.5\\
+5	74323.7\\
+6	29301.5\\
+7	21812.1\\
+8	27596.8\\
+9	20839.3\\
+10	23156.1\\
+11	28213.3\\
+12	30951.1\\
+13	30185.9\\
+14	25837\\
+15	29388.3\\
+16	37398.4\\
+17	31418.8\\
+18	34153.1\\
+19	29259.4\\
+20	36066.7\\
+21	30378.3\\
+22	37186.6\\
+23	33184.2\\
+24	41179.9\\
+25	34867.3\\
+26	41888.4\\
+27	55782\\
+28	45930\\
+29	45676.5\\
+};
+\addlegendentry{$\text{Far with }\gamma$};
+
+\end{axis}
+\end{tikzpicture}%

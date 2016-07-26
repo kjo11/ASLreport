@@ -1,0 +1,152 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+\definecolor{mycolor2}{rgb}{0.85000,0.32500,0.09800}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=0.965\linewidth,
+height=0.75\linewidth,
+at={(0\linewidth,0\linewidth)},
+scale only axis,
+xmin=0,
+xmax=11,
+xlabel={Iteration},
+xmajorgrids,
+ymin=0,
+ymax=0.4,
+ylabel={Error in y [mm]},
+ymajorgrids,
+axis background/.style={fill=white},
+title style={font=\bfseries},
+title={Plane Localization Convergence},
+axis x line*=bottom,
+axis y line*=left
+]
+\addplot [color=mycolor1,solid,line width=1.5pt,forget plot]
+  table[row sep=crcr]{%
+0	0.1\\
+1	0.0552742\\
+2	0.0159614\\
+3	0.00519188\\
+4	0.00353866\\
+5	0.00336784\\
+6	0.00309508\\
+7	0.0032684\\
+8	0.00307508\\
+9	0.00326583\\
+10	0.00307747\\
+11	0.0032471\\
+};
+\addplot [color=mycolor2,dashed,line width=1.5pt,forget plot]
+  table[row sep=crcr]{%
+0	0.1\\
+1	0.0563139\\
+2	0.0170724\\
+3	0.00334387\\
+4	0.00314543\\
+5	0.00311536\\
+6	0.00311098\\
+7	0.00312023\\
+8	0.00311242\\
+9	0.00312136\\
+10	0.00311351\\
+11	0.00312245\\
+};
+\addplot [color=mycolor1,solid,line width=1.5pt,forget plot]
+  table[row sep=crcr]{%
+0	0.2\\
+1	0.16867\\
+2	0.136364\\
+3	0.100246\\
+4	0.0588691\\
+5	0.0221549\\
+6	0.00416914\\
+7	0.00237196\\
+8	0.000689942\\
+9	0.000798152\\
+10	0.000691048\\
+11	0.000709815\\
+};
+\addplot [color=mycolor1,solid,line width=1.5pt,forget plot]
+  table[row sep=crcr]{%
+0	0.3\\
+1	0.273612\\
+2	0.247162\\
+3	0.218541\\
+4	0.187843\\
+5	0.151828\\
+6	0.111773\\
+7	0.0755951\\
+8	0.0493112\\
+9	0.0340084\\
+10	0.0257621\\
+11	0.0208899\\
+};
+\addplot [color=mycolor1,solid,line width=1.5pt,forget plot]
+  table[row sep=crcr]{%
+0	0.4\\
+1	0.370421\\
+2	0.346143\\
+3	0.323836\\
+4	0.301818\\
+5	0.279588\\
+6	0.258494\\
+7	0.239443\\
+8	0.222358\\
+9	0.20674\\
+10	0.192015\\
+11	0.177124\\
+};
+\addplot [color=mycolor2,dashed,line width=1.5pt,forget plot]
+  table[row sep=crcr]{%
+0	0.2\\
+1	0.169601\\
+2	0.137225\\
+3	0.101266\\
+4	0.0599828\\
+5	0.0218772\\
+6	0.00242287\\
+7	0.000595411\\
+8	0.000712633\\
+9	0.000712054\\
+10	0.000713535\\
+11	0.000714452\\
+};
+\addplot [color=mycolor2,dashed,line width=1.5pt,forget plot]
+  table[row sep=crcr]{%
+0	0.3\\
+1	0.274585\\
+2	0.247557\\
+3	0.21933\\
+4	0.188636\\
+5	0.153657\\
+6	0.11455\\
+7	0.0756737\\
+8	0.0457518\\
+9	0.0280065\\
+10	0.0183363\\
+11	0.0123894\\
+};
+\addplot [color=mycolor2,dashed,line width=1.5pt,forget plot]
+  table[row sep=crcr]{%
+0	0.4\\
+1	0.37157\\
+2	0.350122\\
+3	0.330747\\
+4	0.311372\\
+5	0.291422\\
+6	0.271019\\
+7	0.250799\\
+8	0.231631\\
+9	0.212737\\
+10	0.192642\\
+11	0.169652\\
+};
+\end{axis}
+\end{tikzpicture}%
