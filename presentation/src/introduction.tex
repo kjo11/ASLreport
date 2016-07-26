@@ -4,35 +4,40 @@
 \frame{
   \frametitle{Dense SLAM with B-Splines}
 
-  Picture of Sparse SLAM 
-  Picture of Dense SLAM
+  \begin{figure}[]
+    \centering
+    \begin{subfigure}{.49\linewidth}
+      \includegraphics[width=\linewidth]{figures/sparse.png}
+        \caption{Sparse SLAM (PTAM, \cite{PTAM})}
+    \end{subfigure}
+    \begin{subfigure}{.49\linewidth}
+      \includegraphics[width=\linewidth]{figures/dense.png}
+        \caption{Dense SLAM (LSD-SLAM, \cite{LSD-SLAM})}
+    \end{subfigure}
+  \end{figure}
 }
 
 \subsection{Project Goals}
 \frame{
-  \frametitle{Project Goal and Methodology}
+  \frametitle{Stereo Surface Reconstruction And Localization}
 
   Create framework for surface reconstruction and localization using moving
-  stereo camera based on moving monocular camera case. 
+  stereo camera. 
 
-  \begin{columns}
-    \column{0.35\textwidth}
-
-    Added functionalities
+  \begin{itemize}
+    \item \textit{Added functionalities}
     \begin{itemize}
       \item Create spline surface reprensentation from static stereo camera.  
       \item Localize new stereo camera position using obtained map.
     \end{itemize}
 
-      \column{0.65\textwidth}
-    Methodology
+  \item \textit{Methodology}
     \begin{itemize}
-    \item Simulation environment \ros with \rviz for pointcloud and
+      \item \textbf{Simulation environment}: \ros with \rviz for pointcloud and
       \opencv for image handling.
-      \item Implementation of optimization algorithm using \eigen 's
-      sparse matrix solvers.
-      \item Localization method using photometric errors only and generic
-        rotation representation
+    \item \textbf{Optimization}: own implementation of optimization algorithm using \eigen 's sparse matrix solvers.
+    \item \textbf{Hardware}: stereo camera data from \rovio sensor,
+      \textit{MacBook Pro} with Intel Core 2.7MHz, 4 cores.
     \end{itemize}
-  \end{columns}
+\end{itemize}
 }

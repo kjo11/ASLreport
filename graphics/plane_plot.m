@@ -18,13 +18,11 @@ fig = figure;
 plot(x3(1,:), x3(2,:), 'o'); hold on;
 plot(x2(1,:), x2(2,:), 'x') 
 plot(x1(1,:), x1(2,:), '*') 
-axis([-9, 5, 0, 35]);
+axis([-9, 5, 0, 35]);matlab2tikz('planetest.tex','width','\linewidth')
 title('Convergence Study Plane Test');
 ylims=get(gca,'ylim');
 plot([3.0,3.0],ylims)
 plot([1.3178,1.3178],ylims)
 xlabel('Initialization [m]'), ylabel('No. Iterations');
 legend('b=1','b = 100', 'b = 1000','Camera location','Plane location','location','southwest')%,'orientation','horizontal');
-saveas(fig, '../presentation/src/figures/plane_convergence.png');
-
-matlab2tikz('planetest.tex','width','\linewidth')
+matlab2tikz('planetest.tex','width','\textwidth')

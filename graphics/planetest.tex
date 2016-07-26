@@ -13,9 +13,9 @@
 \begin{tikzpicture}
 
 \begin{axis}[%
-width=0.969\linewidth,
-height=0.75\linewidth,
-at={(0\linewidth,0\linewidth)},
+width=0.965\textwidth,
+height=0.75\textwidth,
+at={(0\textwidth,0\textwidth)},
 scale only axis,
 xmin=-9,
 xmax=5,
@@ -28,7 +28,7 @@ title style={font=\bfseries},
 title={Convergence Study Plane Test},
 legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=left,draw=white!15!black}
 ]
-\addplot [color=mycolor1,line width=1.5pt,mark size=5.0pt,only marks,mark=o,mark options={solid}]
+\addplot [color=mycolor1,line width=1.5pt,mark size=2.5pt,only marks,mark=o,mark options={solid}]
   table[row sep=crcr]{%
 -0.2	6\\
 0.2	4\\
@@ -50,7 +50,7 @@ legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=le
 };
 \addlegendentry{b=1};
 
-\addplot [color=mycolor2,line width=1.5pt,mark size=5.0pt,only marks,mark=x,mark options={solid}]
+\addplot [color=mycolor2,line width=1.5pt,mark size=2.5pt,only marks,mark=x,mark options={solid}]
   table[row sep=crcr]{%
 -20	30\\
 -15	30\\
@@ -86,7 +86,7 @@ legend style={at={(0.03,0.03)},anchor=south west,legend cell align=left,align=le
 };
 \addlegendentry{b = 100};
 
-\addplot [color=mycolor3,line width=1.5pt,mark size=5.0pt,only marks,mark=asterisk,mark options={solid}]
+\addplot [color=mycolor3,line width=1.5pt,mark size=2.5pt,only marks,mark=asterisk,mark options={solid}]
   table[row sep=crcr]{%
 -20	30\\
 -10	30\\

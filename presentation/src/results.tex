@@ -1,4 +1,4 @@
-\subsection{Results Mapping}
+\section{Results}
 
 \frame{
   \frametitle{Datasets and parameters}
@@ -27,36 +27,17 @@
 
 \subsection{Mapping}
 \frame{\frametitle{Plane test case}
-\begin{columns}
-  \column{.5\textwidth}
-
-  \begin{figure}[h!]
-\centering
-\resizebox{\linewidth}{!}{
-  \input{../../graphics/planetest.tex}
-}
-\end{figure}
-  \column{.5\textwidth}
-
-    \begin{figure}[H]
-    \begin{subfigure}{.2\linewidth}
-      \includegraphics[width=\textwidth]{figures/planetest1.png}
-    \end{subfigure}
-    \begin{subfigure}{.2\linewidth}
-      \includegraphics[width=\textwidth]{figures/planetest2.png}
-    \end{subfigure}
-  \end{figure}
-
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=.9\linewidth]{figures/planetest3d.png}
-  \end{figure}
-\end{columns}
+\begin{tabular}{cc}
+      \includegraphics[width=0.2\linewidth]{figures/planetest1.png} &
+      \includegraphics[width=0.2\linewidth]{figures/planetest2.png} \\
+      \resizebox{0.45\linewidth}{!}{\input{../../graphics/planetest.tex}} &
+    \includegraphics[valign=b,width=.35\linewidth]{figures/planetest3d.png}\\
+\end{tabular}
 }
 
 %\frame{\frametitle{Simulation test case}}
 \frame{
-  \frametitle{Middlebury dataset}
+  \frametitle{Middlebury dataset results}
   
   \begin{figure}[H]
   \begin{subfigure}{.2\linewidth}
@@ -97,19 +78,24 @@
 }
 
 \frame{
-  \frametitle{Inhouse dataset}
+  \frametitle{Middlebury dataset convergence}
 
-  Parameters: 
-  $\beta = 10$
-  $\gamma = 100e3$
-  $d = 100$
+\resizebox{\linewidth}{!}{
+  \input{../../graphics/middlebury_photometric.tex}
+  \input{../../graphics/middlebury_jacobian.tex}
+}
+  
+}
+
+\frame{
+  \frametitle{Inhouse dataset results}
 
   \scalebox{.9}{
-    \begin{tabularx}{\textwidth}{X c c c}
-  Parameters: \newline
+    \begin{tabularx}{\textwidth}{Xr c c c}
+      \footnotesize
   $\beta = 10$ \newline
-  $\gamma = 1e6$ \newline
-  $d = 100$ &
+  $\gamma = 1e5$
+    &
     \multirow{2}{*}{
     \includegraphics[valign=t,width=.25\textwidth]{figures/bag_far_gt.png}
     } &
@@ -119,6 +105,9 @@
     \includegraphics[valign=t,width=.2\textwidth]{figures/disparity_map_far_hr.png} \\
     & & &
     \includegraphics[valign=t,width=.2\textwidth]{figures/disparity_gt_far.png} \\
+      \footnotesize
+  $\beta = 10$ \newline
+  $\gamma = 1e5$ 
     & \multirow{2}{*}{
     \includegraphics[valign=t,width=.25\textwidth]{figures/bag_close_gt.png} 
     } &
@@ -133,7 +122,23 @@
 
 }
 
+\frame{
+  \frametitle{Inhouse dataset convergence}
+  \resizebox{\linewidth}{!}{
+    \input{../../graphics/bag_photometric.tex}
+    \input{../../graphics/bag_jacobian.tex}
+  }
+
+}
+
 \subsection{Localization}
-\frame{\frametitle{Plane test case}}
+\frame{
+  \frametitle{Plane Test}
+
+\resizebox{\linewidth}{!}{
+  \input{../../graphics/localization_,x.tex}
+  \input{../../graphics/localization_,z.tex}
+}
+}
 
 %\frame{\frametitle{Simulation test case}}

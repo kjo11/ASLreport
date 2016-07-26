@@ -1,26 +1,32 @@
 \subsection{Theoretical Concepts}
 \frame{
-  \frametitle{B-Splines for surface representation}
+  \frametitle{B-Splines for Surface Representation}
   \textit{Splines}: piecewise polynomial function of degree <$d$.
-
   \textit{B(asis)-Splines}: Specific choice of finite-support splines calculated
   by \textit{Cox de Boor} recursion formula (support $s = d + 1$).
 
       \begin{figure}[h!]
         \centering
-        \includegraphics[width=.5\textwidth]{figures/degrees.png}
+        \includegraphics[width=.4\textwidth]{figures/degrees.png}
       \end{figure}
 
+      \vspace{-1em}
+
       \begin{columns}
-        \column{.6\textwidth}
+        \column{.5\textwidth}
 
       \begin{figure}[h!]
         \centering
-        \includegraphics[width=\linewidth]{figures/spline.png}
+        \includegraphics[width=.9\linewidth]{figures/spline.png}
+        % \caption{Quadratic spline basis functions and resulting spline surface in
+        % 1D.}
         \label{fig:splines}
       \end{figure}
 
-        \column{.4\textwidth}
+     % with $k$ the index of the first non-zero spline function for $x_j$ and 
+     % $s$ is the support of the spline function ($s = d + 1$).
+
+        \column{.5\textwidth}
      \begin{align*}
        h(x_j) &= \sum_{i=0}^{\g{M}}\gi{a} h_i(x_j)\\
        &= \sum_{i=k}^{k + \g{s}} \gi{a} h_i(x_j)\text{, for } j = 1 \ldots \g{N}
@@ -30,14 +36,14 @@
 }
 
 \frame{
-  \frametitle{Camera setup}
+  \frametitle{Stereo Camera Setup}
 
   \begin{columns}
     \column{.5\linewidth}
 
   \begin{figure}[h!]
     \centering
-    \includegraphics[width=.8\linewidth]{figures/camerasetup.png}
+    \includegraphics[width=.6\linewidth]{figures/camerasetup.png}
   \end{figure}
     
     \column{.5\linewidth}
@@ -54,7 +60,7 @@
 \end{columns}
 
 \vspace{1em}
-If stereo rotation matrices $\g{R} := \g{csc}$ and baseline $T_x := \g{srcc}$
+If stereo rotation matrices $\g{R} := \g{csc}$ and baseline $\vc T_x := \g{srcc}$
 are known, one pose of $\{ \g{xi}_{C_1}, \g{xi}_{C_2}, \g{xi}_S \}$ is
 sufficient for all poses to be defined.
 }
@@ -64,6 +70,8 @@ sufficient for all poses to be defined.
 
   \begin{columns}
     \column{0.35\linewidth}
+
+    \vspace{-1em}
   
   \begin{figure}[h!]
     \centering
@@ -79,13 +87,15 @@ sufficient for all poses to be defined.
     \label{fig:pixels}
   \end{figure}
 
+  \vspace{-1em}
+
   \begin{figure}[h!]
     \centering
-    \includegraphics[width=\linewidth]{figures/mapping.png}
+    \includegraphics[width=.8\linewidth]{figures/mapping.png}
     \label{fig:photometric}
   \end{figure}
 
-    \column{0.65\linewidth}
+    \column{0.64\linewidth}
 
     \only<1-1>{
 
@@ -99,10 +109,11 @@ sufficient for all poses to be defined.
     with $I_1$, $I_2$ interpolated intensities at the locations $\vc u_{j,k}$ in camera
     $k = 1$ and $k=2$.
 
+    \vspace{-1em}
+
   \begin{align*}
     \vc u_{j,k} &= \vc K_k D_k(\g{Tk}(\g{mrmx}))) \\
-    \g{Tk}(\g{mrmx}) &= \g{pi}(\g{crcx}) \\
-    &= \g{pi}(\g{ccm} (\g{mrmx} - \g{mrmc})) \hspace{1em} 
+    \g{Tk}(\g{mrmx}) &= \g{pi}(\g{ccm} (\g{mrmx} - \g{mrmc})) \hspace{1em} 
     \label{eq:pixel}
   \end{align*}
 
@@ -114,20 +125,14 @@ sufficient for all poses to be defined.
 }
     \only<2-2>{
 
-  The analytical Jacobian 
-
   \begin{equation*}
     \g{Jrs} = \frac{\partial \vc r(\g{a})}{\partial\g{a}} \in\mathbb{R}^{\g{N}x\g{M}}
   \end{equation*}
        
-  is obtained by the chain rule:
-
   \begin{align*} 
     \g{Jrs} &= (\vc J_{pixel, 1} \vc J_{camera, 1}(\g{mrmx}) \\
-    &- \vc J_{pixel, 2} \vc J_{camera, 2}(\g{mrmx})) \vc J_{splines} \text{ ,}
+    &- \vc J_{pixel, 2} \vc J_{camera, 2}(\g{mrmx})) \vc J_{splines} \text{ .}
   \end{align*}
-
-  with 
 
   \begin{align*}
     \vc J_{pixel, k} &= \frac{\partial I_k(\vc u_{k})}{\partial \vc{\tilde{u}}_{k}},
@@ -145,25 +150,30 @@ sufficient for all poses to be defined.
   \frametitle{Optimization problem for mapping}
 
   \begin{align*}
-    \giii{a} &= \argmin{\g{a}\in\mathbb{R}^{\g{M}}} f(\g{a}) \\
-             &= \argmin{\g{a}\in\mathbb{R}^{\g{M}}} \frac{1}{2} (\sum_{j =
+    \giii{a} &= \argmin{\g{a}\in\mathbb{R}^{\g{M}}} f(\g{a}) = \argmin{\g{a}\in\mathbb{R}^{\g{M}}} \frac{1}{2} (\sum_{j =
              0}^{\g{N}} \textcolor{red}{w_j} r_j(\g{a})^2
     + \textcolor{blue}{\beta \g{a}^T \vc B \g{a}} 
     + \textcolor{green}{\gamma \g{a}^T \vc G \g{a}}) \text{ ,}
   \end{align*}
 
   with 
+
   \begin{itemize}
     \item \textcolor{blue}{bending} and \textcolor{green}{gradient} energy regularization terms
       and
     \item \textcolor{red}{weight} representing the average visibility of point $j$.
   \end{itemize}
 
-  \begin{figure}[h!]
-    \centering
-    %\includegraphics[width=.3\linewidth]{figures/visibility.png}
-  \end{figure}
-  
+
+  \vspace{1em}
+  Solved using Gauss-Newton iterations: 
+
+  \centering{
+\begin{align*}
+  \g{a}_{k+1} &= \g{a}_k + \alpha_k \mathbf p_k^{GN}\\
+  \g{Jf}^T \g{Jf} \mathbf p_k^{GN} &= - \g{Jf} ^T \mathbf r_k(\g{a})
+\end{align*}
+}
 }
 
 \frame{
@@ -196,14 +206,10 @@ sufficient for all poses to be defined.
   }
     \only<2-2>{
 
-The analytical Jacobian
-
 \begin{equation*}
   \g{Jrp} = \frac{\partial \vc r(\g{xi})}{\partial\g{xi}} \in\mathbb{R}^{\g{N}x6}
 \end{equation*}
      
-is obtained by the chain rule:
-
     \begin{align*} 
       \g{Jrp} &= \vc J_{pixel} \vc J_{camera}(\g{xi})
     \end{align*}
@@ -227,4 +233,12 @@ is obtained by the chain rule:
     \giii{xi} =  \argmin{\giii{xi}\in\mathbb{R}^6} \frac{1}{2} 
     \sum_{j = 0}^{\g{N}} r_j(\g{xi})^2
   \end{equation*}
+  
+  \vspace{1em}
+  Solved using Gauss-Newton iterations: 
+
+\begin{align*}
+  \g{xi}_{k+1} &= \g{xi}_k \boxplus \alpha_k \mathbf p_k^{GN}\\
+  \g{Jrp}^T \g{Jrp} \mathbf p_k^{GN} &= - \g{Jrp} ^T \mathbf r_k(\g{xi})
+\end{align*}
 }

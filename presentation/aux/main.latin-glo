@@ -14,6 +14,6 @@
 (indexentry :tkey (("Tk" "\\glossentry{Tk}") ) :locref "{}{7}" :attr "pageglsnumberformat" ) 
 (indexentry :tkey (("rmx" "\\glossentry{mrmx}") ) :locref "{}{7}" :attr "pageglsnumberformat" ) 
 (indexentry :tkey (("pi" "\\glossentry{pi}") ) :locref "{}{7}" :attr "pageglsnumberformat" ) 
-(indexentry :tkey (("rcx" "\\glossentry{crcx}") ) :locref "{}{7}" :attr "pageglsnumberformat" ) 
 (indexentry :tkey (("Jrs" "\\glossentry{Jrs}") ) :locref "{}{8}" :attr "pageglsnumberformat" ) 
+(indexentry :tkey (("Jf" "\\glossentry{Jf}") ) :locref "{}{9}" :attr "pageglsnumberformat" ) 
 (indexentry :tkey (("Jrp" "\\glossentry{Jrp}") ) :locref "{}{11}" :attr "pageglsnumberformat" ) 
