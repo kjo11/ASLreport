@@ -1,0 +1,27 @@
+\section{Localization}
+
+\subsection{Photometric Error Calculation}
+    
+\begin{align*}
+  \gi{r}(\g{xi}) &= I_1(\gi{u}(\g{xi})) - \hat{I}(x_j, y_j) \\
+  \gii{r}(\g{xi}) &= I_2(\gii{u}(\g{xi})) - \hat{I}(x_j, y_j)
+\end{align*}
+    
+\begin{equation*}
+  \g{Jrp} = \frac{\partial \g{r}(\g{xi})}{\partial\g{xi}}
+  \in\mathbb{R}^{\g{N}\times 6}
+\end{equation*}
+
+\subsection{Optimization Setup}
+
+\begin{equation*}
+  \giii{xi} =  \argmin{\giii{xi}\in\mathbb{R}^6} \frac{1}{2} 
+  \sum_{j = 0}^{\g{N}} r_j(\g{xi})^2
+\end{equation*}
+
+\subsection{Solver Scheme}
+    
+\begin{align*}
+  \g{xi}_{k+1} &= \g{xi}_k \boxplus \mathbf p_k^{GN}\\
+  \g{Jrp}^T \g{Jrp} \mathbf p_k^{GN} &= - \g{Jrp} ^T \mathbf r_k(\g{xi})
+\end{align*}

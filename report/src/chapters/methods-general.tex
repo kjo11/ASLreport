@@ -1,0 +1,47 @@
+\section{General}
+
+\subsection{Coordinate Systems}
+  
+Camera poses described by \g{mrmc} and \g{ccm} for $k = 1, 2$ or 
+  \begin{align*}
+    \g{xi}_{C_k} &:= \begin{bmatrix} \g{mrmc}, \g{phic} \end{bmatrix}^T \\
+    \g{xi}_S &:= \begin{bmatrix} \g{mrms}, \g{phis} \end{bmatrix}^T
+  \end{align*}
+  
+with \g{phic}, \g{phis} $\in\mathbb{R}^3$ \cite{Primer}
+
+How are the coordinate systems defined and related w.r.t each other?
+
+\subsection{Camera Projections}
+
+How to obtain the pixel coordinates from map points and jacobians.
+      
+    \begin{align*}
+      \vc u_{j,k} &= \vc K_k D_k(\g{Tk}(\g{mrmx}))) \\
+      \g{Tk}(\g{mrmx}) &= \g{pi}(\g{ccm} (\g{mrmx} - \g{mrmc})) \hspace{1em} 
+      \label{eq:pixel}
+    \end{align*}
+
+    with $I_1$, $I_2$ interpolated intensities 
+
+    \begin{equation*}
+      \g{mrmx} = \begin{bmatrix} x_j, y_j, h(x_j,y_j)(\g{a})\end{bmatrix} ^T
+    \end{equation*}
+
+\subsection{Interpolations}
+
+\subsubsection{Splines} 
+
+Interpolations used for splines calculation
+     
+\begin{align*}
+ h(x_j) &= \sum_{i=0}^{\g{M}}\gi{a} h_i(x_j)\\
+ &= \sum_{i=k}^{k + \g{s}} \gi{a} h_i(x_j)\text{, for } j = 1 \ldots \g{N}
+ \label{test}
+\end{align*}
+
+\subsubsection{Image interpolation} 
+
+Interpolation used to interpolate between pixels
+
+

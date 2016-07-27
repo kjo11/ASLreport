@@ -1,0 +1,41 @@
+\documentclass{report}
+
+\input{packages}
+\input{definitions}
+\input{glossary}
+
+\begin{document}
+
+\title{Visual Terrain Estimation For Legged Robots}
+\author{Frederike Dümbgen}
+
+\maketitle
+
+\tableofcontents
+
+\chapter{Introduction}
+\input{chapters/introduction.tex}
+\chapter{Methods}
+\input{chapters/methods-general.tex}
+\input{chapters/methods-mapping.tex}
+\input{chapters/methods-localization.tex}
+\chapter{Results}
+\input{chapters/results-datasets.tex}
+\input{chapters/results-mapping.tex}
+\input{chapters/results-localization.tex}
+\chapter{Conclusion}
+\input{chapters/conclusion.tex}
+
+\begin{appendices}
+
+\chapter{Parameters}
+\input{appendix/parameters.tex}
+
+\end{appendices}
+
+
+%\nocite{*} %Show everything in bibliography.
+\bibliographystyle{siam}
+\bibliography{bibliography}
+
+\end{document}

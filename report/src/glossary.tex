@@ -1,0 +1,37 @@
+\setglossarystyle{long}
+
+\newglossary*{latin}{Latin Symbols}
+
+\makeglossaries
+
+% Optimization
+\addlatelement[a]{a}{a}{Spline coefficients}
+\addlatelement[xi]{xi}{\ensuremath{\xi}}{Camera pose}
+\addlatcameras[r]{r}{r}{Residual vector}
+\addlatcameras[u]{u}{\vc u}{Pixel vector}
+\addlat[Jrs]{Jrs}{\ensuremath{\vc J_r(\vc a)}}{Photometric error Jacobian with respect to spline coefficients}
+\addlat[Jrp]{Jrp}{\ensuremath{\vc J_r(\vc \xi)}}{Photometric error Jacobian with respect to camera position}
+\addlat[Jf]{Jf}{\ensuremath{\vc J_f(\vc a)}}{Cost function Jacobian}
+
+\addlat[pk]{pk}{\ensuremath{\vc p_k^{GN}}}{Gauss-Newton optimization direction}
+\addlat[N]{N}{N}{Number of map points}
+\addlat[M]{M}{M}{Number of spline coefficients}
+\addlat[s]{s}{s}{Support of spline functions}
+
+
+
+% Camera parameters
+\addlat[Kk]{Kk}{\ensuremath{\vc K_k }}{Camera matrix (intrinsic parameters)}
+\addlat[R]{R}{\ensuremath{\vc{R}_k}}{Passive stereo to camera rotation matrix}
+\addlat[Tk]{Tk}{\ensuremath{\vc T_k}}{Object to camera space transformation}
+\addlat[pi]{pi}{\ensuremath{\vc \pi}}{Pinhole camera projection}
+
+\addlat[rcc]{srcc}{\ensuremath{_{S}\vc{r}_{C_1C_2}}}{Baseline vector}
+\addlat[rmx]{mrmx}{\ensuremath{_{M}\vc{r}_{MX_j}}}{Grid point $j$ in map coordinates}
+\addlat[rmc]{mrmc}{\ensuremath{_{M}\vc{r}_{MC_k}}}{Camera center $k$ in map coordinates} 
+\addlat[rms]{mrms}{\ensuremath{_{M}\vc{r}_{MS}}}{Stereo center in map coordinates} 
+\addlat[rcx]{crcx}{\ensuremath{_{C_{k}}\vc{r}_{C_kX_j}}}{Grid point $j$ in camera coordinates}
+\addlat[ccm]{ccm}{\ensuremath{\vc{C}_{C_kM}}}{Passive camera to map rotation matrix} 
+\addlat[csc]{csc}{\ensuremath{\vc{C}_{SC}}}{Passive camera to stereo rotation matrix = R.}
+\addlat[phic]{phic}{\ensuremath{\vc{\Phi}_{C_kM}}}{Camera vs. map frame rotation vector}
+\addlat[phis]{phis}{\ensuremath{\vc{\Phi}_{SM}}}{Stereo vs. map frame rotation vector}

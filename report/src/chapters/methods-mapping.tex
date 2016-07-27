@@ -1,0 +1,34 @@
+\section{Mapping}
+
+\subsection{Photometric Error Calculation}
+
+Photometric error of grid point ${x_j}, {y_j}$:
+
+\begin{equation*}
+  \giii{r} (\g{a}) = I_1(\gi{u}(\g{a})) - I_2(\gii{u}(\g{a})) \text{ ,}
+  \label{eq:photometric}
+\end{equation*}
+
+\subsection{Optimization Setup}
+  
+\begin{align*}
+    \giii{a} &= \argmin{\g{a}\in\mathbb{R}^{\g{M}}} f(\g{a}) 
+    = \argmin{\g{a}\in\mathbb{R}^{\g{M}}} \frac{1}{2} (\sum_{j = 0}^{\g{N}} 
+    w_j r_j(\g{a})^2
+    + \beta \g{a}^T \vc B \g{a}
+    + \gamma \g{a}^T \vc G \g{a}) \text{ ,}
+\end{align*}
+
+\begin{equation*}
+  \g{Jrs} = \frac{\partial \vc r(\g{a})}{\partial\g{a}}
+  \in\mathbb{R}^{\g{N}\times\g{M}}
+\end{equation*}
+
+\subsection{Solver Scheme}
+    
+\begin{align*}
+  \g{a}_{k+1} &= \g{a}_k + \g{pk}\\
+  \g{Jrs}^T \g{Jrs} \g{pk} &= - \g{Jrs} ^T \mathbf r(\g{a})
+\end{align*}
+
+
