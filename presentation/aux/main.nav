@@ -17,50 +17,48 @@
 \headcommand {\beamer@framepages {5}{5}}
 \headcommand {\slideentry {1}{3}{3}{6/6}{Methods}{0}}
 \headcommand {\beamer@framepages {6}{6}}
-\headcommand {\slideentry {1}{3}{4}{7/8}{Methods}{0}}
-\headcommand {\beamer@framepages {7}{8}}
-\headcommand {\slideentry {1}{3}{5}{9/9}{Methods}{0}}
+\headcommand {\slideentry {1}{3}{4}{7/7}{Methods}{0}}
+\headcommand {\beamer@framepages {7}{7}}
+\headcommand {\slideentry {1}{3}{5}{8/8}{Methods}{0}}
+\headcommand {\beamer@framepages {8}{8}}
+\headcommand {\slideentry {1}{3}{6}{9/9}{Methods}{0}}
 \headcommand {\beamer@framepages {9}{9}}
-\headcommand {\slideentry {1}{3}{6}{10/11}{Methods}{0}}
-\headcommand {\beamer@framepages {10}{11}}
-\headcommand {\slideentry {1}{3}{7}{12/12}{Methods}{0}}
+\headcommand {\sectionentry {2}{Results}{10}{Results}{0}}
+\headcommand {\beamer@sectionpages {2}{9}}
+\headcommand {\beamer@subsectionpages {4}{9}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{10}{Mapping And Localization Datasets}}\headcommand {\beamer@subsectionpages {10}{9}}
+\headcommand {\slideentry {2}{1}{1}{10/10}{Mapping And Localization Datasets}{0}}
+\headcommand {\beamer@framepages {10}{10}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{11}{Mapping Results}}\headcommand {\beamer@subsectionpages {10}{10}}
+\headcommand {\slideentry {2}{2}{1}{11/11}{Mapping Results}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\slideentry {2}{2}{2}{12/12}{Mapping Results}{0}}
 \headcommand {\beamer@framepages {12}{12}}
-\headcommand {\sectionentry {2}{Results}{13}{Results}{0}}
-\headcommand {\beamer@sectionpages {2}{12}}
-\headcommand {\beamer@subsectionpages {4}{12}}
-\headcommand {\beamer@subsectionentry {0}{2}{1}{13}{Mapping And Localization Datasets}}\headcommand {\beamer@subsectionpages {13}{12}}
-\headcommand {\slideentry {2}{1}{1}{13/13}{Mapping And Localization Datasets}{0}}
+\headcommand {\slideentry {2}{2}{3}{13/13}{Mapping Results}{0}}
 \headcommand {\beamer@framepages {13}{13}}
-\headcommand {\beamer@subsectionentry {0}{2}{2}{14}{Mapping Results}}\headcommand {\beamer@subsectionpages {13}{13}}
-\headcommand {\slideentry {2}{2}{1}{14/14}{Mapping Results}{0}}
+\headcommand {\slideentry {2}{2}{4}{14/14}{Mapping Results}{0}}
 \headcommand {\beamer@framepages {14}{14}}
-\headcommand {\slideentry {2}{2}{2}{15/15}{Mapping Results}{0}}
+\headcommand {\slideentry {2}{2}{5}{15/15}{Mapping Results}{0}}
 \headcommand {\beamer@framepages {15}{15}}
-\headcommand {\slideentry {2}{2}{3}{16/16}{Mapping Results}{0}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{16}{Localization Results}}\headcommand {\beamer@subsectionpages {11}{15}}
+\headcommand {\slideentry {2}{3}{1}{16/16}{Localization Results}{0}}
 \headcommand {\beamer@framepages {16}{16}}
-\headcommand {\slideentry {2}{2}{4}{17/17}{Mapping Results}{0}}
+\headcommand {\sectionentry {3}{Conclusion}{17}{Conclusion}{0}}
+\headcommand {\beamer@sectionpages {10}{16}}
+\headcommand {\beamer@subsectionpages {16}{16}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{17}{}}\headcommand {\beamer@subsectionpages {17}{16}}
+\headcommand {\slideentry {3}{1}{1}{17/17}{}{0}}
 \headcommand {\beamer@framepages {17}{17}}
-\headcommand {\slideentry {2}{2}{5}{18/18}{Mapping Results}{0}}
+\headcommand {\slideentry {3}{1}{2}{18/18}{}{0}}
 \headcommand {\beamer@framepages {18}{18}}
-\headcommand {\beamer@subsectionentry {0}{2}{3}{19}{Localization Results}}\headcommand {\beamer@subsectionpages {14}{18}}
-\headcommand {\slideentry {2}{3}{1}{19/19}{Localization Results}{0}}
+\headcommand {\slideentry {3}{1}{3}{19/19}{}{0}}
 \headcommand {\beamer@framepages {19}{19}}
-\headcommand {\sectionentry {3}{Conclusion}{20}{Conclusion}{0}}
-\headcommand {\beamer@sectionpages {13}{19}}
-\headcommand {\beamer@subsectionpages {19}{19}}
-\headcommand {\beamer@subsectionentry {0}{3}{1}{20}{}}\headcommand {\beamer@subsectionpages {20}{19}}
-\headcommand {\slideentry {3}{1}{1}{20/20}{}{0}}
+\headcommand {\slideentry {3}{1}{4}{20/20}{}{0}}
 \headcommand {\beamer@framepages {20}{20}}
-\headcommand {\slideentry {3}{1}{2}{21/21}{}{0}}
-\headcommand {\beamer@framepages {21}{21}}
-\headcommand {\slideentry {3}{1}{3}{22/22}{}{0}}
-\headcommand {\beamer@framepages {22}{22}}
-\headcommand {\slideentry {3}{1}{4}{23/23}{}{0}}
-\headcommand {\beamer@framepages {23}{23}}
-\headcommand {\slideentry {3}{1}{4}{23/24}{}{0}}
-\headcommand {\beamer@framepages {23}{24}}
-\headcommand {\beamer@partpages {1}{24}}
-\headcommand {\beamer@subsectionpages {20}{24}}
-\headcommand {\beamer@sectionpages {20}{24}}
-\headcommand {\beamer@documentpages {24}}
-\headcommand {\def \inserttotalframenumber {22}}
+\headcommand {\slideentry {3}{1}{4}{20/21}{}{0}}
+\headcommand {\beamer@framepages {20}{21}}
+\headcommand {\beamer@partpages {1}{21}}
+\headcommand {\beamer@subsectionpages {17}{21}}
+\headcommand {\beamer@sectionpages {17}{21}}
+\headcommand {\beamer@documentpages {21}}
+\headcommand {\def \inserttotalframenumber {21}}

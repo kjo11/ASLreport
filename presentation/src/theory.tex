@@ -58,7 +58,8 @@
 
 \vspace{1em}
 
-Relative position of $\{ \g{xi}_{C_1}, \g{xi}_{C_2}, \g{xi}_S \}$ stays fixed.
+\imp{Relative position of $\{ \g{xi}_{C_1}, \g{xi}_{C_2}, \g{xi}_S \}$ stays
+fixed}
 
 }
 
@@ -94,11 +95,10 @@ Relative position of $\{ \g{xi}_{C_1}, \g{xi}_{C_2}, \g{xi}_S \}$ stays fixed.
 
   \column{0.64\linewidth}
 
-    \only<1-1>{
+    % \only<1-1>{
 
       Photometric error of grid point $\textcolor{orange}{x_j},
       \textcolor{orange}{y_j}$:
-
     \begin{equation*}
       r_j(\textcolor{myblue}{\g{a}}) = I_1(\vc
       u_{j,1}(\textcolor{myblue}{\g{a}})) - I_2(\vc
@@ -106,39 +106,37 @@ Relative position of $\{ \g{xi}_{C_1}, \g{xi}_{C_2}, \g{xi}_S \}$ stays fixed.
       \label{eq:photometric}
     \end{equation*}
 
-    with $I_1$, $I_2$ interpolated intensities at the locations $\vc u_{j,k}$ in camera
-    $k = 1$ and $k=2$.
+    with $I_1$, $I_2$ interpolated intensities 
+
     \begin{align*}
       \vc u_{j,k} &= \vc K_k D_k(\g{Tk}(\g{mrmx}))) \\
       \g{Tk}(\g{mrmx}) &= \g{pi}(\g{ccm} (\g{mrmx} - \g{mrmc})) \hspace{1em} 
       \label{eq:pixel}
     \end{align*}
 
-    3D point given by spline map:
-
     \begin{equation*}
       \g{mrmx} = \begin{bmatrix} \textcolor{orange}{x_j},
         \textcolor{orange}{y_j}, h(\textcolor{orange}{x_j},
         \textcolor{orange}{y_j})(\textcolor{myblue}{\g{a}})\end{bmatrix} ^T
     \end{equation*}
-}
-    \only<2-2>{
+% }
+    % \only<2-2>{
 
-    \begin{equation*}
-      \g{Jrs} = \frac{\partial \vc r(\g{a})}{\partial\g{a}} \in\mathbb{R}^{\g{N}x\g{M}}
-    \end{equation*}
-    \begin{align*} 
-      \g{Jrs} &= (\vc J_{pixel, 1} \vc J_{camera, 1}(\g{mrmx}) \\
-      &- \vc J_{pixel, 2} \vc J_{camera, 2}(\g{mrmx})) \vc J_{splines} \text{ .}
-    \end{align*}
-    \begin{align*}
-      \vc J_{pixel, k} &= \frac{\partial I_k(\vc u_{k})}{\partial \vc{\tilde{u}}_{k}},
-      \hspace{1em}
-      \vc J_{camera, k}(\g{mrmx}) = \frac{\partial
-        \vc{\tilde{u}}_{k}}{\partial \g{mrmx}} \\
-      \vc J_{splines} &= \frac{\partial \g{mrmx}}{\partial \g{a}}
-    \end{align*}
-  }
+    % \begin{equation*}
+      % \g{Jrs} = \frac{\partial \vc r(\g{a})}{\partial\g{a}} \in\mathbb{R}^{\g{N}x\g{M}}
+    % \end{equation*}
+    % \begin{align*} 
+      % \g{Jrs} &= (\vc J_{pixel, 1} \vc J_{camera, 1}(\g{mrmx}) \\
+      % &- \vc J_{pixel, 2} \vc J_{camera, 2}(\g{mrmx})) \vc J_{splines} \text{ .}
+    % \end{align*}
+    % \begin{align*}
+      % \vc J_{pixel, k} = \frac{\partial I_k(\vc u_{k})}{\partial
+        % \vc{\tilde{u}}_{k}} &\text{ , } \vspace{1em} \vc J_{splines} = \frac{\partial
+          % \g{mrmx}}{\partial \g{a}} \\
+      % \vc J_{camera, k}(\g{mrmx}) &= \frac{\partial 
+        % \vc{\tilde{u}}_{k}}{\partial \g{mrmx}} 
+    % \end{align*}
+  % }
   \end{columns}
 }
 
@@ -164,12 +162,19 @@ Relative position of $\{ \g{xi}_{C_1}, \g{xi}_{C_2}, \g{xi}_S \}$ stays fixed.
   \vspace{1em}
   Solved using Gauss-Newton iterations: 
 
+  \begin{columns}
+  \column{.5\linewidth}
   \centering{
     \begin{align*}
     \g{a}_{k+1} &= \g{a}_k + \mathbf p_k^{GN}\\
     \g{Jrs}^T \g{Jrs} \mathbf p_k^{GN} &= - \g{Jrs} ^T \mathbf r(\g{a})
     \end{align*}
   }
+  \column{.5\linewidth}
+    \begin{equation*}
+      \g{Jrs} = \frac{\partial \vc r(\g{a})}{\partial\g{a}} \in\mathbb{R}^{\g{N}x\g{M}}
+    \end{equation*}
+  \end{columns}
 }
 
 \frame{
@@ -205,22 +210,22 @@ Relative position of $\{ \g{xi}_{C_1}, \g{xi}_{C_2}, \g{xi}_S \}$ stays fixed.
     % $k = 1$ and $k=2$ and $\hat{I}(x_j, y_j)$ the estimated intensity from
     % previous step.
   }
-    \only<2-2>{
+    % \only<2-2>{
 
-    \begin{equation*}
-      \g{Jrp} = \frac{\partial \vc r(\g{xi})}{\partial\g{xi}} \in\mathbb{R}^{\g{N}x6}
-    \end{equation*}
+    % \begin{equation*}
+      % \g{Jrp} = \frac{\partial \vc r(\g{xi})}{\partial\g{xi}} \in\mathbb{R}^{\g{N}x6}
+    % \end{equation*}
      
-    \begin{align*} 
-      \g{Jrp} &= \vc J_{pixel} \vc J_{camera}(\g{xi})
-    \end{align*}
+    % \begin{align*} 
+      % \g{Jrp} &= \vc J_{pixel} \vc J_{camera}(\g{xi})
+    % \end{align*}
 
-    \begin{align*}
-      \vc J_{pixel} = \frac{\partial I(\vc u)}{\partial \vc{\tilde{u}}},
-      \hspace{0.5em}
-      \vc J_{camera}(\g{xi}) = \frac{\partial \vc{\tilde{u}}}{\partial \g{xi}}
-    \end{align*}
-}
+    % \begin{align*}
+      % \vc J_{pixel} = \frac{\partial I(\vc u)}{\partial \vc{\tilde{u}}},
+      % \hspace{0.5em}
+      % \vc J_{camera}(\g{xi}) = \frac{\partial \vc{\tilde{u}}}{\partial \g{xi}}
+    % \end{align*}
+% }
 \end{columns}
 
 }
@@ -236,8 +241,16 @@ Relative position of $\{ \g{xi}_{C_1}, \g{xi}_{C_2}, \g{xi}_S \}$ stays fixed.
   \vspace{1em}
   Solved using Gauss-Newton iterations: 
 
+  \begin{columns}
+    \column{.5\linewidth}
   \begin{align*}
     \g{xi}_{k+1} &= \g{xi}_k \boxplus \mathbf p_k^{GN}\\
     \g{Jrp}^T \g{Jrp} \mathbf p_k^{GN} &= - \g{Jrp} ^T \mathbf r_k(\g{xi})
   \end{align*}
+    \column{.5\linewidth}
+    
+    \begin{equation*}
+      \g{Jrp} = \frac{\partial \vc r(\g{xi})}{\partial\g{xi}} \in\mathbb{R}^{\g{N}x6}
+    \end{equation*}
+  \end{columns}
 }
