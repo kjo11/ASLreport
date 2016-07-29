@@ -1,0 +1,24 @@
+\chapter{Methods}
+
+\section{Overview}
+
+The mapping and localization algorithm are both based on the minimization of
+photometric errors.
+
+The idea behind photometric error minimization for localization and mapping is
+that when the position of the test points with respect to the camera
+positions is correct, the image intensities of this point in both cameras are
+exactly the same and correspond to the actual color of that point in object
+space. 
+If the latter is not the case, the relative position of the map with respect to 
+the cameras has to be adjusted by tuning the height of the point (mapping) or 
+the position of the cameras (localization).
+
+Mappings from object points or camera positions to the camera model are highly
+non-linear because of the nature of (pinhole) camera projections and the
+non-linear image intensity function (\ref{sec:methods-mapping-photometric} and
+\ref{sec:methods-localization-photometric}). The resulting minimzation problem
+is therefore non-linear (\ref{sec:methods-mapping-optimization} and
+\ref{sec:methods-localization-optimization} convergence difficulties such as
+local minima and therefore occur, which yield the necessity of some tricks
+(\ref{sec:methods-mapping-schemes} and \ref{sec:methods-localization-schemes}).

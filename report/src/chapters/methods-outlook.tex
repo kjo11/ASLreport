@@ -1,0 +1,39 @@
+\section{Outlook}
+
+Both algorithms for localization and mapping being defined, it is interesting to
+consider different ways of combining them to improve the results.
+
+\subsection{Recursively solving the map}
+
+Once multiple measurements of the same map at \g{K} estimated positions are available, one can improve the
+accuracy of the map by combining these measurements to recursively solve for new
+spline estimates $\giii{a}$ after every new localization step.
+
+Having set up the residual vectors $\g{r}^i$ and Jacobians \gi{Jrs} at $i = 1
+\ldots \g{K}$ positions, the new optimization problem then reads
+ \begin{align*}
+  \giii{a} &= \argmin{\g{a}\inR{\g{M}}} \frac{1}{2} \left( \summ{i}{K} \summ{j}{N} 
+  w^i_j r^i_j(\g{a})^2
+  + \beta \g{a}^T \g{B} \g{a}
+  + \gamma \g{a}^T \g{G} \g{a} \right) \text{ ,}
+\end{align*}
+
+which yields the normal equations  
+
+\begin{equation}
+  \summ{i}{K} \left( {\gi{Jrs}}^T \gi{Jrs} \right) + \g{G} + \g{B}) \g{pk} = - \summ{i}{K}
+  {\gi{Jrs}}^T \g{r}^i(\g{a}) - \g{G}\g{a} - \g{B}\g{a} \text{ .}
+\end{equation}
+
+Further coniderations are necessary such as when a map is sufficiently converged to
+be used for further localization and when a localization is sufficiently
+converged to be used for further recursive mapping.
+
+\subsection{Extending the map}
+
+Although in this work, the map is of limited height and width, it would be
+interesting to consider making these limits variable so that the map can grow and a
+wider camera baseline can be eventually obtained. An appropriate critera for 
+adding new spline parameters to the map may be when the projected pixels start
+to only cover a minor fraction of the image.
+

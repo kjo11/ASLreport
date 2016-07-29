@@ -1,41 +1,60 @@
-\documentclass{report}
+\documentclass[noabstract,doubleheaders,onlytitle,titlepage,oneside,openright,11pt]{epflthesis}
+% \documentclass[doubleheaders,los,lof,lot,titlepage,oneside,openright,11pt]{epflthesis}
+\includeonly{chapters/basics}
 
 \input{packages}
 \input{definitions}
 \input{glossary}
-
-\begin{document}
+\makeglossaries
 
 \title{Visual Terrain Estimation For Legged Robots}
 \author{Frederike Dümbgen}
+\advisor{Alireza Karimi (EPFL)\\
+Michael Blösch (ETHZ) \\
+Philipp Krüsi (ETHZ) \\
+Dominik Schindler (ETHZ) }
+\submitdate{29 July 2016}
+\school{Ecole polytechnique fédérale de Lausanne}
+\dept{Mechanical Engineering}
+% \logo{figures/ABB_logo_small.png}
+\city{Zurich}
 
-\maketitle
+\printlos{%
+  \printglossary[type=latin]
+  % \printglossary[type=greek]
+}
 
-\tableofcontents
 
-\chapter{Introduction}
-\input{chapters/introduction.tex}
-\chapter{Methods}
-\input{chapters/methods-general.tex}
-\input{chapters/methods-mapping.tex}
-\input{chapters/methods-localization.tex}
-\chapter{Results}
-\input{chapters/results-datasets.tex}
-\input{chapters/results-mapping.tex}
-\input{chapters/results-localization.tex}
-\chapter{Conclusion}
-\input{chapters/conclusion.tex}
+\begin{document}
 
-\begin{appendices}
+% \maketitle
+% \tableofcontents
+% \chapter*{Symbols}
+% \printglossaries
 
-\chapter{Parameters}
-\input{appendix/parameters.tex}
+\include{chapters/introduction}
 
-\end{appendices}
+\include{chapters/basics}
 
+\include{chapters/methods-overview}
+\include{chapters/methods-mapping}
+\include{chapters/methods-localization}
+\include{chapters/methods-outlook}
+
+\include{chapters/results-datasets}
+\include{chapters/results-mapping}
+\include{chapters/results-localization}
+
+\include{chapters/conclusion}
+
+
+% \begin{appendices}
+  % \include{appendix/parameters}
+  % \include{appendix/planedataset}
+% \end{appendices}
 
 %\nocite{*} %Show everything in bibliography.
-\bibliographystyle{siam}
-\bibliography{bibliography}
+% \bibliographystyle{siam}
+% \bibliography{bibliography}
 
 \end{document}

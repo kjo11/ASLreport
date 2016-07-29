@@ -1,0 +1,253 @@
+\chapter{Notation and Basics}
+\section{Geometry}
+\subsection{Vectors and Coordinate Frames}
+
+The vector and coordinate frame notations used throughout this report follow the
+conventions introduced in \cite{coordinates}.
+If \g{Mf} is the coordinate frame associated with the map, and $A$, $B$ are two 
+3D points, then \g{arab} contains the coefficients of the vector pointing from $A$ to $B$ expressed in the map coordinate system.
+In the same manner, the rotation matrix \g{cba} is the (passive) matrix linking
+the coordinates in a frame $\mathcal{A}$ to the coorindates in $\mathcal{B}$ like
+
+\begin{equation}
+  \brab = \g{cba} \left( \g{arab} \right) \text{ .}
+\end{equation}
+
+\subsection{Rotation Representations}
+
+For convenient handling of rotations, i.e. their derivatives and updates, the
+rotation vectors \Phic, \Phis $\in\mathbb{R}^3$ are introduced as recommended in 
+\cite{Primer} to represent the relative orientations of the stereo and camera
+frames with respect to the map frame, respectively. The corresponding updates in
+rotation are denoted by \phic and \phis.
+
+The new rotation $\Phic^{k+1}$, resulting from a relatively small change in
+rotation \phic, can be conveniently expressed using the $\boxplus$-operator as
+
+\begin{align}
+  \Phic^{k+1} &= \Phic^k \boxplus \phic \\
+  &= \exp(\phic) \circ \Phic^k \\
+  &= \vc C(\phic) \vc C(\Phic^k)  
+\end{align}
+
+The mapping $\g{C} : SO(3) \implies \mathbb{R}^{3\times3}$ applied to the
+orientation vector \Phic corresponds to the rotation matrix \rotcm since it is
+defined as
+\begin{align}
+  \Phic(\vc{r}) &:= \g{C}(\Phic)\vc{r} \\
+  &= \rotcm(\vc{r})
+  \label{eq:basics-rotation} \text{ .}
+\end{align}
+
+The transformation defined in \ref{eq:basics-rotation} can be derived with
+respect to the orientation vector \Phic and the vector $\vc{r}$, yielding
+
+\begin{align}
+  \pderiv{\Phic(\vc {r})}{\vc r} = \g{C}(\Phic) \text{ ,} \quad 
+  \pderiv{\Phic(\vc {r})}{\vc \Phi} = -(\Phic(\vc r))^\times
+  \text{ ,}
+\end{align}
+
+and
+
+\begin{equation}
+  \pderiv{(\Phic \circ \Phis)(\vc {r})}{\Phis} = \g{C}(\Phic) \text{ .}
+\end{equation}
+
+\section{Camera}
+\subsection{Camera Model}
+
+Having introduced the orientation vectors, the camera poses can be described by
+\begin{align*}
+  \g{xi}_{C_k} &:= \rowvector{\mrmc & \phic}^T \\
+  \g{xi}_S &:= \rowvector{\mrms & \phis}^T \text{ .}
+\end{align*}
+
+The transformation from object space coordinates \mrmx to pixel coordinates
+\giv{u} can be split up in the transformation 
+      
+\begin{equation*}
+  \crcx = \rotcm (\mrmx - \mrmc) \text{, }
+\end{equation*}
+
+which is essentially a coordinate transformation from the map frame to the camera
+frame using the camera's extrinsic parameters, and 
+
+\begin{equation}
+  \giv{u} = \g{Kk} \g{Dk}(\g{pi}(\crcx)) \text{, }
+  \label{eq:unrectified}
+\end{equation}
+
+which assigns a pixel value to each camera coordinate using the camera model and
+its intrinsic parameters.
+
+The model used to approximate the real camera is a pinhole model suspect to
+radial - tangential distortion. A pinhole model assigns to each point \crcx
+its projection
+
+\begin{equation}
+  \g{uu} = \g{pi}(\crcx) = \rowvector{x/z & y/z & 1}^T
+\end{equation}
+
+The obtained normalized coordinates \g{uu} are then distorted using the distortion model \g{Dk} defined by
+\cite{radtan}, which can be scaled and shifted using the camera matrix \g{Kk} in order to
+give pixels the final pixels \rowvector{u, v} lying in \rowvector{0\ldots w,0\ldots h}.
+
+\subsection{Stereo Parameters}
+
+The same considerations as above can be made when unrectified instead of
+rectified images are available. The camera calibration in general provides us
+with information on the orientations of the cameras with respect to the
+rectified image plane \g{R} and their baseline \g{b}. \cite{DocCameraInfo}
+\cite[p.  523f]{Siciliano2007}
+In the present notation, this means in particular that 
+
+\begin{equation}
+  \rotsc = \g{R} \hspace{1em} \text{and} \hspace{1em} \srcc = \g{b} 
+  \label{rect/eqn:assumptions}
+\end{equation}
+
+are known. The distortion coefficients \g{Dk} are zero and the obtained normalized
+points need to be rotated to lie in the same rectified image plane. The camera projection
+\ref{eq:unrectified} for the rectified case therefore becomes
+
+\begin{equation*}
+  \giv{w} = \g{Kprime}\g{R}(\g{pi}(\crcx)) \text{,}
+\end{equation*}
+
+where \g{Kprime} is a modified camera matrix which, depending on the
+camera calibration, can be used to scale the image to void non-defined
+image borders resulting from image undistortion and rectification. 
+
+For a given set of rectified and unrectified images of a well calibrated camera,
+there are strong correspondances between the pixels obtaiend from projections of
+3D points to the rectified and the unrectified images respectively. This
+connection was exploited to test the correctness of the above transformations 
+and the provided camera paramteres, as shown in Appendix \ref{app:parameters}.
+
+\subsection{Interpolation}
+
+The image has to be interpolated around the obtained floating-precision pixel
+locations using any common interpolation kernel $h(i, j)$ and summing over 
+
+\begin{align}
+  I(x, y) &= \summ{i}{s} \summ{j}{s} I(x_i, y_j) h(i, j) \\
+  &= \summ{i}{s} \summ{j}{s} I(x_i, y_j) h(i) h(j)
+  \label{eq:basics:interpolation}
+\end{align}
+
+The indices $x_i$ and $y_i$ correspond to the location of the image where the
+interpolation function $h(i, j)$ takes its maximum value.
+
+The applied scheme in this project was the 
+Keys cubic convolution interpolation kernel \cite{Keys1981}, defined by
+\begin{equation}
+  h(x) = 
+  \begin{cases}
+     0.5(x - 2)^3 + 2.5(x-2)^2+4(x-2) + 2 & \ 0 \leq x < 1 \\
+     -1.5(x-2)^3 - 2.5(x-2)^2 + 1 & \ 1 \leq x < 2 \\
+     1.5(x-2)^3 - 2.5(x-2)^2 + 1 & \ 2 \leq x < 3 \\
+     -0.5(x -2)^3 + 2.5(x-2)^2 - 4(x-2) + 2.0 & \ 3 \leq x < 4 \\
+  \end{cases}
+\end{equation}
+
+Other choices of interpolation schemes, such as bilinear or quadratic
+interpolation kernels, could have been considered but no further investigation 
+was done in this direction since the interpolation scheme did not show any 
+significant effect on the results. 
+
+\subsection{Disparity Images} 
+
+In order to quantify the error between the obtained 3D map and the reference
+map, disparity images of both maps are created and their difference is evaluated. 
+This approach is preferred over other approaches such as the sum over all height
+differences, since at sharp edges a little lateral offset can induce very
+high differences, but the disparity map's error stays relatively constrained, depending 
+on the resolution used. The disparity map also offers a welcome intermediate 
+visualization that gives a very intuitive first impression of the accuracy of the obtained point cloud.
+Finally, the disparity being simply defined as $d = \g{b} \g{fx} / z$, with z the depth of the
+point in the camera frame \g{Cf}, a disparity map can be very easily calculated,
+as shown in Algorithm \ref{alg:disparity}).
+
+\begin{algorithm}
+  \SetKwInOut{Input}{Input}
+  \SetKwInOut{Output}{Output}
+  \Input{Reduced camera projection \g{Proj} and map coordinates \g{x}}
+  \Output{Disparity map}
+  $Disparities[1\ldots h, 1\ldots w]$\;
+  $Counter[1\ldots h, 1\ldots w]$\;
+  \For{$i = 1$ to $\g{N}$} {
+    $[u,v,z] = \g{Proj}(\g{x}(i))$ \; 
+    ${d} = \g{b} \g{fx} / z$ \;
+    $Disparities[v,u] += d$\;
+    $Counter[v,u]++$\;
+  }
+  return $Disparities / Counter$\;
+  \caption{Create a disparity map from 3D coordinates}
+  \label{alg:dipsarity}
+\end{algorithm}
+
+It can not be assured that every pixel in the obtained disparity map has an
+assigned disparity after running Algorithm \ref{alg:dipsarity}. 
+By reducing the resolution of the disparity image by a sufficiently high factor
+with respect to the original images, however, the number of non-defined pixels can be
+limited considerably. In the present case, a good choice of this factor was shown to be 
+2-4 and the few non-defined pixels left were assigned the average
+value of the surrounding non-zero pixels, leading to smooth disparity images.
+
+\section{Splines}
+
+What are splines? Why do we use them? Why are they so great?  bla bla bla bla.
+
+\subsection{Interpolation} 
+
+The naming and indexing conventions for the splines formulations are inspired by
+\cite{Dominik}.
+
+
+\begin{equation}
+  h(x) = 
+  \begin{cases}
+     1/6x^3 & \ 0 \leq x < 1 \\
+     -1/2x^3 + 2x^2 - 2x + 2/3 & \ 1 \leq x < 2 \\
+     1/2x^3 - 4x^2 + 10x - 22/3 & \ 2 \leq x < 3 \\
+     -1/6x^3 + 2x^2 - 8x + 32/3 & \ 3 \leq x < 4 \\
+  \end{cases}
+\end{equation}
+
+
+\begin{equation*}
+  \mrmx = \begin{bmatrix} x_j, y_j, h(x_j,y_j)(\g{a})\end{bmatrix} ^T
+\end{equation*}
+     
+\begin{align*}
+ h(x_j) &= \sum_{i=0}^{\g{M}}\gi{a} h_i(x_j)\\
+ &= \sum_{i=k}^{k + \g{s}} \gi{a} h_i(x_j)\text{, for } j = 1 \ldots \g{N}
+ \label{test}
+\end{align*}
+
+\subsection{Bending energy}
+
+Formal definition and numerical implementation?
+\begin{equation}
+  B(h) = \iint_{\mathbb{R}^2} 
+  \left( \pdderiv{h}{x}(x,y) \right)^2 + 
+  \left( \pddderiv{h}{x}{y}(x,y) \right)^2 + 
+  \left( \pdderiv{h}{y}(x,y) \right)^2
+  \text{d}x\text{d}y
+  \label{eq:basics:bending}
+\end{equation}
+
+\subsection{Gradient energy}
+
+Formal definition and numerical implementation?
+
+\begin{equation}
+  G(h) = \iint_{\mathbb{R}^2} 
+  \left( \pderiv{h}{x}(x,y) \right)^2 + 
+  \left( \pderiv{h}{y}(x,y) \right)^2
+  \text{d}x\text{d}y
+  \label{eq:basics:gradient}
+\end{equation}
+
+

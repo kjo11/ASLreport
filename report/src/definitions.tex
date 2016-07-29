@@ -1,7 +1,3 @@
-\renewcommand{\u}[2]{\ensuremath{\SI{#1}{#2}}}
-\newcommand{\mlab}{\texttt{MATLAB}}
-\newcommand{\emlab}{\texttt{Embedded MATLAB}}
-\newcommand{\slink}{\texttt{Simulink}}
 \newcommand{\cpp}{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\relsize{-3}{\textbf{++}}}}
 \newcommand{\eigen}{\texttt{Eigen }}
 \newcommand{\ros}{\texttt{ROS }}
@@ -9,7 +5,21 @@
 \newcommand{\rovio}{\texttt{rovio }}
 \newcommand{\opencv}{\texttt{opencv }}
 \newcommand{\cholmod}{\texttt{CHOLMOD}}
-\newcommand{\argmin}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{min}}\;}
+
+
+\newcommand{\brab}{\ensuremath{_{B}\vc{r}_{AB}}}
+\newcommand{\mrmx}{\ensuremath{_{M}\vc{r}_{MX_j}}}
+\newcommand{\mrmc}{\ensuremath{_{M}\vc{r}_{MC_k}}}
+\newcommand{\mrms}{\ensuremath{_{M}\vc{r}_{MS}}}
+\newcommand{\crcx}{\ensuremath{_{C_{k}}\vc{r}_{C_kX_j}}}
+\newcommand{\srcc}{\ensuremath{_{S}\vc{r}_{C_1C_2}}}
+\newcommand{\rotcm}{\ensuremath{\vc{C}_{C_kM}}}
+\newcommand{\rotsc}{\ensuremath{\vc{C}_{SC_k}}}
+\newcommand{\Phic}{\ensuremath{\vc{\Phi}_{C_kM}}}
+\newcommand{\Phis}{\ensuremath{\vc{\Phi}_{SM}}}
+\newcommand{\phic}{\ensuremath{\vc{\varphi}_{C_kM}}}
+\newcommand{\phis}{\ensuremath{\vc{\varphi}_{SM}}}
+
 % string commands
 \newcommand{\ReplaceStr}[2]{%
   \IfSubStr{#1}{XX}{%
@@ -18,6 +28,8 @@
 }
 
 % glossary shortcuts
+
+\renewcommand{\glossarysection}[2][]{}
 \newcommand{\g}[1]{\gls*{#1}}
 \newcommand{\gi}[1]{\glsuseri*{#1}\glsunset{#1}}
 \newcommand{\gii}[1]{\glsuserii*{#1}\glsunset{#1}}
@@ -55,57 +67,48 @@
   \newglossaryentry{#2}{name={#3},description={#4},type={greek},sort={\mysort}}
 }
 
-\newcommand{\addlatdelta}[4][]{
-  \ifstrempty{#1}{\def\mysort{#2}}{\def\mysort{#1}}
-  \glssetexpandfield{sortvalue}
-  \newglossaryentry{#2}{name={#3},user1={\gentryi{Delta}#3},description={#4},type={latin},sort={\mysort}}
-}
-
-\newcommand{\addlatnumbered}[4][]{%
-  \addglsnumbered{#1}{#2}{#3}{#4}{latin}%
-}
-
-\newcommand{\addgrknumbered}[4]{%
-  \addglsnumbered{#1}{#2}{#3}{#4}{greek}%
-}
-
-\newcommand{\addglsnumbered}[5]{%
-  \saveexpandmode\normalexpandarg
-  \saveexploremode\exploregroups
-  \StrSubstitute{#3}{XX}{}[\myname]%
-  \StrSubstitute{#3}{XX}{,1}[\myuserone]%
-  \StrSubstitute{#3}{XX}{,2}[\myusertwo]%
-  \restoreexpandmode
-  \restoreexploremode
-  \glssetexpandfield{sortvalue}
-  \glssetexpandfield{name}
-%
-  \ifstrempty{#1}{\def\mysort{#2}}{\def\mysort{#1}}
-  \newglossaryentry{#2}%
-  {%
-    name={\myname},%
-    user1={\myuserone},%
-    user2={\myusertwo},%
-    description={#4},%
-    sort={\mysort},%
-    type={#5}%
-  }%
-}
-
 \newcommand{\addlatelement}[4][]{%
   \addglselement{#1}{#2}{#3}{#4}{latin}%
 }
 
 \newcommand{\addglselement}[5]{%
   \ifstrempty{#1}{\def\mysort{#2}}{\def\mysort{#1}}%
+  \glssetexpandfield{sortvalue}
   \newglossaryentry{#2}%
   {%
     name={\ensuremath{\vc{#3}}},%
     user1={\ensuremath{#3_i}},%
     user2={\ensuremath{#3_{i,j}}},%
     user3={\ensuremath{\vc{\hat{#3}}}},%
-    description={test}%
+    description={#4},%
     sort={\mysort},%
+    type={#5}%
+  }%
+}
+
+\newcommand{\addlatpoint}[4][]{%
+  \addglselement{#1}{#2}{#3}{#4}{latin}%
+}
+
+\newcommand{\addglspoint}[5]{%
+  \saveexpandmode\normalexpandarg
+  \saveexploremode\exploregroups
+  \StrSubstitute{#3}{X}{X}[\myname]%
+  \StrSubstitute{#3}{X}{X_j}[\myuserone]%
+  \StrSubstitute{#3}{X}{C_k}[\myusertwo]%
+  \StrSubstitute{#3}{X}{S}[\myuserthree]%
+  \restoreexpandmode
+  \restoreexploremode
+  \glssetexpandfield{name}
+  \ifstrempty{#1}{\def\mysort{#2}}{\def\mysort{#1}}%
+  \glssetexpandfield{sortvalue}
+  \newglossaryentry{#2}%
+  {%
+    name={\myname},%
+    user1={\myuserone},%
+    user2={\myusertwo},%
+    user3={\myuserthree},%
+    description={#4},% sort={\mysort},%
     type={#5}%
   }%
 }
@@ -115,55 +118,54 @@
 }
 
 \newcommand{\addglscameras}[5]{%
+  \saveexpandmode\normalexpandarg
+  \saveexploremode\exploregroups
+  \StrSubstitute{#3}{XX}{}[\withoutvc]%
+  \StrSubstitute{#3}{XX}{\vc}[\withvc]%
+  \restoreexpandmode
+  \restoreexploremode
+  \glssetexpandfield{name}
   \ifstrempty{#1}{\def\mysort{#2}}{\def\mysort{#1}}%
+  \glssetexpandfield{sortvalue}
   \newglossaryentry{#2}%
   {%
-    name={\ensuremath{\vc{#3}}},%
-    user1={\ensuremath{#3_{1,j}}},%
-    user2={\ensuremath{#3_{2,j}}},%
-    user3={\ensuremath{#3_{j}}},%
-    description={test}%
+    name={\ensuremath{\vc \withoutvc}},%
+    user1={\ensuremath{\withvc_{1,j}}},%
+    user2={\ensuremath{\withvc_{2,j}}},%
+    user3={\ensuremath{\withvc_{j}}},%
+    user4={\ensuremath{\vc \withoutvc_{k,j}}},%
+    description={#4},%
     sort={\mysort},%
     type={#5}%
   }%
 }
 
-
-\newcommand{\addlatfork}[4][]{%
-  \addglsfork{#1}{#2}{#3}{#4}{latin}%
+\newcommand{\addlatiterations}[4][]{%
+  \addglsiterations{#1}{#2}{#3}{#4}{latin}%
 }
 
-\newcommand{\addgrkfork}[4][]{%
-  \ifstrempty{#1}{\def\mysort{#2}}{\def\mysort{#1}}
-  \addglsfork{\mysort}{#2}{#3}{#4}{greek}%
-}
-
-\newcommand{\addglsfork}[5]{%
+\newcommand{\addglsiterations}[5]{%
   \saveexpandmode\normalexpandarg
   \saveexploremode\exploregroups
-  \StrSubstitute{#3}{XX}{k}[\myname]%
-  \StrSubstitute{#3}{XX}{k+1}[\myuserone]%
-  \StrSubstitute{#3}{XX}{k-1}[\myusertwo]%
-  \StrSubstitute{#3}{XX}{k+i}[\myuserthree]%
-  \StrSubstitute{#3}{XX}{k+i+1}[\myuserfour]%
+  \StrSubstitute{#3}{XX}{}[\myname]%
+  \StrSubstitute{#3}{XX}{^i}[\myuserone]%
+  \StrSubstitute{#3}{XX}{^k}[\myusertwo]%
   \restoreexpandmode
   \restoreexploremode
   \glssetexpandfield{sortvalue}
-  \glssetexpandfield{name}
-%
+  \glssetexpandfield{name}%
   \ifstrempty{#1}{\def\mysort{#2}}{\def\mysort{#1}}
   \newglossaryentry{#2}%
   {%
     name={\myname},%
     user1={\myuserone},%
     user2={\myusertwo},%
-    user3={\myuserthree},%
-    user4={\myuserfour},%
     description={#4},%
     sort={\mysort},%
     type={#5}%
   }%
 }
+
 
 % underbrace with normal text
 \newcommand{\ubrace}[2]{\underbrace{#1}_{\textstyle #2}}
@@ -176,22 +178,6 @@
 % define what to do with vectors
 \newcommand{\vc}[1]{\ensuremath{\bm{#1}}}
 
-% transpose
-\newcommand{\tps}[1]{\ensuremath{#1^\intercal}}
-
-% add argmin operator in math mode
-%\DeclareMathOperator*{\argmin}{arg\,min}
-
-% redefine ams macro to allow optional argument for controlling matrix line spacing
-\makeatletter
-\renewcommand*\env@matrix[1][\arraystretch]{%
-  \edef\arraystretch{#1}%
-  \hskip -\arraycolsep
-  \let\@ifnextchar\new@ifnextchar
-  \array{*\c@MaxMatrixCols c}
-}
-\makeatother
-
 % command to add extra space between rows of an amsmath matrix
 \newcommand{\matskip}[1]{\\\noalign{\vspace{#1}}}
 
@@ -199,6 +185,17 @@
 \renewcommand{\glsglossarymark}[1]{}
 
 \newcommand{\imp}[1]{\centering \textbf{\textcolor{ETHlightishblue}{#1}}}
+
+% make common math commands shorter.
+\newcommand{\argmin}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{min}}\;}
+\newcommand{\summ}[2]{\ensuremath{\sum_{#1 = 1}^{\g{#2}}}}
+\newcommand{\inR}[1]{\ensuremath{\in\mathbb{R}^{#1}}}
+\newcommand{\rowvector}[1]{\ensuremath{\begin{bmatrix} #1 \end{bmatrix}}}
+\renewcommand{\exp}{\text{exp}}
+\newcommand{\pderiv}[2]{\ensuremath{\frac{\partial #1}{\partial #2}}}
+\newcommand{\pdderiv}[2]{\ensuremath{\frac{\partial^2 #1}{\partial #2 ^2}}}
+\newcommand{\pddderiv}[3]{\ensuremath{\frac{\partial^2 #1}{\partial #2 \partial
+#3}}}
 
 \definecolor{myblue}{RGB}{70, 170, 210}
 \definecolor{mygreen}{RGB}{80, 170, 80}
