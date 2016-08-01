@@ -5,7 +5,8 @@
 The vector and coordinate frame notations used throughout this report follow the
 conventions introduced in \cite{coordinates}.
 If \g{Mf} is the coordinate frame associated with the map, and $A$, $B$ are two 
-3D points, then \g{arab} contains the coefficients of the vector pointing from $A$ to $B$ expressed in the map coordinate system.
+3D points, then \g{arab} contains the coefficients of the vector pointing from
+$A$ to $B$ expressed in the coordinate system \g{Af}.
 In the same manner, the rotation matrix \g{cba} is the (passive) matrix linking
 the coordinates in a frame $\mathcal{A}$ to the coorindates in $\mathcal{B}$ like
 
@@ -98,16 +99,16 @@ give pixels the final pixels \rowvector{u, v} lying in \rowvector{0\ldots w,0\ld
 The same considerations as above can be made when unrectified instead of
 rectified images are available. The camera calibration in general provides us
 with information on the orientations of the cameras with respect to the
-rectified image plane \g{R} and their baseline \g{b}. \cite{DocCameraInfo}
-\cite[p.  523f]{Siciliano2007}
-In the present notation, this means in particular that 
+rectified image plane \g{R} and their baseline \g{b} \cite{DocCameraInfo}
+\cite[p.  523f]{Siciliano2007}, therefore
 
 \begin{equation}
-  \rotsc = \g{R} \hspace{1em} \text{and} \hspace{1em} \srcc = \g{b} 
+  \rotsc = \g{R} \hspace{1em} \text{and} \hspace{1em} \srcc = \g{b} \text{ .}
   \label{rect/eqn:assumptions}
 \end{equation}
 
-are known. The distortion coefficients \g{Dk} are zero and the obtained normalized
+are known. The distortion coefficients \g{Dk} are zero in the rectified image,
+but the normalized
 points need to be rotated to lie in the same rectified image plane. The camera projection
 \ref{eq:unrectified} for the rectified case therefore becomes
 
@@ -115,32 +116,32 @@ points need to be rotated to lie in the same rectified image plane. The camera p
   \giv{w} = \g{Kprime}\g{R}(\g{pi}(\crcx)) \text{,}
 \end{equation*}
 
-where \g{Kprime} is a modified camera matrix which, depending on the
-camera calibration, can be used to scale the image to void non-defined
+where \g{Kprime} is a modified camera matrix, which can be used to scale the
+image to avoid non-defined
 image borders resulting from image undistortion and rectification. 
 
 For a given set of rectified and unrectified images of a well calibrated camera,
 there are strong correspondances between the pixels obtaiend from projections of
-3D points to the rectified and the unrectified images respectively. This
-connection was exploited to test the correctness of the above transformations 
+3D points to the rectified and the unrectified images, respectively. This
+property was exploited to test the correctness of the above transformations 
 and the provided camera paramteres, as shown in Appendix \ref{app:parameters}.
 
 \subsection{Interpolation}
 
 The image has to be interpolated around the obtained floating-precision pixel
-locations using any common interpolation kernel $h(i, j)$ and summing over 
+locations using any common interpolation kernel $h(i, j)$ as such:
 
 \begin{align}
   I(x, y) &= \summ{i}{s} \summ{j}{s} I(x_i, y_j) h(i, j) \\
-  &= \summ{i}{s} \summ{j}{s} I(x_i, y_j) h(i) h(j)
+  &= \summ{i}{s} \summ{j}{s} I(x_i, y_j) h(i) h(j) \text{ .}
   \label{eq:basics:interpolation}
 \end{align}
 
-The indices $x_i$ and $y_i$ correspond to the location of the image where the
+The indices $x_i$ and $y_i$ correspond to the location in the image where the
 interpolation function $h(i, j)$ takes its maximum value.
 
-The applied scheme in this project was the 
-Keys cubic convolution interpolation kernel \cite{Keys1981}, defined by
+In this project, the Keys cubic convolution interpolation kernel \cite{Keys1981}, 
+was applied, defined by
 \begin{equation}
   h(x) = 
   \begin{cases}
@@ -149,25 +150,28 @@ Keys cubic convolution interpolation kernel \cite{Keys1981}, defined by
      1.5(x-2)^3 - 2.5(x-2)^2 + 1 & \ 2 \leq x < 3 \\
      -0.5(x -2)^3 + 2.5(x-2)^2 - 4(x-2) + 2.0 & \ 3 \leq x < 4 \\
   \end{cases}
+  \label{eq:cubicinterpolation}
 \end{equation}
 
-Other choices of interpolation schemes, such as bilinear or quadratic
+Other choices of interpolation schemes, using bilinear or quadratic
 interpolation kernels, could have been considered but no further investigation 
-was done in this direction since the interpolation scheme did not show any 
-significant effect on the results. 
+was done since the interpolation kernel did not show any 
+significant effect on the results in terms of accuracy or converge in terms of
+accuracy or convergence.
 
 \subsection{Disparity Images} 
 
 In order to quantify the error between the obtained 3D map and the reference
-map, disparity images of both maps are created and their difference is evaluated. 
+map, disparity images of both maps were created and their difference was evaluated. 
 This approach is preferred over other approaches such as the sum over all height
 differences, since at sharp edges a little lateral offset can induce very
-high differences, but the disparity map's error stays relatively constrained, depending 
-on the resolution used. The disparity map also offers a welcome intermediate 
-visualization that gives a very intuitive first impression of the accuracy of the obtained point cloud.
+high differences, but the disparity map's error stays relatively constrained
+because of the limiting factor of the pixel values. Furthermore, even before
+quantitative analysis, the disparity map 
+offers an intermediate visualization that gives a very intuitive first impression of the accuracy of the obtained point cloud.
 Finally, the disparity being simply defined as $d = \g{b} \g{fx} / z$, with z the depth of the
-point in the camera frame \g{Cf}, a disparity map can be very easily calculated,
-as shown in Algorithm \ref{alg:disparity}).
+point in the camera frame \g{Cf}, it can be very easily calculated,
+using Algorithm \ref{alg:disparity}).
 
 \begin{algorithm}
   \SetKwInOut{Input}{Input}
@@ -187,48 +191,77 @@ as shown in Algorithm \ref{alg:disparity}).
   \label{alg:dipsarity}
 \end{algorithm}
 
-It can not be assured that every pixel in the obtained disparity map has an
-assigned disparity after running Algorithm \ref{alg:dipsarity}. 
+It can not be assured that every pixel in the obtained disparity map has been
+assigned a disparity value after running Algorithm \ref{alg:dipsarity}. 
 By reducing the resolution of the disparity image by a sufficiently high factor
 with respect to the original images, however, the number of non-defined pixels can be
 limited considerably. In the present case, a good choice of this factor was shown to be 
 2-4 and the few non-defined pixels left were assigned the average
 value of the surrounding non-zero pixels, leading to smooth disparity images.
 
-\section{Splines}
+\section{B-Splines for surface representation}
 
-What are splines? Why do we use them? Why are they so great?  bla bla bla bla.
+Splines are piecewise polynomial functions of a degree $\leq \g{D}$ whose
+parameters are allowed to change at so-called knot points, allowing to impose
+certain behaviour suh as smoothness and derivability. 
+B-Splines got their name from the fact that they are commonly used as (B)asis
+functions for representing more complex behaviours or geometries. In this
+project, for instance, they can be used to represent realistic and relatively
+smooth surfaces with adjustable amount detail using only a limited number of
+parameters. B-Splines can be obtained using the \textit{Cox de Boor} recursion
+formula. They are continuous at the knots and their deriavtives are also
+continuous up to $\g{D} -1$.
 
 \subsection{Interpolation} 
 
-The naming and indexing conventions for the splines formulations are inspired by
-\cite{Dominik}.
-
+The naming and indexing conventions for the B-splines formulations are inspired by
+\cite{Dominik}. Let us denote by $(x_i, y_i)$ the knot point ``responsible'' for
+the point at which the spline is evaluated, $(x_{i,k}, y_{i,k})$. and let
+$(\delta_x(k), \delta_y(k))$ be the offset of the evaluation point with
+  respect to the knot point (i.e. $\delta_{x}(k) = x_{i,k} - x_i$, idem for $y$).
+The height at the point $(x_j, y_j)$ for a B-spline representation of support 
+\g{s}, is then given by 
 
 \begin{equation}
-  h(x) = 
-  \begin{cases}
-     1/6x^3 & \ 0 \leq x < 1 \\
-     -1/2x^3 + 2x^2 - 2x + 2/3 & \ 1 \leq x < 2 \\
-     1/2x^3 - 4x^2 + 10x - 22/3 & \ 2 \leq x < 3 \\
-     -1/6x^3 + 2x^2 - 8x + 32/3 & \ 3 \leq x < 4 \\
-  \end{cases}
+  h(x_{j}, y_{j}) = h(x_{i, k}, y_{i, k}) = \summ{\mu}{s} \summ{\nu}{s} a_{i + \mu, j
+  + \nu}\gamma_{k, \mu, \nu} \text{ ,}
 \end{equation}
 
+where $\gamma_{k, \mu, \nu}$ is the pre-evaluated tensor product basis,
+corresponding to the value of the spline function at $(\mu,
+\nu)$, calculated using 
+
+\begin{equation}
+  \gamma_{k, \mu, \nu} = h_D(\mu + \delta_x(k))h_D(\nu + \delta_y(k)) \text{ .}
+\end{equation}
+
+where $h_D(x)$ is the interpolation function of the spline of degree $D$, 
+for example for cubic splines
+
+\begin{equation}
+  h_3(x) = 
+  \begin{cases}
+     1/6x^3 & \ 0 \leq x < 1 \\
+     -0.5x^3 + 2x^2 - 2x + 2/3 & \ 1 \leq x < 2 \\
+     0.5x^3 - 4x^2 + 10x - 22/3 & \ 2 \leq x < 3 \\
+     -1/6x^3 + 2x^2 - 8x + 32/3 & \ 3 \leq x < 4 \\
+  \end{cases}
+  \label{eq:cubicspline}
+\end{equation}
+
+The coordinates of grid point $j$ are then given by
 
 \begin{equation*}
-  \mrmx = \begin{bmatrix} x_j, y_j, h(x_j,y_j)(\g{a})\end{bmatrix} ^T
+  \mrmx = \begin{bmatrix} x_j, y_j, h(x_j,y_j)(\g{a})\end{bmatrix} ^T \text{ , }
 \end{equation*}
-     
-\begin{align*}
- h(x_j) &= \sum_{i=0}^{\g{M}}\gi{a} h_i(x_j)\\
- &= \sum_{i=k}^{k + \g{s}} \gi{a} h_i(x_j)\text{, for } j = 1 \ldots \g{N}
- \label{test}
-\end{align*}
+
+which can be repeated for all points ($j = 1 \ldots \g{N}$) to yield the map
+coordinates.  
 
 \subsection{Bending energy}
 
-Formal definition and numerical implementation?
+
+
 \begin{equation}
   B(h) = \iint_{\mathbb{R}^2} 
   \left( \pdderiv{h}{x}(x,y) \right)^2 + 
@@ -239,8 +272,6 @@ Formal definition and numerical implementation?
 \end{equation}
 
 \subsection{Gradient energy}
-
-Formal definition and numerical implementation?
 
 \begin{equation}
   G(h) = \iint_{\mathbb{R}^2} 
