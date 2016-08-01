@@ -1,3 +1,5 @@
+/aux/
+/report.pdf
 *.aux
 *.log
 *.swp
