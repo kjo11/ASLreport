@@ -9,6 +9,7 @@ TARGET = $(OUTDIR)/report.pdf
 
 PDF_OUTPUT = $(SOURCE:$(SRCDIR)/%.tex=$(AUXDIR)/%.pdf)
 
+CLSFILE = epflthesis.sty
 TEXFILES = $(shell find $(SRCDIR) -name "*.tex")
 GLOSSARIESFILES = $(wildcard $(AUXDIR)/*glo)
 
@@ -28,7 +29,7 @@ all: $(TARGET)
 $(TARGET): $(PDF_OUTPUT)
 	cp "$(PDF_OUTPUT)" "$(TARGET)"
 
-$(PDF_OUTPUT): $(IMGFILES) $(TEXFILES) | $(AUXSUBDIRS)
+$(PDF_OUTPUT): $(IMGFILES) $(TEXFILES) $(CLSFILE) | $(AUXSUBDIRS)
 	@latexmk -bibtex -outdir=$(AUXDIR) $(notdir $(SOURCE))
 
 $(AUXSUBDIRS):
@@ -50,5 +51,7 @@ clean:
 
 cleaner: clean
 	rm -rf $(AUXDIR)
+
+$(CLSFILE):
 
 .PHONY: all clean cleaner glossary firstrun

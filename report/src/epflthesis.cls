@@ -65,19 +65,26 @@
 \def\headrule{\color{darkgray}{\hrule\@height\headrulewidth\@width\headwidth \vskip-\headrulewidth}}
 
 %define required vars
+\gdef\@school{Ecole polytechnique fédérale de Lausanne}
+\gdef\@reporttype{Master's Thesis}
 \def\@deptpref{Department of}
 \def\departmentprefix#1{\gdef\@deptpref{#1}}
 \def\printlos#1{\gdef\@printlos{#1}}
 \def\@advisorpref{Supervisors:~}
 \def\advisorprefix#1{\gdef\@advisorpref{#1}}
 \def\advisor#1{\gdef\@advisor{#1}}
-\gdef\@school{Ecole polytechnique fédérale de Lausanne}
 \def\school#1{\gdef\@school{#1}}
 \def\dept#1{\gdef\@dept{#1}}
 \def\submitdate#1{\gdef\@submitdate{#1}}
+\def\reporttype#1{\gdef\@reporttype{#1}}
 \long\def\acknowledgements#1{\gdef\@acknowledgements{#1}}
 
+
 %define optional vars
+\def\schoolii#1{\gdef\@schoolii{#1}}
+\def\advisorii#1{\gdef\@advisorii{#1}}
+\def\deptii#1{\gdef\@deptii{#1}}
+
 \def\city#1{\gdef\@city{#1}}
 \def\dedication#1{\gdef\@dedication{#1}}
 \def\extranotes#1{\gdef\@extranotes{#1}}
@@ -122,14 +129,27 @@
 
     \vspace{0.1\textheight}
     \noindent\large
-    \textbf{Master's Thesis} \\ 
+    \textbf{\@reporttype} \\
+    \ifx\@schoolii\undefined
     \@school \\
-    \@deptpref~\@dept 
+    \@deptpref~\@dept%
+    \else
+    \parbox[t]{0.46\textwidth}{\raggedright\@school\\\@deptpref~\@dept} \hfill
+    \parbox[t]{0.46\textwidth}{\raggedright\@schoolii\\\@deptii}%
+    \fi
+%
+    \\[1em]
 
+    \ifx\@advisorii\undefined
     \@advisorpref\hfill
     \parbox[t]{\@advisorlength}{\@advisor}
+    \else
+    \@advisorpref\hfill
+    \parbox[t]{\@advisorlength}{\@advisor\\\@advisorii}
+    \fi
 
-    \vfill 
+
+    \vfill
 
     \ifx\@city\@empty\else
     \@city,~
@@ -203,7 +223,7 @@
   \fi
 }
 
-%various optional lists 
+%various optional lists
 \DeclareOption{noheader}{
   \renewcommand*{\begincmd}{
     \onehalfspacing
@@ -307,5 +327,5 @@
 \newcommand{\ml}{MATLAB}
 
 \endinput
-%% 
+%%
 %% End of file 'epflthesis.cls'.
